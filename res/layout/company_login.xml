@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="500.0dip" android:layout_height="350.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <Button android:id="@id/cancel_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="25.0dip" android:layout_marginTop="32.0dip" android:text="@string/cancel" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:onClick="LoginCancelButtonOnClick" style="?android:attr/buttonStyleSmall" />
+    <ProgressBar android:id="@id/ecs_login_progress" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" />
+    <EditText android:id="@id/login_passwordEditor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="@string/password" android:ems="10" android:singleLine="true" android:layout_toRightOf="@id/cancel_button" android:layout_centerVertical="true" android:inputType="textPassword">
+        <requestFocus />
+    </EditText>
+    <EditText android:id="@id/login_nameEditor" android:layout_width="wrap_content" android:layout_height="wrap_content" android:hint="@string/username" android:ems="10" android:singleLine="true" android:layout_toRightOf="@id/cancel_button" android:layout_above="@id/login_passwordEditor" android:inputType="textPersonName" />
+    <Button android:id="@id/login_button" android:layout_width="200.0dip" android:layout_height="wrap_content" android:layout_marginTop="22.0dip" android:text="@string/login" android:layout_below="@id/login_passwordEditor" android:layout_alignLeft="@id/login_passwordEditor" android:layout_alignRight="@id/login_passwordEditor" android:onClick="LoginButtonOnClick" />
+</RelativeLayout>

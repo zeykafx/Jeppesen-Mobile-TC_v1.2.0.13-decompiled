@@ -1,0 +1,26 @@
+!!brut.androlib.meta.MetaInfo
+apkFileName: Jeppesen Mobile TC_v1.2.0.13_apkpure.com.apk
+compressionType: false
+doNotCompress:
+- resources.arsc
+- png
+- assets/demojit/charts.bin
+- assets/demojit/vfrcharts.bin
+isFrameworkApk: false
+packageInfo:
+  forcedPackageId: '127'
+  renameManifestPackage: null
+sdkInfo:
+  minSdkVersion: '11'
+  targetSdkVersion: '17'
+sharedLibrary: false
+sparseResources: true
+unknownFiles: {}
+usesFramework:
+  ids:
+  - 1
+  tag: null
+version: 2.5.0
+versionInfo:
+  versionCode: '10200013'
+  versionName: 1.2.0.13

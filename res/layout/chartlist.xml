@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center|left" android:orientation="vertical" android:id="@id/chartlist_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:animateLayoutChanges="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0">
+        <ImageView android:id="@id/chartlist_back_to_airports_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/popover_arrowback_trans" android:onClick="ChartListBackOnClick" />
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#fff6f5f4" android:gravity="center" android:layout_gravity="center" android:id="@id/chartlist_currenticao" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginRight="44.0dip" android:lines="1" android:layout_weight="1.0" />
+    </LinearLayout>
+    <ListView android:id="@id/chartlist_list_view" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" android:animateLayoutChanges="true" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/NoFavsImageViewChart" android:visibility="gone" android:layout_width="182.0dip" android:layout_height="257.0dip" android:src="@drawable/nofavs" android:layout_weight="1.0" />
+    <View android:id="@id/divider" android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="2.0dip" android:paddingRight="2.0dip" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="60.0dip" android:layout_weight="0.0">
+        <ImageView android:id="@id/chartlist_allcharts" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/charts_all_on" android:onClick="ChartListAllChartsOnClick" />
+        <ImageView android:id="@id/chartlist_favoritecharts" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/charts_favs" android:onClick="ChartListFavoritesOnClick" />
+        <ImageView android:id="@id/chartlist_groups" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/charts_groups" android:onClick="ChartListGroupsOnClick" />
+    </LinearLayout>
+</LinearLayout>

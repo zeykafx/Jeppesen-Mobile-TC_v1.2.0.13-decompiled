@@ -1,0 +1,591 @@
+Manifest-Version: 1.0
+Created-By: 1.6.0_45 (Apple Inc.)
+
+Name: res/drawable-mdpi/menubar_bg.9.png
+SHA1-Digest: kRu5zo9fdAfTZCVJpYs5pd6abW8=
+
+Name: res/drawable-port/jtstips_port_gps.png
+SHA1-Digest: UbHY8E/UO7TuB4wT+niPH6ahnnk=
+
+Name: assets/tcl/fonts/FONT35.jrf
+SHA1-Digest: 3K01nlkrjveMnLxJYIF7/e0nYEA=
+
+Name: res/xml/about_preferences.xml
+SHA1-Digest: ZdvmmnfiITKxL08g1n2ikSEU3Do=
+
+Name: res/drawable-mdpi/airports_all.png
+SHA1-Digest: aNnDseBcWUlETKqytj0vxfVqk84=
+
+Name: res/drawable-mdpi/icon_manuals_launch.png
+SHA1-Digest: RTE/TgPEws/A0f+F7ojdzgvYrOc=
+
+Name: assets/tcl/fonts/FONT8.jrf
+SHA1-Digest: rcAezSTjo/i66tu7MNABjBsLCxM=
+
+Name: assets/tcl/fonts/FONT79.jrf
+SHA1-Digest: fgSrCywQaQL3zGnDGe6zl81roSw=
+
+Name: res/layout/gpsdatapopup.xml
+SHA1-Digest: Il9tHo5KgRR8Yl7q2bLXfozzMHA=
+
+Name: res/layout/buttonpref.xml
+SHA1-Digest: Hno3B0rXr2TUKU758u9wAPLxqSs=
+
+Name: assets/demojit/vfrcharts.bin
+SHA1-Digest: UYm5qk8EdADPLWzhQfsZWislCoA=
+
+Name: assets/tcl/fonts/FONT43.jrf
+SHA1-Digest: zB2cO9G0Tzj0CxvhA696BluGFcM=
+
+Name: res/layout/chartlist.xml
+SHA1-Digest: Dm/8my1w2CDTRRKT+y/V1ZgKOC4=
+
+Name: assets/tcl/fonts/FONT11.jrf
+SHA1-Digest: Q9yprYDCRnRMigGhoT3pwe+U/vY=
+
+Name: res/xml/updates_preferences.xml
+SHA1-Digest: es3Or7jbvfcISncPiu4aSXDaPJ8=
+
+Name: res/drawable-mdpi/icon_manuals_transbg.png
+SHA1-Digest: rCw7Tayf/t9IeFSjqYDMqQLpeOI=
+
+Name: res/drawable-mdpi/icontitleairports.png
+SHA1-Digest: OPt5ZR3qMFMe4h875Bi/8eR70N4=
+
+Name: res/layout/splashscreen.xml
+SHA1-Digest: fmGM+n0vC/VdmkLWgHzgidkB/MQ=
+
+Name: res/layout/eula_dialog.xml
+SHA1-Digest: M71blspaov7waEH4HxFIdnM9HRg=
+
+Name: res/xml/preferences_headers.xml
+SHA1-Digest: WXoBr9ZB94P1j02wqPk+ncTdMgI=
+
+Name: res/drawable-hdpi/appicon.png
+SHA1-Digest: OImQdeYTcjMLOlPHkepqh1aKfFI=
+
+Name: assets/tcl/fonts/FONT52.jrf
+SHA1-Digest: 6iQT4rq/uO+IKPZGG3HL7TsgZE4=
+
+Name: res/drawable-mdpi/btn_demo.png
+SHA1-Digest: /I1E47I69hwR/OGBc8BYYCxh/Ug=
+
+Name: assets/thmb-07-add-favorites.png
+SHA1-Digest: r956Hv1VYHRH1AmrLwAwj36/4OU=
+
+Name: res/drawable-mdpi/charts_favs_on.png
+SHA1-Digest: EBwxAMv/v8qpbs/4zRUX+LghrpM=
+
+Name: res/drawable-mdpi/chart_stack_bg_9.9.png
+SHA1-Digest: s7/S04z2LRAH2nMSA45JF7qFxHY=
+
+Name: assets/help-v2.html
+SHA1-Digest: ykcG5+Ut2wFDuJcUCv4N8GBlTHQ=
+
+Name: res/layout/chart_group_lineitem.xml
+SHA1-Digest: Q50pm1mymCtLGBOTL9poc8nOpqs=
+
+Name: res/layout/airportlist_lineitem.xml
+SHA1-Digest: HrPPe+6CIGU0ejSvtE6JRTKxmhQ=
+
+Name: assets/tcl/fonts/FONT82.jrf
+SHA1-Digest: m4c23XVRVN/Ov7Kfu2Pz9fmVXzg=
+
+Name: res/drawable-mdpi/ownship_no_heading.png
+SHA1-Digest: ZIXOzGnBIHEQjKNdwfL2AcMJSYc=
+
+Name: res/drawable-port/background_port.png
+SHA1-Digest: k5wnKUb9/u2r2ohavT3mES84ZbU=
+
+Name: assets/manuals.png
+SHA1-Digest: yFBZ/3aPyhjtrQkFJXoJFGkfcvE=
+
+Name: res/drawable-port/jtstips_port.png
+SHA1-Digest: 0yJQfrT8QknRnQrw4Z8m1MwRecg=
+
+Name: assets/tcl/tcl/jeppesen.tfl
+SHA1-Digest: 7c2+7DkO8AngSkouxsoM8zjsL6I=
+
+Name: res/drawable-mdpi/bg_activate.png
+SHA1-Digest: e3xXYRz0MCB/3xNbvJOuEnmmJhk=
+
+Name: res/drawable-mdpi/popover_groupheader_bg.png
+SHA1-Digest: S7F0nPL6+57PFbBFC6u+jpqUW9g=
+
+Name: res/drawable-mdpi/airport_arrowsnext_trans.png
+SHA1-Digest: YA8BNEoxLO7A4dk9baLN5C45+PY=
+
+Name: assets/tcl/fonts/FONT7.jrf
+SHA1-Digest: m7biJSv84+HG5KfuQytul4HJcsg=
+
+Name: assets/all-charts.png
+SHA1-Digest: GR5JaHPUNy8iVqGVCH2sI29oLCk=
+
+Name: res/layout/manualslist_item.xml
+SHA1-Digest: +Q/F+4gkmwXB7VBZaBfOP46qmAo=
+
+Name: res/layout/legal.xml
+SHA1-Digest: 9ko4+tVYNCsgjyYKKfWXX3jB6fQ=
+
+Name: res/drawable-mdpi/iconhelp.png
+SHA1-Digest: nhaRBbDm+OdnEG7xaml1Zgo99tI=
+
+Name: res/layout/help_dialog.xml
+SHA1-Digest: paQUZLmaHS9eeihvyAuxrh5CWWw=
+
+Name: res/drawable/dialog_full_holo_dark2.9.png
+SHA1-Digest: e5s6og/Ga4UoJW9FWDwuttT516A=
+
+Name: res/drawable-land/jtstips_land_gps.png
+SHA1-Digest: yIquU7oazX6Ny/Mv1i3Mh2tHOHY=
+
+Name: assets/tcl/fonts/FONT5.jrf
+SHA1-Digest: MpDDh8+WcYbfJ1wReFyGBG2Sntc=
+
+Name: res/layout-sw720dp/activation.xml
+SHA1-Digest: 7oe/AXT6y3vLVjN3hbQA2vIsarg=
+
+Name: assets/tcl/fonts/FONT84.jrf
+SHA1-Digest: u9EQt1fV7hCOvdJZseleOQxhjYM=
+
+Name: assets/tcl/fonts/FONT76.jrf
+SHA1-Digest: jyjEcIhJUYycUqxQOaZ3zLvuyjE=
+
+Name: res/layout/update_coverages.xml
+SHA1-Digest: QiJklWF+E6IsVK0UYjASdcUOu7Y=
+
+Name: assets/demojit/charts.bin
+SHA1-Digest: rwkx39FEPkdxI9ta1qTn7wr4VrQ=
+
+Name: res/drawable-mdpi/iconupdates.png
+SHA1-Digest: vKuMrtPdoEuE8n5qEvA+VQdjIz0=
+
+Name: res/drawable-mdpi/scrubber_tooltip_withglow.png
+SHA1-Digest: Xtmgz3FBa55UHkTUrYNR7R298/I=
+
+Name: res/drawable-mdpi/icon_legal.png
+SHA1-Digest: oLP5v9UlJJqAkU7q2WWYwfe2kVk=
+
+Name: assets/tcl/tcl/jeppesen.tls
+SHA1-Digest: p/h9ODBxnw0/PUARgTIzY1sMlS8=
+
+Name: res/drawable-mdpi/icontitledimmer.png
+SHA1-Digest: G4kMM2l2foS5TqiYfxCuQMCJ2Qk=
+
+Name: res/drawable-mdpi/charts_groups.png
+SHA1-Digest: +/H5ZeyTELmfsZUbNYduPPHYdA8=
+
+Name: assets/tcl/fonts/FONT21.jrf
+SHA1-Digest: foFz9Q9rM1IHWNpT51a5vj861tA=
+
+Name: assets/tcl/fonts/FONT16.jrf
+SHA1-Digest: eJtXNDgdyICOvc1Ul7VDnkqB5e8=
+
+Name: assets/tcl/fonts/FONT4.jrf
+SHA1-Digest: gptfF2gVzuU78JjkoWn5PkoMwLs=
+
+Name: assets/tcl/tcl/lssdef.tcl
+SHA1-Digest: MQv6c629LsPP/aF9mAitdNUgr6U=
+
+Name: assets/settings-updates.png
+SHA1-Digest: W8Oit/gX9BfzVop6uhiGW9CmlIs=
+
+Name: res/layout/chartlist_lineitem.xml
+SHA1-Digest: VBkdDDJGSFbrOK7rhlu9g3WOmi0=
+
+Name: assets/tcl/fonts/FONT77.jrf
+SHA1-Digest: h5lJ/955uC2m04EgtBWkxkhxjRk=
+
+Name: lib/armeabi/libjithandler.so
+SHA1-Digest: zCLHwv3gQIh/N9b1x/ELLMQjtYg=
+
+Name: res/layout/alert_dialog_text_entry.xml
+SHA1-Digest: dEvn9XcYhORr8qQbAuXL0tbS2aE=
+
+Name: lib/armeabi/libnotamhandler.so
+SHA1-Digest: qZNVGSz/raKXwPPQfXAzMH7n+zc=
+
+Name: res/anim/slide_out_left.xml
+SHA1-Digest: YIYbCLdxbzvK06J0OlAKC6jd+5o=
+
+Name: res/drawable-mdpi/charts_groups_on.png
+SHA1-Digest: Axzi/tvT7rM+3rMQ7MYnjG3KvR8=
+
+Name: assets/thmb-15-settings-popover.png
+SHA1-Digest: G+c2MZSqTmIP5lryN3lARQoLdsM=
+
+Name: assets/tcl/fonts/FONT32.jrf
+SHA1-Digest: daHTY8ucSyO9GfoA8eTkaRddeiA=
+
+Name: assets/tcl/fonts/FONT23.jrf
+SHA1-Digest: K6utbN+8bCCxkLqHUIAMcknS5z0=
+
+Name: res/drawable-mdpi/brightness_dialog.xml
+SHA1-Digest: yU4mgl5IbqCgulWPqLntIYhZpM4=
+
+Name: assets/appEula.html
+SHA1-Digest: 6zhHUt3EM8aW/sAdNLcCRHAFA2I=
+
+Name: res/drawable-mdpi/btn_demo_press.png
+SHA1-Digest: R0bDoJ10yAQmQd41nZd8CBeth/Y=
+
+Name: res/drawable-mdpi/btnactivate.png
+SHA1-Digest: 6p1r4PETN5FCw47a1z1EAbWOHpk=
+
+Name: res/layout/notamslist.xml
+SHA1-Digest: Du+EoOO7c9xz/1mSlIReFsQtilI=
+
+Name: res/layout/nonotams.xml
+SHA1-Digest: zgm8vh+lQFNXsZXlGHwe3Bwygcc=
+
+Name: assets/tcl/fonts/FONT25.jrf
+SHA1-Digest: Sb/4McXUrvvBE74lolsPGDhRZQ0=
+
+Name: assets/tcl/fonts/FONT13.jrf
+SHA1-Digest: KPti8geVDuF/5HvA2CpnpjCk2n4=
+
+Name: res/drawable-land/background_land.png
+SHA1-Digest: /izco50sftpo2SHgwNyoIkyhdoc=
+
+Name: res/drawable-mdpi/sidescrubber_divider.9.png
+SHA1-Digest: ILrKSpO3Q5E7/WrzRGRzYrNOEUQ=
+
+Name: res/layout/airportlist.xml
+SHA1-Digest: 2R/RAVLThX2MSfQem1JNww1+wn4=
+
+Name: res/anim/slide_in_right.xml
+SHA1-Digest: tN4yMTtfUivYnfDleQEEvnd2JvE=
+
+Name: res/layout/sidescrubber_lineitem.xml
+SHA1-Digest: d184x5777mi9OZuFH3X70z3qaOU=
+
+Name: lib/armeabi/libjtca.so
+SHA1-Digest: dSubjj4P6sRDE9y1mMRF9+MUCoo=
+
+Name: res/layout/activation.xml
+SHA1-Digest: 7oe/AXT6y3vLVjN3hbQA2vIsarg=
+
+Name: res/drawable-mdpi/iconupdates_badge.png
+SHA1-Digest: ZUYqhkmGtiVV3nQACq/ea70Kh0k=
+
+Name: assets/preferences.png
+SHA1-Digest: hGenRnjEaIYf2g1FMALG9nmgJzU=
+
+Name: res/layout/update.xml
+SHA1-Digest: +E3KeLPP809YcsYSxk33m8BnjWU=
+
+Name: res/drawable/vertical_divider_line.xml
+SHA1-Digest: DzlRPOiXtst2g1I22ffs6SBq8Nc=
+
+Name: res/drawable-mdpi/airports_favs.png
+SHA1-Digest: MkulKeJhMc5FyKX/NHxIwmXyMD0=
+
+Name: res/drawable-mdpi/btnsettings.png
+SHA1-Digest: X9MRyPK7r7xs3xM48rfjQyKimss=
+
+Name: assets/GPS.png
+SHA1-Digest: CbJ4UFi2ogO9BfaAPx6m9O/MrYo=
+
+Name: assets/tcl/fonts/FONT3.jrf
+SHA1-Digest: B+TiChHqmriHsjs2Oyo6e3DYMXo=
+
+Name: lib/armeabi/libjitecharts.so
+SHA1-Digest: iRE5bIw+Hk+mQN5032r/SLwRKa0=
+
+Name: res/drawable-mdpi/btnsettingsupdate.png
+SHA1-Digest: 7f1Z2UyDAmJAZsQHaP1iUX0Xm0k=
+
+Name: res/layout/manualslist_update_item.xml
+SHA1-Digest: GVLr5prdmsRjVSLZvAXJC4tI/tk=
+
+Name: assets/thmb-14-brightness.png
+SHA1-Digest: QE1GNJLn4VbkpaFyroY21qBHU1s=
+
+Name: res/layout/settingsmenupopup.xml
+SHA1-Digest: ZNFCKGRPjOoDTqNhWC6uyA5qR3Q=
+
+Name: res/drawable-port/jtstips_1_9_gps.png
+SHA1-Digest: UbHY8E/UO7TuB4wT+niPH6ahnnk=
+
+Name: res/drawable-mdpi/icon_about.png
+SHA1-Digest: KWxr9cssLeuAeWoQ67ruazBDqNo=
+
+Name: res/layout/company_login.xml
+SHA1-Digest: Hxo6BgbkD4uzQou6ZNMkkMSVZZE=
+
+Name: res/drawable-mdpi/appicon.png
+SHA1-Digest: 1F9TBNG7dvKu1R2CiTjCKmhc2h8=
+
+Name: res/drawable-mdpi/fav_off.png
+SHA1-Digest: +5hl1GMAhEExbgHyJ/R/md3pk1M=
+
+Name: assets/demojit/charts.ini
+SHA1-Digest: 2As3j6S6drAbUN1ddIcpq+CbJu4=
+
+Name: assets/tcl/fonts/FONT80.jrf
+SHA1-Digest: 5U18uAfNKdtDeXvOCSz8pCAEaaw=
+
+Name: res/drawable-port/bg4_9.png
+SHA1-Digest: k5wnKUb9/u2r2ohavT3mES84ZbU=
+
+Name: assets/demojit/vfrntms.dbf
+SHA1-Digest: LOpa5mDErYsp5u0KMM/S0WWjVeg=
+
+Name: res/drawable-mdpi/demo_startup_bkg.png
+SHA1-Digest: T3Vi4FkAD2bHiNsi5ll5sLYhap0=
+
+Name: res/drawable-mdpi/sidescrubber_whitetab.png
+SHA1-Digest: /mt1qrFomZJBcWNxlZwI2bLqQOg=
+
+Name: res/layout/dimmercontrol.xml
+SHA1-Digest: gTaFwLbSY27oLjfnzYt21SQmxAs=
+
+Name: assets/scrubber.png
+SHA1-Digest: DY1uufPm/ULes9KwzDFmR4EqUyI=
+
+Name: res/xml/fragmented_preferences.xml
+SHA1-Digest: ZOanCPp1xDLmEPmtTH6cQGf/B9w=
+
+Name: res/drawable-mdpi/popover_arrowback_trans.png
+SHA1-Digest: FypVaiHkTvCEh/koeyJjqT7G6ak=
+
+Name: res/drawable-mdpi/scrubber_favtooltip_glow.png
+SHA1-Digest: oTPW7NDJstxowOPsPyoWxVKgOqk=
+
+Name: assets/thmb-13-titlebar-navright.png
+SHA1-Digest: A50lpmBR3uatZIC9UWf8ApVjmd0=
+
+Name: res/layout-sw600dp/activation.xml
+SHA1-Digest: bOjpAr7ZbKctTn50qauNQDnXW1Y=
+
+Name: res/drawable-mdpi/titlechartfavorite_on.png
+SHA1-Digest: oJBDIrX+aMbqAbiuy3W+wrhYtuY=
+
+Name: assets/tcl/fonts/FONT34.jrf
+SHA1-Digest: g222xeTRm70uRBKVGhKSdjcoQZs=
+
+Name: assets/thmb-01-airports.png
+SHA1-Digest: Yo5dEQEGF4q0ZeVFQ6lCg+8/A+o=
+
+Name: assets/tcl/data/current_chart.tcl
+SHA1-Digest: uipFYbv7i6ReeeCrgA1vrfRoZBs=
+
+Name: assets/demojit/vfrchrts.dbf
+SHA1-Digest: toAiRmG87Q55K7ShmZWW2r6abvs=
+
+Name: res/layout/nofavorites.xml
+SHA1-Digest: zbby9MWpJ+6BtvkRzJPORJWY3kw=
+
+Name: res/drawable-mdpi/icontitlenotices.png
+SHA1-Digest: /W7pxMcQoRhea4u58ihYj27AURc=
+
+Name: assets/demojit/vfrntms.dbt
+SHA1-Digest: scXbHDFPXgwd1Frvikk26uXIno4=
+
+Name: assets/help.png
+SHA1-Digest: yhCLD0dbvItwi1xNEs4f6clrXS0=
+
+Name: res/drawable-land/jtstips_land.png
+SHA1-Digest: qnZ8wIGvHlAOL5VJTCXA5XTg+ik=
+
+Name: res/drawable-mdpi/airports_all_on.png
+SHA1-Digest: m/9/e2srOu44Zkuh5kigbB1Ll5E=
+
+Name: res/layout/update_manuals.xml
+SHA1-Digest: 2x/lOeIxRROSw06yI8io7J7PXHM=
+
+Name: assets/tcl/fonts/FONT2.jrf
+SHA1-Digest: ricTVJhojgVE8rsuTGXTNSPV25I=
+
+Name: res/drawable/activate_button_selector.xml
+SHA1-Digest: dIaXksMhmnUe+6P3v6H8H0WeSDs=
+
+Name: resources.arsc
+SHA1-Digest: u/inKq+il5Y9jRMUWx8uxElyMWg=
+
+Name: assets/thmb-12-titlebar-navleft.png
+SHA1-Digest: ut0nXGrq9QT6LbnWC6ClQ46JHPQ=
+
+Name: res/drawable-mdpi/fav_on.png
+SHA1-Digest: tW6TdNBm5UobhCAwKe3EkCwOLjU=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 5F2O9oSGhZWLLRZQSGfkdvFWu4c=
+
+Name: assets/demojit/airports.dbf
+SHA1-Digest: yHCq+u6WB9eTKDl5jQQcRrj4oP8=
+
+Name: assets/tcl/fonts/FONT26.jrf
+SHA1-Digest: r70p/sOcwoeTkvqhCc0XOot9tCQ=
+
+Name: lib/armeabi/libupdateservercomm.so
+SHA1-Digest: o9ePkcyUEk5esnXYnzNflN3lNCo=
+
+Name: assets/demojit/charts.dbf
+SHA1-Digest: INiW0GWuzYe9tH+EwfzuwslbxrM=
+
+Name: res/drawable/notification_icon.png
+SHA1-Digest: bg/7+6JhMKSj5PNGQONTpmbiXrM=
+
+Name: assets/company-manuals.png
+SHA1-Digest: KtvF79XOYyTcqVkoFOuI9kS0ChQ=
+
+Name: res/drawable-mdpi/charts_favs.png
+SHA1-Digest: nxy5RnETYGEjJKvAuT6dIzGRvuQ=
+
+Name: assets/thmb-08-charts-groups.png
+SHA1-Digest: 79ngtlhEyBqnnDwbBYf4L+rEKRU=
+
+Name: res/drawable-mdpi/airports_favs_on.png
+SHA1-Digest: GPUDyS0NmHNj6aPjJG/Z5ZkZkrY=
+
+Name: res/drawable-mdpi/icongps.png
+SHA1-Digest: OcHsJUtDnyalShqKYj8hiyoMqc8=
+
+Name: assets/chart-change-notices.png
+SHA1-Digest: jUPd4an1kMSIEi8IDO4EJmNAETI=
+
+Name: assets/thmb-10-charts-favorites-titlebar.png
+SHA1-Digest: sQ9R4foI6u4wr30MlQAoQE31R4s=
+
+Name: classes.dex
+SHA1-Digest: rVV2oEi67eC00p1ROWfO0t0j864=
+
+Name: res/layout/faved_chartlist.xml
+SHA1-Digest: ErUFMOr/330dCYenU9XFBQ00Kh8=
+
+Name: res/drawable-mdpi/ic_settings_display.png
+SHA1-Digest: 3zUJP/QyuynU4nVDT1pR6sF2OEw=
+
+Name: res/layout/notamslist_item.xml
+SHA1-Digest: fqwCOuDhyjR5jTLUTfPMGk7wbP0=
+
+Name: res/drawable-land/jtstips_1_9.png
+SHA1-Digest: qnZ8wIGvHlAOL5VJTCXA5XTg+ik=
+
+Name: res/drawable-port/jtstips_1_9.png
+SHA1-Digest: 0yJQfrT8QknRnQrw4Z8m1MwRecg=
+
+Name: res/drawable-land/jtstips_1_9_gps.png
+SHA1-Digest: yIquU7oazX6Ny/Mv1i3Mh2tHOHY=
+
+Name: res/drawable-mdpi/btn_activate.png
+SHA1-Digest: 91sRC+gIdWDE0UhksWqrMK/YXsM=
+
+Name: res/drawable-mdpi/icongps_badge.png
+SHA1-Digest: qK/mYUDiZlVIS3SSdA2R2QJJieM=
+
+Name: res/drawable-ldpi/appicon.png
+SHA1-Digest: OImQdeYTcjMLOlPHkepqh1aKfFI=
+
+Name: res/drawable-mdpi/nomanuals.png
+SHA1-Digest: kQLaPNdz9aRttU46Pfj45YV0WmQ=
+
+Name: assets/tcl/fonts/FONT1.jrf
+SHA1-Digest: Lo+msiUIHn3YlEHhEFgxtooAFE4=
+
+Name: assets/thmb-06-charts.png
+SHA1-Digest: xVCpK6t6n8AsnfScLJnTLvmBHms=
+
+Name: res/layout/aboutview.xml
+SHA1-Digest: Nwukh9O3tw6R2JKP9KlXC9YB+Dg=
+
+Name: assets/tcl/fonts/FONT81.jrf
+SHA1-Digest: U51bZNHZ2z1PHcf5g06yTW6YVeI=
+
+Name: res/drawable/demo_button_selector.xml
+SHA1-Digest: IESSvcBjGoRt5y7uRdjIDV0NwGs=
+
+Name: res/drawable-mdpi/ownship_active.png
+SHA1-Digest: 3+k4wdgDuL/2kJPFI2r6EklauYs=
+
+Name: res/layout/scrubber_procedure_popup.xml
+SHA1-Digest: aQsFjn95TUdSUSxaCIIDIlQ7fhU=
+
+Name: res/drawable-mdpi/titlechartfavorite.png
+SHA1-Digest: B5FBGuCc2zFSW9yzzJqYS8geQwk=
+
+Name: res/drawable-mdpi/btn_activate_press.png
+SHA1-Digest: TCx6u0F7QYto/lqjLnK52hniKLs=
+
+Name: res/drawable-mdpi/charts_all_on.png
+SHA1-Digest: /AgInl9gE+n1no1ZGlWEnDk4D6s=
+
+Name: assets/tcl/fonts/FONT75.jrf
+SHA1-Digest: jY+8WGgIo26fUPl2/7x+SCwA6xM=
+
+Name: res/drawable/update_status_bg.xml
+SHA1-Digest: kZjwLr+9d0T3wrH+ZR26UV2Ggi0=
+
+Name: res/layout/tailoredcoverageslist_update_item.xml
+SHA1-Digest: ZqKDfiI1l81wxOpKzhNuSRsjIBs=
+
+Name: res/drawable-land/bg4_9.png
+SHA1-Digest: /izco50sftpo2SHgwNyoIkyhdoc=
+
+Name: res/drawable-mdpi/btndemo.png
+SHA1-Digest: MifFaqw0GHdn79vM8dHoOFmc9LA=
+
+Name: assets/tcl/fonts/FONT73.jrf
+SHA1-Digest: 6quLUt3YGDwaCW7rizh9Vv5s2F4=
+
+Name: res/layout/manualslist.xml
+SHA1-Digest: YWiSmmmLXXvaFH/E8EOC9EM4i24=
+
+Name: res/drawable-mdpi/nonotices.png
+SHA1-Digest: h78cftcOBs9UY4GpHqcZydm5LzA=
+
+Name: res/layout/nomanuals.xml
+SHA1-Digest: LxznZnSKqfuLA7vOPsJ/cMfdl2c=
+
+Name: assets/tcl/fonts/FONT74.jrf
+SHA1-Digest: WPZjsnbMTbPuhum0DesyG7JTCIs=
+
+Name: assets/thmb-09-charts-favorites-popover.png
+SHA1-Digest: RUFNzmDvDvHeR9szlUudU7T9Fq4=
+
+Name: assets/tcl/fonts/FONT65.jrf
+SHA1-Digest: 2v9SlyHDyqMTIPyF47WSZP8LgoM=
+
+Name: assets/tcl/fonts/FONT24.jrf
+SHA1-Digest: 1jE9ljmlI3mAaVL9JDTmvNl5Szk=
+
+Name: assets/tcl/fonts/FONT17.jrf
+SHA1-Digest: 8/iU52eVQKZznzTZqNptw9AKE1g=
+
+Name: assets/demojit/vfrapts.dbf
+SHA1-Digest: TbXwLYY8qLAE5qfjoE897eTWvDM=
+
+Name: res/drawable-mdpi/nofavs.png
+SHA1-Digest: TyKdI3KEdnyzQW+PsbqzKh/lykA=
+
+Name: res/layout/chartdisplay.xml
+SHA1-Digest: O1C/YAHhAYAU6vrqWBQY0RDx33k=
+
+Name: assets/tcl/fonts/FONT12.jrf
+SHA1-Digest: xDS+fqMQbqWM4bc+VxrRlxB9yYw=
+
+Name: res/drawable-mdpi/titlechartfavoriteall.png
+SHA1-Digest: 7DpYifhDbYGGj2fmum4WlAmyhIs=
+
+Name: res/drawable-mdpi/icon_preferences.png
+SHA1-Digest: rP8ZCK3WgT6ZvYl7fG3jGl9MDYQ=
+
+Name: res/drawable-mdpi/charts_all.png
+SHA1-Digest: HtZNyyTms+SI4QaqaZ2yVygRePw=
+
+Name: assets/tcl/fonts/FONT71.jrf
+SHA1-Digest: lpIdmOMy50TFi0IryLA+Hy1mZt4=
+
+Name: assets/tcl/fonts/FONT6.jrf
+SHA1-Digest: uV0xlSJyrj9q3iwT6uyWaMKX+aQ=
+
+Name: assets/deactivate-screen-confim.png
+SHA1-Digest: aGK8Xm4Agpdjqgv4ZgIRgGEF68o=
+
+Name: assets/tcl/fonts/FONT27.jrf
+SHA1-Digest: 5+q3wcx7ynDc4rlX6CesGDdmf/8=
+
+Name: assets/tcl/fonts/FONT15.jrf
+SHA1-Digest: L7N9I7N89F/EeJd3S5stDSVFHQs=
+

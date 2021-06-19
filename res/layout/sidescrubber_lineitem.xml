@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/sidescrubber_layout" android:clickable="true" android:layout_width="60.0dip" android:layout_height="40.0dip" android:onClick="ChartSelectedFromScrubberOnClick"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="15.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#ff3e80df" android:gravity="center" android:id="@id/sidescrubber_itemtext" android:clickable="true" android:longClickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:layout_centerInParent="true" android:onClick="ChartSelectedFromScrubberOnClick" />
+</RelativeLayout>

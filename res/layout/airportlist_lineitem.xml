@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:layout_gravity="center" android:id="@id/airportlist_favIcon" android:background="@null" android:focusable="false" android:layout_width="55.0dip" android:layout_height="wrap_content" android:layout_weight="0.0" android:onClick="AirportFavedToggle" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:clickable="false" android:layout_width="220.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textColor="#fff6f5f4" android:id="@id/airportlist_icao" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="AirportSelectedOnClick" />
+        <TextView android:textSize="13.0sp" android:typeface="sans" android:textColor="#ff7d7d7d" android:ellipsize="marquee" android:id="@id/airportlist_name" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:scrollHorizontally="true" android:onClick="AirportSelectedOnClick" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/airportlist_right_tick_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/airport_arrowsnext_trans" android:layout_weight="0.0" android:onClick="AirportSelectedOnClick" />
+</LinearLayout>

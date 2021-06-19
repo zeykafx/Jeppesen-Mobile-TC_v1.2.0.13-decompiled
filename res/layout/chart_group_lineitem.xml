@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="8.0dip" android:paddingTop="5.0dip" android:layout_width="fill_parent" android:layout_height="60.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentLeft="true">
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textColor="#fff6f5f4" android:ellipsize="end" android:id="@id/chartgroup_name" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:lines="1" android:onClick="ChartGroupSelected" />
+        <TextView android:textSize="13.0sp" android:typeface="sans" android:textColor="#ff7d7d7d" android:id="@id/chartgroup_description" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="ChartGroupSelected" />
+    </LinearLayout>
+    <ImageView android:layout_gravity="center_vertical" android:id="@id/chartgroup_right_tick_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/airport_arrowsnext_trans" android:layout_alignParentRight="true" android:onClick="ChartGroupSelected" />
+</RelativeLayout>

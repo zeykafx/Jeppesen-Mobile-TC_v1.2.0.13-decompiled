@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="500.0dip" android:layout_height="450.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ListView android:id="@id/update_coverages_listview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="5.0dip" android:layout_below="@id/update_coverages_submit_button" android:layout_alignLeft="@id/update_coverages_submit_button" android:layout_alignParentBottom="true" />
+    <ImageView android:id="@id/update_coverages_returnarrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/popover_arrowback_trans" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:onClick="returnFromCoveragesToMainUpdateViewOnClick" />
+    <Button android:id="@id/update_coverages_submit_button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/update_available_coverages_list" android:layout_toRightOf="@id/update_coverages_returnarrow" android:layout_alignTop="@id/update_coverages_returnarrow" android:onClick="UpdateCoveragesOnClick" />
+    <ProgressBar android:id="@id/update_coverages_progress" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" android:layout_toRightOf="@id/update_coverages_submit_button" android:layout_above="@id/update_coverages_listview" />
+</RelativeLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="aboutPrefScreenKey"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="About JeppTC">
+        <com.jeppesen.android.preferences.SiteKeyTextViewPreference android:persistent="false" android:title="@string/sitekey" android:summary="bogus entry" style="?android:preferenceInformationStyle" />
+        <com.jeppesen.android.preferences.VersionTextViewPreference android:persistent="false" android:title="@string/version" android:summary="bogus entry" style="?android:preferenceInformationStyle" />
+        <PreferenceScreen android:title="@string/deactivate" android:summary="Will remove all data and release site key">
+            <intent android:action="com.jeppesen.android.tc.activity.DeactivateActivity" android:targetClass="com.jeppesen.android.tc.activity.DeactivateActivity" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Legal">
+        <PreferenceScreen android:title="@string/app_eula">
+            <intent android:action="com.jeppesen.android.tc.activity.LegalActivity" android:targetClass="com.jeppesen.android.tc.activity.LegalActivity">
+                <extra android:name="EULA_TYPE" android:value="APP_EULA" />
+            </intent>
+        </PreferenceScreen>
+        <PreferenceScreen android:title="@string/data_eula">
+            <intent android:action="com.jeppesen.android.tc.activity.LegalActivity" android:targetClass="com.jeppesen.android.tc.activity.LegalActivity">
+                <extra android:name="EULA_TYPE" android:value="DATA_EULA" />
+            </intent>
+        </PreferenceScreen>
+        <Preference android:persistent="false" android:summary="@string/copyrightDetails" style="?android:preferenceInformationStyle" />
+    </PreferenceCategory>
+</PreferenceScreen>

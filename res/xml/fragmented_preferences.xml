@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="prefScreenKey"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/general_preferences">
+        <CheckBoxPreference android:title="@string/restore_quick_tips" android:key="quick_tips_preference" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/show_ownship_apt_diagram" android:key="show_ownship_apt_diagram" android:summary="@string/ownship_summary" android:defaultValue="false" />
+        <CheckBoxPreference android:title="@string/prefs_turn_off_sleep_mode" android:key="keep_screen_on" android:summary="@string/prefs_turn_off_sleep_mode_summary" android:defaultValue="false" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/company_content">
+        <CheckBoxPreference android:title="@string/company_content" android:key="company_content" android:defaultValue="false" />
+        <com.jeppesen.android.util.UserPassDialogPreference android:title="Login" android:key="custom_user_pass" android:dependency="company_content" />
+    </PreferenceCategory>
+</PreferenceScreen>

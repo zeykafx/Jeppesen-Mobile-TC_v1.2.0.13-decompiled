@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <header android:icon="@drawable/iconupdates" android:title="Updates" android:fragment="com.jeppesen.android.tc.activity.ApplicationPreferencesActivity$UpdatesFragment" />
+    <header android:icon="@drawable/icon_preferences" android:title="Preferences" android:fragment="com.jeppesen.android.tc.activity.ApplicationPreferencesActivity$PreferencesFragment" />
+    <header android:icon="@drawable/icon_about" android:title="About" android:fragment="com.jeppesen.android.tc.activity.ApplicationPreferencesActivity$AboutFragment" />
+</preference-headers>

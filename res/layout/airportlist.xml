@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/airportlist_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:animateLayoutChanges="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#fff6f5f4" android:gravity="center" android:id="@id/airportlist_title_text" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/airports" />
+    <View android:id="@id/divider" android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:gravity="center" android:id="@id/airportlist_search_header" android:padding="2.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0">
+        <ImageView android:id="@id/airportlist_magnifyingglass" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_search" android:layout_alignParentLeft="true" />
+        <EditText android:id="@id/airportlist_search_view" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/search_airports" android:cursorVisible="true" android:lines="1" android:layout_toLeftOf="@id/airportlist_clear_search" android:layout_toRightOf="@id/airportlist_magnifyingglass" android:inputType="text" />
+        <ImageView android:id="@id/airportlist_clear_search" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_close_clear_cancel" android:layout_alignParentRight="true" android:onClick="AirportListClearSearchOnClick" />
+    </RelativeLayout>
+    <ListView android:id="@id/airportlist_list_view" android:padding="2.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_weight="1.0" android:animateLayoutChanges="true" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@id/NoFavsImageViewAirport" android:visibility="gone" android:layout_width="182.0dip" android:layout_height="257.0dip" android:src="@drawable/nofavs" android:layout_weight="1.0" />
+    <View android:id="@id/divider2" android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <LinearLayout android:layout_gravity="center_horizontal" android:orientation="horizontal" android:paddingLeft="2.0dip" android:paddingRight="2.0dip" android:paddingBottom="2.0dip" android:layout_width="wrap_content" android:layout_height="60.0dip" android:layout_weight="0.0">
+        <ImageView android:id="@id/airportlist_allairports" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/airports_all_on" android:onClick="AirportListAllAirportsOnClick" />
+        <ImageView android:id="@id/airportlist_favoriteairports" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/airports_favs" android:onClick="AirportListFavoritesOnClick" />
+    </LinearLayout>
+</LinearLayout>

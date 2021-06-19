@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/linearLayout1" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TableLayout android:id="@id/tableLayout1" android:background="#ff000000" android:clickable="false" android:layout_width="fill_parent" android:layout_height="fill_parent" android:stretchColumns="*" android:shrinkColumns="*">
+        <TableRow>
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:gravity="left" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:text="@string/notamType" />
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:gravity="right" android:id="@id/notamTypeValue" android:padding="10.0dip" />
+        </TableRow>
+        <View android:background="#99ffffff" android:layout_height="1.0dip" />
+        <TableRow>
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:gravity="left" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:text="@string/notamEffectivity" />
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:gravity="right" android:id="@id/notamEffectivityValue" android:padding="10.0dip" />
+        </TableRow>
+        <View android:background="#99ffffff" android:layout_height="1.0dip" />
+        <TableRow>
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:gravity="left" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:text="@string/notamBeginDate" />
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:gravity="right" android:id="@id/notamBeginDateValue" android:padding="10.0dip" />
+        </TableRow>
+        <View android:background="#99ffffff" android:layout_height="1.0dip" />
+        <TableRow>
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:gravity="left" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:text="@string/notamEndDate" />
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:gravity="right" android:id="@id/notamEndDateValue" android:padding="10.0dip" />
+        </TableRow>
+        <View android:background="#99ffffff" android:layout_height="1.0dip" />
+        <TableRow>
+            <TextView android:textSize="18.0sp" android:typeface="sans" android:gravity="left" android:id="@id/notamTextValue" android:padding="10.0dip" android:layout_span="2" />
+        </TableRow>
+    </TableLayout>
+    <View android:id="@id/notamSpacer" android:layout_width="fill_parent" android:layout_height="10.0dip" />
+</LinearLayout>

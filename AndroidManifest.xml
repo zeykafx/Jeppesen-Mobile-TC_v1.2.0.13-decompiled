@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.jeppesen.android.tc">
+    <supports-screens android:largeScreens="true" android:normalScreens="false" android:smallScreens="false" android:xlargeScreens="true"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <application android:enabled="true" android:icon="@drawable/appicon" android:label="@string/app_name" android:largeHeap="true" android:name="com.jeppesen.android.tc.MobileTC" android:theme="@android:style/Theme.NoTitleBar">
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="false" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.ChartDisplayActivity" android:noHistory="false" android:theme="@android:style/Theme.Holo.NoActionBar">
+            <intent-filter>
+                <action android:name="com.jeppesen.android.tc.activity.ChartDisplayActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.SplashScreenActivity" android:noHistory="true" android:stateNotNeeded="true" android:theme="@android:style/Theme.Holo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/update_settings" android:launchMode="singleInstance" android:name="com.jeppesen.android.tc.activity.UpdateActivity" android:theme="@android:style/Theme.Holo.Dialog" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:excludeFromRecents="true" android:exported="false" android:label="@string/update_settings" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.ActivationActivity" android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" android:windowSoftInputMode="stateUnchanged"/>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/deactivate" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.DeactivateActivity" android:theme="@android:style/Theme.Holo.Dialog.NoActionBar" android:windowSoftInputMode="stateUnchanged">
+            <intent-filter>
+                <action android:name="com.jeppesen.android.tc.activity.DeactivateActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/legal_settings" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.LegalActivity" android:theme="@android:style/Theme.Holo" android:windowSoftInputMode="stateUnchanged">
+            <intent-filter>
+                <action android:name="com.jeppesen.android.tc.activity.LegalActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="true" android:exported="false" android:label="@string/preferences" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.ApplicationPreferencesActivity" android:theme="@android:style/Theme.Holo" android:windowSoftInputMode="stateUnchanged"/>
+        <service android:exported="false" android:name="com.jeppesen.android.tc.service.UpdateService"/>
+        <service android:exported="false" android:name="com.jeppesen.android.tc.service.ManualsService"/>
+        <service android:exported="false" android:name="com.jeppesen.android.tc.service.TailoredCoveragesService"/>
+        <receiver android:name="com.jeppesen.android.tc.receiver.DownloadReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.DOWNLOAD_COMPLETE"/>
+                <action android:name="android.intent.action.DOWNLOAD_NOTIFICATION_CLICKED"/>
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

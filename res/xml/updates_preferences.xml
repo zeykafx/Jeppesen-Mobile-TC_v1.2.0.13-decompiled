@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:key="updatesPrefScreenKey"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.jeppesen.android.preferences.ChartCycleTextViewPreference android:persistent="false" android:title="@string/cycle_date" android:key="chartCyclePrefKey" android:summary="bogus entry" style="?android:preferenceInformationStyle" />
+    <com.jeppesen.android.preferences.NextChartIssueTextViewPreference android:persistent="false" android:title="@string/next_issue_date" android:summary="bogus entry" style="?android:preferenceInformationStyle" />
+    <com.jeppesen.android.preferences.LastManualsUpdateTextViewPreference android:persistent="false" android:title="@string/manuals_update_date" android:summary="bogus entry" style="?android:preferenceInformationStyle" />
+    <PreferenceCategory android:title="Available Updates">
+        <com.jeppesen.android.preferences.TerminalChartsTextViewPreference android:persistent="false" android:title="@string/terminal_charts" android:summary="bogus entry" style="?android:preferenceInformationStyle" />
+        <PreferenceScreen android:title="Manuals" android:key="ManualsPrefScreenKey" android:summary="@string/update_manuals_checking" android:fragment="com.jeppesen.android.tc.activity.ApplicationPreferencesActivity$ManualsFragment" />
+        <com.jeppesen.android.preferences.ButtonPreference />
+    </PreferenceCategory>
+</PreferenceScreen>

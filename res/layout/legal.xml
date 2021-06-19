@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/LegalActivityLayout" android:layout_width="600.0dip" android:layout_height="180.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#fff6f5f4" android:gravity="center" android:id="@id/legalTextView" android:padding="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/legal_menu_item" />
+    <View android:id="@id/separate22" android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="1.0dip" />
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <ImageView android:id="@id/appeula_icon" android:layout_width="44.0dip" android:layout_height="50.0dip" android:src="@drawable/icon_legal" android:onClick="AppEulaOnClick" />
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="normal" android:textColor="#fff6f5f4" android:id="@id/appeula_text" android:padding="10.0dip" android:clickable="true" android:layout_width="800.0dip" android:layout_height="50.0dip" android:text="@string/app_eula" android:layout_toRightOf="@id/appeula_icon" android:onClick="AppEulaOnClick" />
+        <View android:id="@id/separate3" android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/appeula_icon" />
+        <ImageView android:id="@id/dataeula_icon" android:layout_width="44.0dip" android:layout_height="50.0dip" android:src="@drawable/icon_legal" android:layout_below="@id/separate3" android:onClick="DataEulaOnClick" />
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="normal" android:textColor="#fff6f5f4" android:id="@id/dataeula_text" android:padding="10.0dip" android:clickable="true" android:layout_width="800.0dip" android:layout_height="50.0dip" android:text="@string/data_eula" android:layout_toRightOf="@id/dataeula_icon" android:layout_below="@id/separate3" android:onClick="DataEulaOnClick" />
+        <View android:id="@id/separate4" android:background="#ff333333" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_below="@id/dataeula_text" />
+        <TextView android:textSize="13.0sp" android:typeface="sans" android:textStyle="normal" android:textColor="#ff7d7d7d" android:gravity="center" android:id="@id/copyright_text_bottom" android:padding="10.0dip" android:layout_width="800.0dip" android:layout_height="50.0dip" android:text="@string/copyrightDetails" android:layout_below="@id/separate4" />
+    </RelativeLayout>
+</LinearLayout>

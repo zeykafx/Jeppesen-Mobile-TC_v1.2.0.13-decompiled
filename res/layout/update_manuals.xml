@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="500.0dip" android:layout_height="450.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageButton android:id="@id/update_manuals_returnarrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:src="@drawable/popover_arrowback_trans" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" android:onClick="returnFromManualsToMainUpdateViewOnClick" />
+    <ListView android:id="@id/update_manuals_listview" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="10.0dip" android:layout_toRightOf="@id/update_manuals_returnarrow" android:layout_alignParentTop="true" />
+</RelativeLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:id="@id/NoFavsRelativeLayout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#fff6f5f4" android:gravity="center" android:id="@id/NoFavs" android:layout_width="fill_parent" android:layout_height="44.0dip" android:text="" android:layout_alignParentTop="true" />
+    <ImageView android:id="@id/NoFavsImageView" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/nofavs" android:layout_alignParentTop="true" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

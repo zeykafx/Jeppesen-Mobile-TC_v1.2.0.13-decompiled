@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/manualslist_item_linearlayout" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:typeface="sans" android:textStyle="bold" android:textColor="#fff6f5f4" android:gravity="center_vertical" android:id="@id/manuallist_group_title" android:background="@drawable/popover_groupheader_bg" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="30.0dip" />
+    <ImageButton android:layout_gravity="center" android:id="@id/manuallist_launchReaderIcon" android:background="@null" android:padding="5.0dip" android:focusable="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/icon_manuals_launch" android:onClick="LaunchReaderOnClick" />
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:clickable="false" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="18.0sp" android:typeface="sans" android:textColor="#fff6f5f4" android:ellipsize="end" android:id="@id/manualTypeValue" android:paddingTop="2.0dip" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:onClick="LaunchReaderOnClick" />
+        <TextView android:textSize="13.0sp" android:typeface="sans" android:textColor="#ff7d7d7d" android:id="@id/manualDate" android:paddingBottom="2.0dip" android:clickable="true" android:layout_width="wrap_content" android:layout_height="wrap_content" android:onClick="LaunchReaderOnClick" />
+    </LinearLayout>
+</LinearLayout>
