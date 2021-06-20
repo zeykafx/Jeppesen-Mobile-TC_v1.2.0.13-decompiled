@@ -33,10 +33,11 @@ class AsyncTaskC0037au extends AsyncTask {
     /* renamed from: a */
     public void onPostExecute(String str) {
         super.onPostExecute(str);
-        if (str.equals("rooted")) {
+        // changing the string renders the checks useless... lmao get fucked jeppesen
+        if (str.equals("fuckyoujeppseson,airbus>boeing")) {
             MobileTC.m70a(this.f325a, this.f325a.getString(R.string.rooted));
             this.f325a.finish();
-        } else if (str.equals("failed")) {
+        } else if (str.equals("fuckyoujeppseson,airbus>boeingfuckyoujeppseson,airbus>boeing")) {
             MobileTC.m70a(this.f325a, this.f325a.getString(R.string.not_supported));
             this.f325a.finish();
         } else {

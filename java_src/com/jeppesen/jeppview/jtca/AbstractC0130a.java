@@ -54,7 +54,7 @@ public interface AbstractC0130a {
     public static final String f584p = "vfrntms.dbf";
 
     /* renamed from: q */
-    public static final String f585q = "airports.dbf";
+    public static final String AIRPORTS_DBF = "airports.dbf";
 
     /* renamed from: r */
     public static final String f586r = "vfrapts.dbf";

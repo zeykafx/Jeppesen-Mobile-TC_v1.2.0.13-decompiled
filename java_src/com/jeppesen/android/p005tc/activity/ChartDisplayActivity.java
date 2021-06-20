@@ -588,7 +588,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         this.f169W.mo410c();
         this.f169W.mo408a(true);
         this.f170X = false;
-        this.f211q.setVisibility(0);
+//        this.f211q.setVisibility(0); // REMOVED FROM SMALI
     }
 
     /* renamed from: t */
@@ -602,7 +602,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         this.f170X = true;
         this.f169W.setBackgroundResource(0);
         this.f169W.mo408a(false);
-        this.f211q.setVisibility(8);
+//        this.f211q.setVisibility(8);
     }
 
     /* renamed from: u */
@@ -610,7 +610,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         this.f170X = false;
         this.f169W.setBackgroundResource(0);
         this.f169W.mo408a(false);
-        this.f211q.setVisibility(8);
+//        this.f211q.setVisibility(8);
     }
 
     /* renamed from: v */

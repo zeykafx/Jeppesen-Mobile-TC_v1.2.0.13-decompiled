@@ -31,43 +31,7 @@
 
 .method public static a()Z
     .locals 2
-
     const/4 v0, 0x0
-
-    invoke-static {}, Lcom/jeppesen/android/util/k;->c()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-static {}, Lcom/jeppesen/android/util/k;->d()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-static {}, Lcom/jeppesen/android/util/k;->e()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-static {}, Lcom/jeppesen/android/util/k;->f()Z
-
-    move-result v1
-
-    if-nez v1, :cond_0
-
-    invoke-static {}, Lcom/jeppesen/android/util/k;->b()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    :cond_0
-    const/4 v0, 0x1
-
-    :cond_1
     return v0
 .end method
 

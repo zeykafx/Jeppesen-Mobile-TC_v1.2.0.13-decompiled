@@ -427,7 +427,7 @@ public class C0005a {
     /* renamed from: b */
     public static void m33b(int i) {
         int b = m31b();
-        int c = b + ((m34c() - b) - 7);
+        int c = b + ((m34c() - b) - 7); // 2459362.5 + ((2459375.5 - 2459362.5) - 7) = 6
         try {
             BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(new File(f10b + File.separatorChar + "charts.ini")));
             try {

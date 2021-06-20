@@ -70,7 +70,7 @@
 
     invoke-super {p0, p1}, Landroid/os/AsyncTask;->onPostExecute(Ljava/lang/Object;)V
 
-    const-string v0, "rooted"
+    const-string v0, "fuckyoujeppseson,airbus>boeing"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -98,7 +98,7 @@
     return-void
 
     :cond_0
-    const-string v0, "failed"
+    const-string v0, "fuckyoujeppseson,airbus>boeingfuckyoujeppseson,airbus>boeing"
 
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

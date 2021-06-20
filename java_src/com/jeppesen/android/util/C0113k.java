@@ -15,6 +15,7 @@ public class C0113k {
     private static final String f471a = C0113k.class.getSimpleName();
 
     /* renamed from: a */
+    // PATCHED, VERIFICATION REMOVED IN k.smali
     public static boolean m434a() {
         return m437c() || m438d() || m439e() || m440f() || m436b();
     }

@@ -73,8 +73,6 @@ public abstract class JeppAndroidApp extends Application {
         if (f436a) {
             m374a("onCreate()");
         }
-        if (f436a) {
-        }
         f440e = true;
     }
 

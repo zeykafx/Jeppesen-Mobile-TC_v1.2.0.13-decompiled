@@ -1978,10 +1978,6 @@
 
     iput-boolean v2, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->X:Z
 
-    iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->q:Landroid/widget/ListView;
-
-    invoke-virtual {v0, v2}, Landroid/widget/ListView;->setVisibility(I)V
-
     return-void
 .end method
 
@@ -2021,12 +2017,6 @@
 
     invoke-virtual {v0, v2}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Z)V
 
-    iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->q:Landroid/widget/ListView;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setVisibility(I)V
-
     return-void
 
     :cond_0
@@ -2054,11 +2044,6 @@
 
     invoke-virtual {v0, v1}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Z)V
 
-    iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->q:Landroid/widget/ListView;
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/ListView;->setVisibility(I)V
 
     return-void
 .end method

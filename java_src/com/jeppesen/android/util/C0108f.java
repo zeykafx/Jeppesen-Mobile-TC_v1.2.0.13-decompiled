@@ -28,6 +28,8 @@ public class C0108f {
     }
 
     /* renamed from: a */
+
+    // DECODES THE CHART.BIN ???? // TODO, code = "elrey!" nah it doesnt
     public static String m390a(List list) {
         MessageDigest instance = MessageDigest.getInstance("SHA-1");
         Iterator it = list.iterator();

@@ -1,5 +1,6 @@
 package com.jeppesen.android.echarts.view;
 
+import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.opengl.GLSurfaceView;
 import android.os.Debug;
@@ -16,6 +17,7 @@ import javax.microedition.khronos.opengles.GL10;
 import javax.microedition.khronos.opengles.GL11ExtensionPack;
 
 /* renamed from: com.jeppesen.android.echarts.view.a */
+@SuppressLint("NewApi")
 public class C0008a implements GLSurfaceView.Renderer {
 
     /* renamed from: a */
@@ -111,7 +113,7 @@ public class C0008a implements GLSurfaceView.Renderer {
 
     /* renamed from: a */
     private boolean m59a(GL10 gl10, String str) {
-        return this.f42e && new StringBuilder().append(" ").append(gl10.glGetString(7939)).append(" ").toString().indexOf(new StringBuilder().append(" ").append(str).append(" ").toString()) >= 0;
+        return this.f42e && (" " + gl10.glGetString(7939) + " ").contains(" " + str + " ");
     }
 
     /* renamed from: b */
