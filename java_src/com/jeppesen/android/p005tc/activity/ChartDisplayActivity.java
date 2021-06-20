@@ -448,6 +448,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                     it.remove();
                 }
             }
+            // C IS THE LIST OF CHARTS AVAIBLE!
             c = d;
         }
         this.f211q.setAdapter((ListAdapter) new C0034ar(this, R.layout.sidescrubber_lineitem, R.id.sidescrubber_itemtext, c));
@@ -587,7 +588,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         this.f169W.setScaleType(ImageView.ScaleType.FIT_START);
         this.f169W.mo410c();
         this.f169W.mo408a(true);
-        this.f170X = false;
+        this.f170X = true;
 //        this.f211q.setVisibility(0); // REMOVED FROM SMALI
     }
 
@@ -607,9 +608,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* renamed from: u */
     private void m231u() {
-        this.f170X = false;
+        this.f170X = true;
         this.f169W.setBackgroundResource(0);
-        this.f169W.mo408a(false);
+        this.f169W.mo408a(true);
 //        this.f211q.setVisibility(8);
     }
 
@@ -1055,7 +1056,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     public void RemoveTips(View view) {
         this.f169W.setOnClickListener(null);
         mo148a();
-        this.f170X = false;
+        this.f170X = true;
         if (MobileTC.f436a) {
             Log.i(f136V, "RemoveTips() called, clearing screen");
         }
@@ -1367,7 +1368,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             setContentView(R.layout.chartdisplay);
             this.f211q = (ListView) findViewById(R.id.sidescrubber_listview);
             float f = getResources().getDisplayMetrics().density;
-            this.f169W = (ImageZoomView) findViewById(R.id.imageView);
+            this.f169W = (ImageZoomView) findViewById(R.id.imageView); // represents the actual image viewer, not the gl surface i think
             this.f169W.mo409b();
             this.f171Y = (TCLGLSurfaceView) findViewById(R.id.glSurfaceView);
             this.f171Y.setMyHandler(this.f163P);
@@ -1397,7 +1398,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.f198d.addView(inflate, 0);
             this.f198d.addView(inflate2, 1);
             this.f198d.setBackgroundResource(R.drawable.dialog_full_holo_dark2);
-            this.f197c = new PopupWindow(this.f198d, (int) (350.0f * f), 620);
+            this.f197c = new PopupWindow(this.f198d, (int) (350.0f * f), 1535);
             this.f197c.setFocusable(true);
             this.f197c.setTouchable(true);
             this.f197c.setOutsideTouchable(true);
@@ -1410,7 +1411,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             Drawable drawable = getResources().getDrawable(R.drawable.dialog_full_holo_dark2);
             this.f149B = new PopupWindow(this);
             this.f149B.setWidth((int) (380.0f * f));
-            this.f149B.setHeight(620);
+            this.f149B.setHeight(1535);
             this.f149B.setFocusable(true);
             this.f149B.setBackgroundDrawable(drawable);
             this.f152E = this.f173a.inflate(R.layout.notamslist, (ViewGroup) null);
@@ -1433,7 +1434,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             ((TextView) this.f148A.findViewById(R.id.version_value)).setText(packageInfo.versionName);
             this.f154G = new PopupWindow(this);
             this.f154G.setWidth((int) (350.0f * f));
-            this.f154G.setHeight(620);
+            this.f154G.setHeight(1535);
             this.f154G.setFocusable(true);
             this.f154G.setBackgroundDrawable(drawable);
             this.f157J = this.f173a.inflate(R.layout.manualslist, (ViewGroup) null);
@@ -1441,7 +1442,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.f156I = findViewById(R.id.manualsicon);
             this.f155H = new PopupWindow(this);
             this.f155H.setWidth((int) (350.0f * f));
-            this.f155H.setHeight(620);
+            this.f155H.setHeight(1535);
             this.f155H.setFocusable(true);
             this.f155H.setBackgroundDrawable(drawable);
             this.f158K = this.f173a.inflate(R.layout.nomanuals, (ViewGroup) null);
@@ -1456,14 +1457,14 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             f145aj = (ImageButton) findViewById(R.id.GPSDataicon);
             this.f216v = new PopupWindow(this);
             this.f216v.setWidth((int) (350.0f * f));
-            this.f216v.setHeight(620);
+            this.f216v.setHeight(1535);
             this.f216v.setFocusable(true);
             this.f216v.setBackgroundDrawable(drawable);
             this.f218x = this.f173a.inflate(R.layout.faved_chartlist, (ViewGroup) null);
             this.f216v.setContentView(this.f218x);
             this.f215u = new PopupWindow(this);
             this.f215u.setWidth((int) (f * 350.0f));
-            this.f215u.setHeight(620);
+            this.f215u.setHeight(1535);
             this.f215u.setFocusable(true);
             this.f215u.setBackgroundDrawable(drawable);
             this.f219y = this.f173a.inflate(R.layout.nofavorites, (ViewGroup) null);

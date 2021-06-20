@@ -1,14 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout android:background="@drawable/bg_activate" android:paddingLeft="1.0dip" android:paddingTop="1.0dip" android:paddingRight="1.0dip" android:layout_width="600.0dip" android:layout_height="600.0dip"
-  xmlns:android="http://schemas.android.com/apk/res/android">
-    <TextView android:textSize="18.0dip" android:typeface="sans" android:textColor="#ffffffff" android:gravity="center" android:id="@id/activation_welcomeTextView" android:background="#ff000000" android:layout_width="fill_parent" android:layout_height="50.0dip" android:text="@string/activation_welcome" />
-    <ProgressBar android:id="@id/activation_progress" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="32.0dip" />
-    <EditText android:id="@id/activation_nameEditor" android:layout_width="450.0dip" android:layout_height="wrap_content" android:layout_marginLeft="36.0dip" android:hint="Name" android:lines="1" android:ems="10" android:singleLine="true" android:maxLength="35" android:layout_x="70.0dip" android:layout_y="345.0dip" android:inputType="textPersonName">
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="600.0dip"
+    android:background="@drawable/bg_activate"
+    android:paddingLeft="1.0dip"
+    android:paddingTop="1.0dip"
+    android:paddingRight="1.0dip">
+
+    <TextView
+        android:id="@id/activation_welcomeTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="50.0dip"
+        android:background="#ff000000"
+        android:gravity="center"
+        android:text="@string/activation_welcome"
+        android:textColor="#ffffffff"
+        android:textSize="18.0dip"
+        android:typeface="sans" />
+
+    <ProgressBar
+        android:id="@id/activation_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32.0dip"
+        android:visibility="invisible" />
+
+    <EditText
+        android:id="@id/activation_nameEditor"
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="36.0dip"
+        android:layout_x="40dp"
+        android:layout_y="320dp"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:lines="1"
+        android:maxLength="35"
+        android:singleLine="true">
+
         <requestFocus />
     </EditText>
-    <EditText android:id="@id/activation_snEditor" android:layout_width="450.0dip" android:layout_height="wrap_content" android:hint="Serial Number" android:lines="1" android:ems="10" android:singleLine="true" android:maxLength="19" android:layout_x="70.0dip" android:layout_y="395.0dip" android:inputType="textVisiblePassword" />
-    <ImageButton android:id="@id/demoButton" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="68.0dip" android:src="@drawable/demo_button_selector" android:layout_x="72.0dip" android:layout_y="460.0dip" android:onClick="DemoButtonOnClick" />
-    <TextView android:typeface="sans" android:textColor="#ffffffff" android:gravity="center" android:id="@id/activation_subRequirementTextView" android:padding="15.0dip" android:layout_width="385.0dip" android:layout_height="wrap_content" android:text="@string/update_subsrequirement" android:layout_x="105.0dip" android:layout_y="270.0dip" />
-    <ImageButton android:id="@id/activateButton" android:background="@null" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="27.0dip" android:src="@drawable/activate_button_selector" android:layout_x="310.0dip" android:layout_y="460.0dip" android:onClick="ActivateButtonOnClick" />
-    <TextView android:id="@id/copyright" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/copyrightDetails" android:layout_x="135.0dip" android:layout_y="560.0dip" />
+
+    <EditText
+        android:id="@id/activation_snEditor"
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_x="41dp"
+        android:layout_y="375dp"
+        android:ems="10"
+        android:hint="Serial Number"
+        android:inputType="textVisiblePassword"
+        android:lines="1"
+        android:maxLength="19"
+        android:singleLine="true" />
+
+    <ImageButton
+        android:id="@id/demoButton"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68.0dip"
+        android:layout_x="41dp"
+        android:layout_y="463dp"
+        android:background="@null"
+        android:onClick="DemoButtonOnClick"
+        android:src="@drawable/demo_button_selector" />
+
+    <TextView
+        android:id="@id/activation_subRequirementTextView"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:layout_x="18dp"
+        android:layout_y="257dp"
+        android:gravity="center"
+        android:padding="15.0dip"
+        android:text="@string/update_subsrequirement"
+        android:textColor="#ffffffff"
+        android:typeface="sans" />
+
+    <ImageButton
+        android:id="@id/activateButton"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="27.0dip"
+        android:layout_x="213dp"
+        android:layout_y="463dp"
+        android:background="@null"
+        android:onClick="ActivateButtonOnClick"
+        android:src="@drawable/activate_button_selector" />
+
+    <TextView
+        android:id="@id/copyright"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_x="53dp"
+        android:layout_y="557dp"
+        android:text="@string/copyrightDetails" />
 </AbsoluteLayout>

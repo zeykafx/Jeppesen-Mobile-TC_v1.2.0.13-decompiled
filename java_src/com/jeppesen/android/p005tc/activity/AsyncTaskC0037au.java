@@ -35,12 +35,13 @@ class AsyncTaskC0037au extends AsyncTask {
         super.onPostExecute(str);
         // changing the string renders the checks useless... lmao get fucked jeppesen
         if (str.equals("fuckyoujeppseson,airbus>boeing")) {
-            MobileTC.m70a(this.f325a, this.f325a.getString(R.string.rooted));
-            this.f325a.finish();
+//            MobileTC.m70a(this.f325a, this.f325a.getString(R.string.rooted));
+//            this.f325a.finish();
         } else if (str.equals("fuckyoujeppseson,airbus>boeingfuckyoujeppseson,airbus>boeing")) {
-            MobileTC.m70a(this.f325a, this.f325a.getString(R.string.not_supported));
-            this.f325a.finish();
+//            MobileTC.m70a(this.f325a, this.f325a.getString(R.string.not_supported));
+//            this.f325a.finish();
         } else {
+            // I believe this is checking dates to verify the charts status
             if (MobileTC.m82f()) {
                 MobileTC.m70a(this.f325a, this.f325a.getString(R.string.update_status_charts_expired));
             }

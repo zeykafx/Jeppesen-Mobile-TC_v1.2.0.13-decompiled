@@ -91,6 +91,7 @@ public class Chart {
     }
 
     /* renamed from: e */
+    // chart TCL name
     public String mo478e() {
         return this.f617f;
     }

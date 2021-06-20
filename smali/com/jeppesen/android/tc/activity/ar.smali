@@ -120,7 +120,7 @@
     invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundResource(I)V
 
     :goto_0
-    invoke-virtual {v1}, Lcom/jeppesen/jeppview/jtca/data/Chart;->c()Ljava/lang/String;
+    invoke-virtual {v1}, Lcom/jeppesen/jeppview/jtca/data/Chart;->b()Ljava/lang/String;
 
     move-result-object v1
 

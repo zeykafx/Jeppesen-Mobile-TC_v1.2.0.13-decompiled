@@ -49,7 +49,7 @@ public class C0034ar extends ArrayAdapter {
         } else {
             view.setBackgroundResource(R.drawable.sidescrubber_whitetab);
         }
-        textView.setText(chart.mo474c());
+        textView.setText(chart.mo472b());
         view.forceLayout();
         return view;
     }

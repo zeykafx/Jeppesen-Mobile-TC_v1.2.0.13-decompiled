@@ -22,7 +22,7 @@
     <string name="airwayManualsTitle">Jeppesen Airway Manuals</string>
     <string name="app_name">JeppTC</string>
     <string name="update_welcome">Updates</string>
-    <string name="update_subsrequirement">You must have a current Jeppesen electronic charting subscription in order to use this application.</string>
+    <string name="update_subsrequirement">Who tf will activate this old shit lol</string>
     <string name="update_sn">Serial Number:</string>
     <string name="update_supportTitle">Jeppesen Support</string>
     <string name="update_supportPacific">Pacific-Americas:</string>
@@ -73,7 +73,7 @@
     <string name="help_menu_item">Help</string>
     <string name="legal_menu_item">Terms and Conditions</string>
     <string name="legal_settings">Jepp Mobile TC Legal</string>
-    <string name="copyrightDetails">Copyright © 2013 Jeppesen. All Rights Reserved</string>
+    <string name="copyrightDetails">Airbus > boeing, im just saying ¯\_(ツ)_/¯</string>
     <string name="copyright">Copyright</string>
     <string name="app_eula">Application End User License Agreement</string>
     <string name="data_eula">Data End User License Agreement</string>
@@ -119,7 +119,7 @@
     <string name="prefs_turn_off_sleep_mode">Turn Off Sleep Mode</string>
     <string name="prefs_turn_off_sleep_mode_summary">Turning off sleep mode will affect battery life</string>
     <string name="deactivate">Deactivate</string>
-    <string name="activation_welcome">Activate Jeppesen Mobile TC</string>
+    <string name="activation_welcome">JeppTC mod v0.1</string>
     <string name="activation_name">Name:</string>
     <string name="login_password">Password:</string>
     <string name="airports">Airports</string>
@@ -156,6 +156,6 @@ Settings > Updates > Manuals"</string>
     <string name="gps_bearing">Bearing</string>
     <string name="gps_speed">Speed</string>
     <string name="ownship">Ownship</string>
-    <string name="rooted">JeppTC will not run on rooted devices</string>
-    <string name="not_supported">JeppTC is not supported on this device</string>
+    <string name="rooted">Fuck jeppesen, this works on rooted phones</string>
+    <string name="not_supported">fuck jeppesen, this works on all devices</string>
 </resources>

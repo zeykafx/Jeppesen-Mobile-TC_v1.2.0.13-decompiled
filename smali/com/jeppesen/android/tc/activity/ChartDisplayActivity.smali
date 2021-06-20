@@ -1962,7 +1962,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->W:Lcom/jeppesen/android/views/imagezoom/ImageZoomView;
 
-    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_START:Landroid/widget/ImageView$ScaleType;
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_XY:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
@@ -1976,15 +1976,17 @@
 
     invoke-virtual {v0, v1}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Z)V
 
-    iput-boolean v2, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->X:Z
+    iput-boolean v1, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->X:Z
 
     return-void
 .end method
 
 .method private t()V
-    .locals 3
+    .locals 4
 
     const/4 v2, 0x0
+
+    const v3, 0x1
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->W:Lcom/jeppesen/android/views/imagezoom/ImageZoomView;
 
@@ -2015,7 +2017,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->W:Lcom/jeppesen/android/views/imagezoom/ImageZoomView;
 
-    invoke-virtual {v0, v2}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Z)V
+    invoke-virtual {v0, v3}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Z)V
 
     return-void
 
@@ -2030,11 +2032,13 @@
 .end method
 
 .method private u()V
-    .locals 2
+    .locals 3
 
     const/4 v1, 0x0
 
-    iput-boolean v1, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->X:Z
+    const v2, 0x1
+
+    iput-boolean v2, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->X:Z
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->W:Lcom/jeppesen/android/views/imagezoom/ImageZoomView;
 
@@ -2042,7 +2046,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->W:Lcom/jeppesen/android/views/imagezoom/ImageZoomView;
 
-    invoke-virtual {v0, v1}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Z)V
+    invoke-virtual {v0, v2}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Z)V
 
 
     return-void
@@ -4556,7 +4560,9 @@
 .end method
 
 .method public RemoveTips(Landroid/view/View;)V
-    .locals 2
+    .locals 3
+
+    const v2, 0x1
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->W:Lcom/jeppesen/android/views/imagezoom/ImageZoomView;
 
@@ -4568,7 +4574,7 @@
 
     const/4 v0, 0x0
 
-    iput-boolean v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->X:Z
+    iput-boolean v2, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->X:Z
 
     sget-boolean v0, Lcom/jeppesen/android/tc/MobileTC;->a:Z
 
@@ -6119,7 +6125,7 @@
 
     float-to-int v5, v5
 
-    const/16 v6, 0x26c
+    const/16 v6, 0x5ff
 
     invoke-direct {v0, v4, v5, v6}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;II)V
 
@@ -6217,7 +6223,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->B:Landroid/widget/PopupWindow;
 
-    const/16 v5, 0x26c
+    const/16 v5, 0x5ff
 
     invoke-virtual {v0, v5}, Landroid/widget/PopupWindow;->setHeight(I)V
 
@@ -6273,7 +6279,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->C:Landroid/widget/PopupWindow;
 
-    const/16 v5, 0x26c
+    const/16 v5, 0x5ff
 
     invoke-virtual {v0, v5}, Landroid/widget/PopupWindow;->setHeight(I)V
 
@@ -6385,7 +6391,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->G:Landroid/widget/PopupWindow;
 
-    const/16 v5, 0x26c
+    const/16 v5, 0x5ff
 
     invoke-virtual {v0, v5}, Landroid/widget/PopupWindow;->setHeight(I)V
 
@@ -6441,7 +6447,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->H:Landroid/widget/PopupWindow;
 
-    const/16 v5, 0x26c
+    const/16 v5, 0x5ff
 
     invoke-virtual {v0, v5}, Landroid/widget/PopupWindow;->setHeight(I)V
 
@@ -6547,7 +6553,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->v:Landroid/widget/PopupWindow;
 
-    const/16 v5, 0x26c
+    const/16 v5, 0x5ff
 
     invoke-virtual {v0, v5}, Landroid/widget/PopupWindow;->setHeight(I)V
 
@@ -6595,7 +6601,7 @@
 
     iget-object v0, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->u:Landroid/widget/PopupWindow;
 
-    const/16 v2, 0x26c
+    const/16 v2, 0x5ff
 
     invoke-virtual {v0, v2}, Landroid/widget/PopupWindow;->setHeight(I)V
 
