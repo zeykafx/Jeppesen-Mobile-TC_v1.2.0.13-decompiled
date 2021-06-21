@@ -34,7 +34,7 @@ class AsyncTaskC0020ad extends AsyncTask {
     /* access modifiers changed from: protected */
     /* renamed from: a */
     public void onPostExecute(List list) {
-        TextView textView = (TextView) this.f297a.f152E.findViewById(R.id.notamsHeader);
+        TextView textView = (TextView) this.f297a.notamListView.findViewById(R.id.notamsHeader);
         String str = "";
         if (ChartDisplayActivity.m207e(this.f297a) != null) {
             str = ChartDisplayActivity.m207e(this.f297a).mo469a();
@@ -43,18 +43,18 @@ class AsyncTaskC0020ad extends AsyncTask {
         }
         textView.setText(str + " " + this.f297a.getString(R.string.notams));
         C0032ap apVar = new C0032ap(this.f297a.getApplicationContext(), R.layout.notamslist_item, R.id.notamTypeValue, list);
-        this.f297a.f201g = (ListView) this.f297a.f152E.findViewById(R.id.notamslist_list_view);
+        this.f297a.f201g = (ListView) this.f297a.notamListView.findViewById(R.id.notamslist_list_view);
         this.f297a.f201g.setAdapter((ListAdapter) apVar);
         this.f297a.f201g.setTextFilterEnabled(false);
         if (list == null || list.size() < 1) {
-            if (!this.f297a.f150C.isShowing()) {
-                ((TextView) this.f297a.f153F.findViewById(R.id.NoNotams)).setText(str + " " + this.f297a.getString(R.string.notams));
-                this.f297a.f150C.showAsDropDown(this.f297a.f151D, 2, 0);
-                ChartDisplayActivity.m192a(this.f297a, this.f297a.f150C, 350, this.f297a.f151D);
+            if (!this.f297a.notamPopupWindow.isShowing()) {
+                ((TextView) this.f297a.noNotamsView.findViewById(R.id.NoNotams)).setText(str + " " + this.f297a.getString(R.string.notams));
+                this.f297a.notamPopupWindow.showAsDropDown(this.f297a.notamIcon, 2, 0);
+                ChartDisplayActivity.m192a(this.f297a, this.f297a.notamPopupWindow, 350, this.f297a.notamIcon);
             }
-        } else if (!this.f297a.f149B.isShowing()) {
-            this.f297a.f149B.showAsDropDown(this.f297a.f151D, 2, 0);
-            ChartDisplayActivity.m192a(this.f297a, this.f297a.f149B, 380, this.f297a.f151D);
+        } else if (!this.f297a.popupWindow2.isShowing()) {
+            this.f297a.popupWindow2.showAsDropDown(this.f297a.notamIcon, 2, 0);
+            ChartDisplayActivity.m192a(this.f297a, this.f297a.popupWindow2, 380, this.f297a.notamIcon);
         }
     }
 }

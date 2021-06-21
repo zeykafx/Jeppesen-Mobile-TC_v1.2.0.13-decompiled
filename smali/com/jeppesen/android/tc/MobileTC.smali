@@ -333,7 +333,17 @@
     return-object v0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/jeppesen/android/tc/MobileTC;->getFilesDir()Ljava/io/File;
+    #invoke-virtual {p0}, Lcom/jeppesen/android/tc/MobileTC;->getFilesDir()Ljava/io/File;
+
+    #move-result-object v1
+
+    #invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    #move-result-object v1
+
+    sget-object v1, Landroid/os/Environment;->DIRECTORY_DOWNLOADS:Ljava/lang/String;
+
+    invoke-static {v1}, Landroid/os/Environment;->getExternalStoragePublicDirectory(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v1
 
@@ -342,6 +352,11 @@
     move-result-object v1
 
     sput-object v1, Lcom/jeppesen/android/tc/MobileTC;->d:Ljava/lang/String;
+
+
+
+
+
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 

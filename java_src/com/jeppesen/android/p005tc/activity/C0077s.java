@@ -13,7 +13,7 @@ class C0077s implements PopupWindow.OnDismissListener {
     }
 
     public void onDismiss() {
-        this.f377a.f198d.setInAnimation(this.f377a, 17432576);
-        this.f377a.f198d.setOutAnimation(this.f377a, 17432577);
+        this.f377a.viewSwitcher.setInAnimation(this.f377a, 17432576);
+        this.f377a.viewSwitcher.setOutAnimation(this.f377a, 17432577);
     }
 }

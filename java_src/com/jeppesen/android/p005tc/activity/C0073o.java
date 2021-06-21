@@ -18,7 +18,7 @@ class C0073o implements AbsListView.OnScrollListener {
         }
         if (!ChartDisplayActivity.m196a(this.f373a)) {
             this.f373a.f205k = i;
-        } else if (this.f373a.f202h.getText().length() > 0) {
+        } else if (this.f373a.airportSearchEditText.getText().length() > 0) {
             this.f373a.f206l = i;
         } else {
             this.f373a.f204j = i;

@@ -888,7 +888,8 @@
 .end method
 
 .method protected onCreate(Landroid/os/Bundle;)V
-    .locals 1
+    .locals 2
+
 
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
@@ -898,9 +899,9 @@
 
     iput-object v0, p0, Lcom/jeppesen/android/tc/activity/ActivationActivity;->n:Landroid/content/SharedPreferences;
 
-    const v0, 0x7f030001
+#    const v0, 0x7f030001
 
-    invoke-virtual {p0, v0}, Lcom/jeppesen/android/tc/activity/ActivationActivity;->setContentView(I)V
+ #   invoke-virtual {p0, v0}, Lcom/jeppesen/android/tc/activity/ActivationActivity;->setContentView(I)V
 
     const v0, 0x7f09000a
 

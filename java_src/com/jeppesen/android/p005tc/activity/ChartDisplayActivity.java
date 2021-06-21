@@ -1,5 +1,6 @@
 package com.jeppesen.android.p005tc.activity;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -45,7 +46,6 @@ import com.jeppesen.android.p002a.C0002a;
 import com.jeppesen.android.p004c.C0005a;
 import com.jeppesen.android.p005tc.MobileTC;
 import com.jeppesen.android.p005tc.R;
-import com.jeppesen.android.p005tc.activity.ApplicationPreferencesActivity;
 import com.jeppesen.android.p005tc.activity.p007a.C0014a;
 import com.jeppesen.android.p005tc.p006a.C0011b;
 import com.jeppesen.android.p005tc.service.UpdateService;
@@ -99,58 +99,58 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private static final int f144ai;
 
     /* renamed from: aj */
-    private static ImageButton f145aj;
+    private static ImageButton gpsDataIcon;
 
     /* renamed from: ak */
-    private static ImageButton f146ak;
+    private static ImageButton settingsButton;
 
     /* renamed from: al */
-    private static ImageView f147al;
+    private static ImageView settingsPopupUpdateIcon;
 
     /* renamed from: A */
-    View f148A;
+    View aboutView;
 
     /* renamed from: B */
-    PopupWindow f149B;
+    PopupWindow popupWindow2;
 
     /* renamed from: C */
-    PopupWindow f150C;
+    PopupWindow notamPopupWindow;
 
     /* renamed from: D */
-    View f151D;
+    View notamIcon;
 
     /* renamed from: E */
-    View f152E;
+    View notamListView;
 
     /* renamed from: F */
-    View f153F;
+    View noNotamsView;
 
     /* renamed from: G */
-    PopupWindow f154G;
+    PopupWindow versionValueView;
 
     /* renamed from: H */
-    PopupWindow f155H;
+    PopupWindow manualPopupIcon;
 
     /* renamed from: I */
-    View f156I;
+    View manualIcon;
 
     /* renamed from: J */
-    View f157J;
+    View ManualListView;
 
     /* renamed from: K */
-    View f158K;
+    View noManualView;
 
     /* renamed from: L */
-    PopupWindow f159L;
+    PopupWindow noManualPopup;
 
     /* renamed from: M */
-    View f160M;
+    View gpsDataPopup;
 
     /* renamed from: N */
-    PopupWindow f161N;
+    PopupWindow settingsMenuPopupWindow;
 
     /* renamed from: O */
-    View f162O;
+    View settingsMenuPopup;
 
     /* renamed from: P */
     final Handler f163P = new HandlerC0075q(this);
@@ -183,7 +183,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private TextView f172Z;
 
     /* renamed from: a */
-    LayoutInflater f173a;
+    LayoutInflater layoutInflater;
 
     /* renamed from: aC */
     private final String f174aC = "eula_";
@@ -192,7 +192,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private String f175aD;
 
     /* renamed from: aE */
-    private SharedPreferences f176aE = null;
+    private SharedPreferences sharedPreferences = null;
 
     /* renamed from: aF */
     private final String f177aF = "quickTips_";
@@ -252,13 +252,13 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private String f195az;
 
     /* renamed from: b */
-    InputMethodManager f196b;
+    InputMethodManager inputMethodManager;
 
     /* renamed from: c */
-    PopupWindow f197c;
+    PopupWindow popupWindow;
 
     /* renamed from: d */
-    ViewSwitcher f198d;
+    ViewSwitcher viewSwitcher;
 
     /* renamed from: e */
     int f199e = 0;
@@ -270,10 +270,10 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     ListView f201g;
 
     /* renamed from: h */
-    EditText f202h;
+    EditText airportSearchEditText;
 
     /* renamed from: i */
-    View f203i;
+    View airportIcon;
 
     /* renamed from: j */
     int f204j;
@@ -309,22 +309,22 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     AsyncTaskC0021ae f214t;
 
     /* renamed from: u */
-    PopupWindow f215u;
+    PopupWindow favChartsPopupWindow;
 
     /* renamed from: v */
-    PopupWindow f216v;
+    PopupWindow gpsDataIconPopup;
 
     /* renamed from: w */
-    View f217w;
+    View favAllChartsButton;
 
     /* renamed from: x */
-    View f218x;
+    View favedChartListView;
 
     /* renamed from: y */
-    View f219y;
+    View noFavsView;
 
     /* renamed from: z */
-    PopupWindow f220z;
+    PopupWindow noNotamsPopupWindow;
 
     /* renamed from: a */
     private Dialog m185a(String str) {
@@ -368,17 +368,17 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     /* renamed from: a */
     public static void m195a(boolean z) {
         if (z) {
-            if (f146ak != null && f147al != null) {
-                f146ak.setImageResource(R.drawable.btnsettingsupdate);
-                f146ak.invalidate();
-                f147al.setImageResource(R.drawable.iconupdates_badge);
-                f147al.invalidate();
+            if (settingsButton != null && settingsPopupUpdateIcon != null) {
+                settingsButton.setImageResource(R.drawable.btnsettingsupdate);
+                settingsButton.invalidate();
+                settingsPopupUpdateIcon.setImageResource(R.drawable.iconupdates_badge);
+                settingsPopupUpdateIcon.invalidate();
             }
-        } else if (f146ak != null && f147al != null) {
-            f146ak.setImageResource(R.drawable.btnsettings);
-            f146ak.invalidate();
-            f147al.setImageResource(R.drawable.iconupdates);
-            f147al.invalidate();
+        } else if (settingsButton != null && settingsPopupUpdateIcon != null) {
+            settingsButton.setImageResource(R.drawable.btnsettings);
+            settingsButton.invalidate();
+            settingsPopupUpdateIcon.setImageResource(R.drawable.iconupdates);
+            settingsPopupUpdateIcon.invalidate();
         }
     }
 
@@ -468,10 +468,10 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* renamed from: p */
     private void m223p() {
-        ImageView imageView = (ImageView) this.f198d.findViewById(R.id.chartlist_allcharts);
-        ImageView imageView2 = (ImageView) this.f198d.findViewById(R.id.chartlist_favoritecharts);
-        ImageView imageView3 = (ImageView) this.f198d.findViewById(R.id.chartlist_groups);
-        TextView textView = (TextView) this.f198d.findViewById(R.id.chartlist_currenticao);
+        ImageView imageView = (ImageView) this.viewSwitcher.findViewById(R.id.chartlist_allcharts);
+        ImageView imageView2 = (ImageView) this.viewSwitcher.findViewById(R.id.chartlist_favoritecharts);
+        ImageView imageView3 = (ImageView) this.viewSwitcher.findViewById(R.id.chartlist_groups);
+        TextView textView = (TextView) this.viewSwitcher.findViewById(R.id.chartlist_currenticao);
         switch (this.f199e) {
             case UpdateService.f405b /*{ENCODED_INT: 0}*/:
                 imageView.setImageResource(R.drawable.charts_all_on);
@@ -504,7 +504,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* renamed from: q */
     private void m224q() {
-        TextView textView = (TextView) this.f148A.findViewById(R.id.sitekey_value);
+        TextView textView = (TextView) this.aboutView.findViewById(R.id.sitekey_value);
         if (C0002a.m7b()) {
             textView.setText(C0002a.m3a().mo5b());
         } else {
@@ -524,14 +524,14 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private void m227r() {
         String str;
         Location g = MobileTC.m83g();
-        TextView textView = (TextView) this.f160M.findViewById(R.id.GPSTime);
-        TextView textView2 = (TextView) this.f160M.findViewById(R.id.GPSAccuracy);
-        TextView textView3 = (TextView) this.f160M.findViewById(R.id.GPSAircraftPositionStatus);
-        TextView textView4 = (TextView) this.f160M.findViewById(R.id.GPSAircraftPosition);
-        TextView textView5 = (TextView) this.f160M.findViewById(R.id.GPSBearing);
-        TextView textView6 = (TextView) this.f160M.findViewById(R.id.GPSSpeed);
-        TextView textView7 = (TextView) this.f160M.findViewById(R.id.GPSOwnshipStatus);
-        TextView textView8 = (TextView) this.f160M.findViewById(R.id.GPSOwnship);
+        TextView textView = (TextView) this.gpsDataPopup.findViewById(R.id.GPSTime);
+        TextView textView2 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSAccuracy);
+        TextView textView3 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSAircraftPositionStatus);
+        TextView textView4 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSAircraftPosition);
+        TextView textView5 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSBearing);
+        TextView textView6 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSSpeed);
+        TextView textView7 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSOwnshipStatus);
+        TextView textView8 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSOwnship);
         if (g != null) {
             Date date = new Date(g.getTime());
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("kk:mm:ss");
@@ -636,8 +636,8 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     }
 
     public void AboutOnClick(View view) {
-        if (this.f161N.isShowing()) {
-            this.f161N.dismiss();
+        if (this.settingsMenuPopupWindow.isShowing()) {
+            this.settingsMenuPopupWindow.dismiss();
         }
         Intent intent = new Intent(this, ApplicationPreferencesActivity.class);
         intent.putExtra(":android:show_fragment", ApplicationPreferencesActivity.AboutFragment.class.getName());
@@ -661,48 +661,48 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     public void AirportListAllAirportsOnClick(View view) {
         Log.d(f136V, "AirportListAllAirportsOnClick");
         List b = JITHandler.m533b();
-        this.f198d.findViewById(R.id.airportlist_search_header).setVisibility(0);
+        this.viewSwitcher.findViewById(R.id.airportlist_search_header).setVisibility(0);
         this.f188as = true;
         if (b != null && !b.isEmpty()) {
             C0065g gVar = new C0065g(this, R.layout.airportlist_lineitem, R.id.airportlist_icao, b, this.f213s);
-            this.f201g = (ListView) this.f198d.findViewById(R.id.airportlist_list_view);
+            this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.airportlist_list_view);
             this.f201g.setAdapter((ListAdapter) gVar);
             this.f201g.setTextFilterEnabled(false);
-            if (this.f202h.getText().length() < 1) {
+            if (this.airportSearchEditText.getText().length() < 1) {
                 this.f201g.setSelection(this.f204j);
             }
             mo153d();
             this.f201g.setVisibility(0);
-            ((ImageView) this.f198d.findViewById(R.id.NoFavsImageViewAirport)).setVisibility(8);
-            ((ImageView) this.f198d.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all_on);
-            ((ImageView) this.f198d.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.NoFavsImageViewAirport)).setVisibility(8);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all_on);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs);
         }
     }
 
     public void AirportListClearSearchOnClick(View view) {
-        this.f202h.setText("");
+        this.airportSearchEditText.setText("");
         mo153d();
         this.f201g.setSelection(this.f204j);
     }
 
     public void AirportListFavoritesOnClick(View view) {
-        this.f196b.hideSoftInputFromWindow(this.f202h.getWindowToken(), 0);
+        this.inputMethodManager.hideSoftInputFromWindow(this.airportSearchEditText.getWindowToken(), 0);
         List a = C0111i.m414a();
-        this.f198d.findViewById(R.id.airportlist_search_header).setVisibility(8);
+        this.viewSwitcher.findViewById(R.id.airportlist_search_header).setVisibility(8);
         if (a == null || a.isEmpty()) {
             this.f201g.setVisibility(8);
-            ((ImageView) this.f198d.findViewById(R.id.NoFavsImageViewAirport)).setVisibility(0);
-            ((ImageView) this.f198d.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all);
-            ((ImageView) this.f198d.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs_on);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.NoFavsImageViewAirport)).setVisibility(0);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs_on);
         }
         if (a != null && !a.isEmpty()) {
             C0065g gVar = new C0065g(this, R.layout.airportlist_lineitem, R.id.airportlist_icao, a, null);
-            this.f201g = (ListView) this.f198d.findViewById(R.id.airportlist_list_view);
+            this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.airportlist_list_view);
             this.f201g.setAdapter((ListAdapter) gVar);
             this.f201g.setSelection(this.f205k);
             this.f201g.setTextFilterEnabled(false);
-            ((ImageView) this.f198d.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all);
-            ((ImageView) this.f198d.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs_on);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs_on);
         }
         this.f188as = false;
     }
@@ -725,13 +725,13 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             List c = JITHandler.m535c(this.f184ao.mo451a());
             if (c == null || c.size() < 1) {
                 MobileTC.m70a(this, "Charts for this airport are not available");
-                this.f197c.dismiss();
-                this.f198d.setDisplayedChild(0);
+                this.popupWindow.dismiss();
+                this.viewSwitcher.setDisplayedChild(0);
                 return;
             }
             if (this.f199e == 0) {
                 C0025ai aiVar = new C0025ai(this, R.layout.chartlist_lineitem, R.id.chartlist_index, C0025ai.m320a(c));
-                this.f201g = (ListView) this.f198d.findViewById(R.id.chartlist_list_view);
+                this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.chartlist_list_view);
                 this.f201g.setAdapter((ListAdapter) aiVar);
                 this.f201g.setTextFilterEnabled(false);
             } else if (this.f199e == 1) {
@@ -739,30 +739,30 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             }
             m223p();
             this.f201g.setSelection(this.f208n);
-            this.f198d.setDisplayedChild(1);
-            this.f196b.hideSoftInputFromWindow(this.f202h.getWindowToken(), 0);
-            this.f198d.setInAnimation(this, 17432578);
-            this.f198d.setOutAnimation(this, 17432579);
+            this.viewSwitcher.setDisplayedChild(1);
+            this.inputMethodManager.hideSoftInputFromWindow(this.airportSearchEditText.getWindowToken(), 0);
+            this.viewSwitcher.setInAnimation(this, 17432578);
+            this.viewSwitcher.setOutAnimation(this, 17432579);
         }
     }
 
     public void AirportsOnClick(View view) {
         List b;
         Location location;
-        if (view.getId() == R.id.airporticon && this.f198d.getDisplayedChild() == 1) {
+        if (view.getId() == R.id.airporticon && this.viewSwitcher.getDisplayedChild() == 1) {
             if (this.f199e == 1) {
                 ChartListFavoritesOnClick(view);
             }
             this.f201g.setSelection(this.f208n);
-            if (!this.f197c.isShowing()) {
-                this.f197c.showAsDropDown(this.f203i, 0, 0);
-                m191a(this.f197c, 350, this.f203i);
+            if (!this.popupWindow.isShowing()) {
+                this.popupWindow.showAsDropDown(this.airportIcon, 0, 0);
+                m191a(this.popupWindow, 350, this.airportIcon);
             }
-            this.f198d.setInAnimation(this, 17432578);
-            this.f198d.setOutAnimation(this, 17432579);
+            this.viewSwitcher.setInAnimation(this, 17432578);
+            this.viewSwitcher.setOutAnimation(this, 17432579);
             return;
         }
-        this.f201g = (ListView) this.f198d.findViewById(R.id.airportlist_list_view);
+        this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.airportlist_list_view);
         if (this.f201g.getAdapter() == null || JITHandler.m536c()) {
             this.f204j = 0;
         }
@@ -770,15 +770,15 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             b = C0111i.m414a();
             if (b == null || b.isEmpty()) {
                 this.f201g.setVisibility(8);
-                ((ImageView) this.f198d.findViewById(R.id.NoFavsImageViewAirport)).setVisibility(0);
-                ((ImageView) this.f198d.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all);
-                ((ImageView) this.f198d.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs_on);
-                this.f198d.setDisplayedChild(0);
-                if (!this.f197c.isShowing()) {
-                    this.f197c.showAsDropDown(this.f203i, 0, 0);
-                    m191a(this.f197c, 350, this.f203i);
+                ((ImageView) this.viewSwitcher.findViewById(R.id.NoFavsImageViewAirport)).setVisibility(0);
+                ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_allairports)).setImageResource(R.drawable.airports_all);
+                ((ImageView) this.viewSwitcher.findViewById(R.id.airportlist_favoriteairports)).setImageResource(R.drawable.airports_favs_on);
+                this.viewSwitcher.setDisplayedChild(0);
+                if (!this.popupWindow.isShowing()) {
+                    this.popupWindow.showAsDropDown(this.airportIcon, 0, 0);
+                    m191a(this.popupWindow, 350, this.airportIcon);
                 }
-                this.f196b.hideSoftInputFromWindow(this.f202h.getWindowToken(), 0);
+                this.inputMethodManager.hideSoftInputFromWindow(this.airportSearchEditText.getWindowToken(), 0);
                 return;
             }
             location = null;
@@ -788,8 +788,8 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         }
         if (b == null || b.size() < 1) {
             MobileTC.m70a(this, "No airports currently available.\n\nIf you are currently updating your subscriptions, try again in a few moments.");
-            this.f197c.dismiss();
-            this.f198d.setDisplayedChild(0);
+            this.popupWindow.dismiss();
+            this.viewSwitcher.setDisplayedChild(0);
             return;
         }
         this.f201g.setAdapter((ListAdapter) new C0065g(this, R.layout.airportlist_lineitem, R.id.airportlist_icao, b, location));
@@ -797,19 +797,19 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         mo153d();
         if (!this.f188as) {
             this.f201g.setSelection(this.f205k);
-        } else if (this.f202h.getText().length() > 0) {
+        } else if (this.airportSearchEditText.getText().length() > 0) {
             this.f201g.setSelection(this.f206l);
         } else {
             this.f201g.setSelection(this.f204j);
         }
-        this.f198d.setDisplayedChild(0);
-        if (!this.f197c.isShowing()) {
-            this.f197c.showAsDropDown(this.f203i, 0, 0);
-            m191a(this.f197c, 350, this.f203i);
+        this.viewSwitcher.setDisplayedChild(0);
+        if (!this.popupWindow.isShowing()) {
+            this.popupWindow.showAsDropDown(this.airportIcon, 0, 0);
+            m191a(this.popupWindow, 350, this.airportIcon);
         }
-        this.f196b.hideSoftInputFromWindow(this.f202h.getWindowToken(), 0);
-        this.f198d.setInAnimation(this, R.anim.slide_in_right);
-        this.f198d.setOutAnimation(this, R.anim.slide_out_left);
+        this.inputMethodManager.hideSoftInputFromWindow(this.airportSearchEditText.getWindowToken(), 0);
+        this.viewSwitcher.setInAnimation(this, R.anim.slide_in_right);
+        this.viewSwitcher.setOutAnimation(this, R.anim.slide_out_left);
     }
 
     public void CCNOnClick(View view) {
@@ -821,10 +821,10 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 str = this.f184ao.mo451a();
             }
             new AsyncTaskC0020ad(this, null).execute(str);
-        } else if (!this.f150C.isShowing()) {
-            ((TextView) this.f153F.findViewById(R.id.NoNotams)).setText(getString(R.string.nonotams));
-            this.f150C.showAsDropDown(this.f151D, 2, 0);
-            m191a(this.f150C, 350, this.f151D);
+        } else if (!this.notamPopupWindow.isShowing()) {
+            ((TextView) this.noNotamsView.findViewById(R.id.NoNotams)).setText(getString(R.string.nonotams));
+            this.notamPopupWindow.showAsDropDown(this.notamIcon, 2, 0);
+            m191a(this.notamPopupWindow, 350, this.notamIcon);
         }
     }
 
@@ -863,7 +863,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             }
         }
         C0025ai aiVar = new C0025ai(this, R.layout.chartlist_lineitem, R.id.chartlist_index, d);
-        this.f201g = (ListView) this.f198d.findViewById(R.id.chartlist_list_view);
+        this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.chartlist_list_view);
         this.f201g.setAdapter((ListAdapter) aiVar);
         this.f201g.setTextFilterEnabled(false);
     }
@@ -875,11 +875,11 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         m223p();
         if (d != null && !d.isEmpty()) {
             C0025ai aiVar = new C0025ai(this, R.layout.chartlist_lineitem, R.id.chartlist_index, C0025ai.m320a(d));
-            this.f201g = (ListView) this.f198d.findViewById(R.id.chartlist_list_view);
+            this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.chartlist_list_view);
             this.f201g.setAdapter((ListAdapter) aiVar);
             this.f201g.setTextFilterEnabled(false);
             this.f201g.setVisibility(0);
-            ((ImageView) this.f198d.findViewById(R.id.NoFavsImageViewChart)).setVisibility(8);
+            ((ImageView) this.viewSwitcher.findViewById(R.id.NoFavsImageViewChart)).setVisibility(8);
         }
     }
 
@@ -902,7 +902,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         }
         mo155f();
         C0025ai aiVar = new C0025ai(this, R.layout.chartlist_lineitem, R.id.chartlist_index, C0025ai.m320a(c));
-        this.f201g = (ListView) this.f198d.findViewById(R.id.chartlist_list_view);
+        this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.chartlist_list_view);
         this.f201g.setAdapter((ListAdapter) aiVar);
         this.f201g.setTextFilterEnabled(false);
     }
@@ -923,11 +923,11 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             }
         }
         C0024ah ahVar = new C0024ah(this, R.layout.chart_group_lineitem, R.id.chartgroup_name, a, this.f184ao);
-        this.f201g = (ListView) this.f198d.findViewById(R.id.chartlist_list_view);
+        this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.chartlist_list_view);
         this.f201g.setAdapter((ListAdapter) ahVar);
         this.f201g.setTextFilterEnabled(false);
         this.f201g.setVisibility(0);
-        ((ImageView) this.f198d.findViewById(R.id.NoFavsImageViewChart)).setVisibility(8);
+        ((ImageView) this.viewSwitcher.findViewById(R.id.NoFavsImageViewChart)).setVisibility(8);
     }
 
     public void ChartSelectedFromScrubberOnClick(View view) {
@@ -944,9 +944,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     public void ChartSelectedOnClick(View view) {
         m221o();
-        this.f197c.dismiss();
-        this.f212r = this.f216v.isShowing();
-        this.f216v.dismiss();
+        this.popupWindow.dismiss();
+        this.f212r = this.gpsDataIconPopup.isShowing();
+        this.gpsDataIconPopup.dismiss();
         Chart chart = (Chart) view.getTag();
         m204b(chart);
         m219n();
@@ -959,7 +959,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             f = -f;
         }
         int i = (int) (f * 100.0f);
-        View inflate = this.f173a.inflate(R.layout.dimmercontrol, (ViewGroup) null);
+        View inflate = this.layoutInflater.inflate(R.layout.dimmercontrol, (ViewGroup) null);
         this.f181ac = new PopupWindow(inflate, 320, 100, true);
         this.f181ac.setBackgroundDrawable(getResources().getDrawable(R.drawable.dialog_full_holo_dark2));
         SeekBar seekBar = (SeekBar) inflate.findViewById(R.id.seekBar);
@@ -978,41 +978,41 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             if (c != null && c.size() != 0) {
                 List a2 = C0025ai.m320a(c);
                 C0025ai aiVar = new C0025ai(this, R.layout.chartlist_lineitem, R.id.chartlist_index, a2);
-                this.f201g = (ListView) this.f218x.findViewById(R.id.faved_chartlist_list_view);
+                this.f201g = (ListView) this.favedChartListView.findViewById(R.id.faved_chartlist_list_view);
                 this.f201g.setAdapter((ListAdapter) aiVar);
                 this.f201g.setTextFilterEnabled(false);
-                ((TextView) this.f218x.findViewById(R.id.faved_chartlist_currenticao)).setText(a + " Favorites");
+                ((TextView) this.favedChartListView.findViewById(R.id.faved_chartlist_currenticao)).setText(a + " Favorites");
                 if (a2 == null || a2.size() < 1) {
-                    if (!this.f215u.isShowing()) {
-                        ((TextView) this.f219y.findViewById(R.id.NoFavs)).setText(a + " Favorites");
-                        this.f215u.showAsDropDown(this.f217w, 2, 0);
-                        m191a(this.f215u, 350, this.f217w);
+                    if (!this.favChartsPopupWindow.isShowing()) {
+                        ((TextView) this.noFavsView.findViewById(R.id.NoFavs)).setText(a + " Favorites");
+                        this.favChartsPopupWindow.showAsDropDown(this.favAllChartsButton, 2, 0);
+                        m191a(this.favChartsPopupWindow, 350, this.favAllChartsButton);
                     }
-                } else if (!this.f216v.isShowing()) {
-                    this.f216v.showAsDropDown(this.f217w, 2, 0);
-                    m191a(this.f216v, 350, this.f217w);
+                } else if (!this.gpsDataIconPopup.isShowing()) {
+                    this.gpsDataIconPopup.showAsDropDown(this.favAllChartsButton, 2, 0);
+                    m191a(this.gpsDataIconPopup, 350, this.favAllChartsButton);
                 }
-            } else if (!this.f215u.isShowing()) {
-                ((TextView) this.f219y.findViewById(R.id.NoFavs)).setText(a + " Favorites");
-                this.f215u.showAsDropDown(this.f217w, 2, 0);
-                m191a(this.f215u, 350, this.f217w);
+            } else if (!this.favChartsPopupWindow.isShowing()) {
+                ((TextView) this.noFavsView.findViewById(R.id.NoFavs)).setText(a + " Favorites");
+                this.favChartsPopupWindow.showAsDropDown(this.favAllChartsButton, 2, 0);
+                m191a(this.favChartsPopupWindow, 350, this.favAllChartsButton);
             }
-        } else if (!this.f215u.isShowing()) {
-            ((TextView) this.f219y.findViewById(R.id.NoFavs)).setText(R.string.nofavs);
-            this.f215u.showAsDropDown(this.f217w, 2, 0);
-            m191a(this.f215u, 350, this.f217w);
+        } else if (!this.favChartsPopupWindow.isShowing()) {
+            ((TextView) this.noFavsView.findViewById(R.id.NoFavs)).setText(R.string.nofavs);
+            this.favChartsPopupWindow.showAsDropDown(this.favAllChartsButton, 2, 0);
+            m191a(this.favChartsPopupWindow, 350, this.favAllChartsButton);
         }
     }
 
     public void GPSDataOnClick(View view) {
         m227r();
-        this.f159L.showAsDropDown(f145aj, 2, 0);
+        this.noManualPopup.showAsDropDown(gpsDataIcon, 2, 0);
     }
 
     public void HelpOnClick(View view) {
         Log.d(f136V, "In HelpOnClick");
-        if (this.f161N.isShowing()) {
-            this.f161N.dismiss();
+        if (this.settingsMenuPopupWindow.isShowing()) {
+            this.settingsMenuPopupWindow.dismiss();
         }
         try {
             showDialog(2);
@@ -1045,8 +1045,8 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     public void PreferencesOnClick(View view) {
         Log.d(f136V, "In PreferencesOnClick");
-        if (this.f161N.isShowing()) {
-            this.f161N.dismiss();
+        if (this.settingsMenuPopupWindow.isShowing()) {
+            this.settingsMenuPopupWindow.dismiss();
         }
         Intent intent = new Intent(this, ApplicationPreferencesActivity.class);
         intent.putExtra(":android:show_fragment", ApplicationPreferencesActivity.PreferencesFragment.class.getName());
@@ -1064,19 +1064,19 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     public void SettingsMenuOnClick(View view) {
         Log.d(f136V, "In SettingsMenuOnClick");
-        this.f161N.showAsDropDown(findViewById(R.id.settingsbutton), -230, 0);
+        this.settingsMenuPopupWindow.showAsDropDown(findViewById(R.id.settingsbutton), -230, 0);
     }
 
     public void SettingsOnClick(View view) {
         boolean z = false;
-        if (this.f161N.isShowing()) {
-            this.f161N.dismiss();
+        if (this.settingsMenuPopupWindow.isShowing()) {
+            this.settingsMenuPopupWindow.dismiss();
         }
         boolean b = C0002a.m7b();
         int b2 = C0005a.m31b();
         if (!C0115m.m451b("downloadIds", getApplicationContext()).isEmpty()) {
         }
-        if (C0002a.m10c() && this.f176aE.getBoolean("company_content", false)) {
+        if (C0002a.m10c() && this.sharedPreferences.getBoolean("company_content", false)) {
             z = true;
         }
         if (z) {
@@ -1128,7 +1128,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* renamed from: b */
     public void mo150b() {
-        if (MobileTC.m87k() != null) {
+        if (MobileTC.m87k() != null) { // return a bimap, so this must be the splash screen image
             m229s();
             this.f169W.setImage(MobileTC.m87k());
         } else if (MobileTC.m85i() || MobileTC.m86j()) {
@@ -1163,24 +1163,24 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* renamed from: d */
     public void mo153d() {
-        if (this.f188as && this.f202h.getText().length() > 0) {
-            ((C0066h) ((Filterable) this.f201g.getAdapter()).getFilter()).filter(this.f202h.getText());
+        if (this.f188as && this.airportSearchEditText.getText().length() > 0) {
+            ((C0066h) ((Filterable) this.f201g.getAdapter()).getFilter()).filter(this.airportSearchEditText.getText());
             this.f201g.setSelection(this.f206l);
         }
     }
 
     /* renamed from: e */
     public void mo154e() {
-        this.f201g = (ListView) this.f198d.findViewById(R.id.chartlist_list_view);
+        this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.chartlist_list_view);
         this.f201g.setVisibility(8);
-        ((ImageView) this.f198d.findViewById(R.id.NoFavsImageViewChart)).setVisibility(0);
+        ((ImageView) this.viewSwitcher.findViewById(R.id.NoFavsImageViewChart)).setVisibility(0);
     }
 
     /* renamed from: f */
     public void mo155f() {
-        this.f201g = (ListView) this.f198d.findViewById(R.id.chartlist_list_view);
+        this.f201g = (ListView) this.viewSwitcher.findViewById(R.id.chartlist_list_view);
         this.f201g.setVisibility(0);
-        ((ImageView) this.f198d.findViewById(R.id.NoFavsImageViewChart)).setVisibility(8);
+        ((ImageView) this.viewSwitcher.findViewById(R.id.NoFavsImageViewChart)).setVisibility(8);
     }
 
     /* renamed from: g */
@@ -1351,7 +1351,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 mo150b();
                 this.f169W.invalidate();
                 this.f169W.setOnClickListener(this.f166S);
-                SharedPreferences.Editor edit = this.f176aE.edit();
+                SharedPreferences.Editor edit = this.sharedPreferences.edit();
                 edit.remove(this.f178aG);
                 edit.commit();
                 return true;
@@ -1379,108 +1379,110 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 Log.e(f136V, "Unable to get package info: ", e);
             }
             this.f178aG = "quickTips_" + packageInfo.versionCode;
-            this.f176aE = PreferenceManager.getDefaultSharedPreferences(this);
-            MobileTC.m76b(this.f176aE.getBoolean(this.f178aG, true));
-            boolean z = this.f176aE.getBoolean("quick_tips_preference", false);
+            this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+            MobileTC.m76b(this.sharedPreferences.getBoolean(this.f178aG, true));
+            boolean z = this.sharedPreferences.getBoolean("quick_tips_preference", false);
             MobileTC.m78c(z);
-            mo150b();
+            mo150b(); // sets the splash screen image I think
             this.f172Z = (TextView) findViewById(R.id.AirportName);
             if (MobileTC.f436a) {
                 registerForContextMenu(this.f172Z);
             }
-            this.f173a = (LayoutInflater) getSystemService("layout_inflater");
-            this.f196b = (InputMethodManager) getSystemService("input_method");
-            this.f198d = new ViewSwitcher(this);
-            View inflate = this.f173a.inflate(R.layout.airportlist, (ViewGroup) null);
+            this.layoutInflater = (LayoutInflater) getSystemService("layout_inflater");
+            this.inputMethodManager = (InputMethodManager) getSystemService("input_method");
+            this.viewSwitcher = new ViewSwitcher(this);
+
+            View inflate = this.layoutInflater.inflate(R.layout.airportlist, (ViewGroup) null);
             ((ListView) inflate.findViewById(R.id.airportlist_list_view)).setOnScrollListener(new C0073o(this));
-            View inflate2 = this.f173a.inflate(R.layout.chartlist, (ViewGroup) null);
+            View inflate2 = this.layoutInflater.inflate(R.layout.chartlist, (ViewGroup) null);
             ((ListView) inflate2.findViewById(R.id.chartlist_list_view)).setOnScrollListener(new C0076r(this));
-            this.f198d.addView(inflate, 0);
-            this.f198d.addView(inflate2, 1);
-            this.f198d.setBackgroundResource(R.drawable.dialog_full_holo_dark2);
-            this.f197c = new PopupWindow(this.f198d, (int) (350.0f * f), 1535);
-            this.f197c.setFocusable(true);
-            this.f197c.setTouchable(true);
-            this.f197c.setOutsideTouchable(true);
-            this.f197c.setClippingEnabled(false);
-            this.f197c.setBackgroundDrawable(new BitmapDrawable());
-            this.f203i = findViewById(R.id.airporticon);
-            this.f197c.setOnDismissListener(new C0077s(this));
-            this.f202h = (EditText) this.f198d.findViewById(R.id.airportlist_search_view);
-            this.f202h.addTextChangedListener(this);
+
+            this.viewSwitcher.addView(inflate, 0);
+            this.viewSwitcher.addView(inflate2, 1);
+            this.viewSwitcher.setBackgroundResource(R.drawable.dialog_full_holo_dark2);
+            this.popupWindow = new PopupWindow(this.viewSwitcher, (int) (350.0f * f), 1535);
+            this.popupWindow.setFocusable(true);
+            this.popupWindow.setTouchable(true);
+            this.popupWindow.setOutsideTouchable(true);
+            this.popupWindow.setClippingEnabled(false);
+            this.popupWindow.setBackgroundDrawable(new BitmapDrawable());
+            this.airportIcon = findViewById(R.id.airporticon);
+            this.popupWindow.setOnDismissListener(new C0077s(this));
+            this.airportSearchEditText = (EditText) this.viewSwitcher.findViewById(R.id.airportlist_search_view);
+            this.airportSearchEditText.addTextChangedListener(this);
             Drawable drawable = getResources().getDrawable(R.drawable.dialog_full_holo_dark2);
-            this.f149B = new PopupWindow(this);
-            this.f149B.setWidth((int) (380.0f * f));
-            this.f149B.setHeight(1535);
-            this.f149B.setFocusable(true);
-            this.f149B.setBackgroundDrawable(drawable);
-            this.f152E = this.f173a.inflate(R.layout.notamslist, (ViewGroup) null);
-            this.f149B.setContentView(this.f152E);
-            this.f151D = findViewById(R.id.notamsicon);
-            this.f150C = new PopupWindow(this);
-            this.f150C.setWidth((int) (350.0f * f));
-            this.f150C.setHeight(620);
-            this.f150C.setFocusable(true);
-            this.f150C.setBackgroundDrawable(drawable);
-            this.f153F = this.f173a.inflate(R.layout.nonotams, (ViewGroup) null);
-            this.f150C.setContentView(this.f153F);
-            this.f220z = new PopupWindow(this);
-            this.f220z.setWidth((int) (450.0f * f));
-            this.f220z.setHeight(300);
-            this.f220z.setBackgroundDrawable(drawable);
-            this.f220z.setFocusable(true);
-            this.f148A = this.f173a.inflate(R.layout.aboutview, (ViewGroup) null);
-            this.f220z.setContentView(this.f148A);
-            ((TextView) this.f148A.findViewById(R.id.version_value)).setText(packageInfo.versionName);
-            this.f154G = new PopupWindow(this);
-            this.f154G.setWidth((int) (350.0f * f));
-            this.f154G.setHeight(1535);
-            this.f154G.setFocusable(true);
-            this.f154G.setBackgroundDrawable(drawable);
-            this.f157J = this.f173a.inflate(R.layout.manualslist, (ViewGroup) null);
-            this.f154G.setContentView(this.f157J);
-            this.f156I = findViewById(R.id.manualsicon);
-            this.f155H = new PopupWindow(this);
-            this.f155H.setWidth((int) (350.0f * f));
-            this.f155H.setHeight(1535);
-            this.f155H.setFocusable(true);
-            this.f155H.setBackgroundDrawable(drawable);
-            this.f158K = this.f173a.inflate(R.layout.nomanuals, (ViewGroup) null);
-            this.f155H.setContentView(this.f158K);
-            this.f159L = new PopupWindow(this);
-            this.f159L.setWidth((int) (350.0f * f));
-            this.f159L.setHeight(380);
-            this.f159L.setFocusable(true);
-            this.f159L.setBackgroundDrawable(drawable);
-            this.f160M = this.f173a.inflate(R.layout.gpsdatapopup, (ViewGroup) null);
-            this.f159L.setContentView(this.f160M);
-            f145aj = (ImageButton) findViewById(R.id.GPSDataicon);
-            this.f216v = new PopupWindow(this);
-            this.f216v.setWidth((int) (350.0f * f));
-            this.f216v.setHeight(1535);
-            this.f216v.setFocusable(true);
-            this.f216v.setBackgroundDrawable(drawable);
-            this.f218x = this.f173a.inflate(R.layout.faved_chartlist, (ViewGroup) null);
-            this.f216v.setContentView(this.f218x);
-            this.f215u = new PopupWindow(this);
-            this.f215u.setWidth((int) (f * 350.0f));
-            this.f215u.setHeight(1535);
-            this.f215u.setFocusable(true);
-            this.f215u.setBackgroundDrawable(drawable);
-            this.f219y = this.f173a.inflate(R.layout.nofavorites, (ViewGroup) null);
-            this.f215u.setContentView(this.f219y);
-            this.f217w = findViewById(R.id.ChartFavoriteAll);
-            f146ak = (ImageButton) findViewById(R.id.settingsbutton);
-            this.f162O = this.f173a.inflate(R.layout.settingsmenupopup, (ViewGroup) null);
-            this.f162O.measure(0, 0);
-            int measuredWidth = this.f162O.getMeasuredWidth();
-            this.f161N = new PopupWindow(this);
-            this.f161N.setWidth(measuredWidth);
-            this.f161N.setHeight(this.f162O.getMeasuredHeight() + 50);
-            this.f161N.setFocusable(true);
-            this.f161N.setBackgroundDrawable(drawable);
-            this.f161N.setContentView(this.f162O);
-            f147al = (ImageView) this.f162O.findViewById(R.id.settingsmenu_updateicon);
+            this.popupWindow2 = new PopupWindow(this);
+            this.popupWindow2.setWidth((int) (380.0f * f));
+            this.popupWindow2.setHeight(1535);
+            this.popupWindow2.setFocusable(true);
+            this.popupWindow2.setBackgroundDrawable(drawable);
+            this.notamListView = this.layoutInflater.inflate(R.layout.notamslist, (ViewGroup) null);
+            this.popupWindow2.setContentView(this.notamListView);
+            this.notamIcon = findViewById(R.id.notamsicon);
+            this.notamPopupWindow = new PopupWindow(this);
+            this.notamPopupWindow.setWidth((int) (350.0f * f));
+            this.notamPopupWindow.setHeight(620);
+            this.notamPopupWindow.setFocusable(true);
+            this.notamPopupWindow.setBackgroundDrawable(drawable);
+            this.noNotamsView = this.layoutInflater.inflate(R.layout.nonotams, (ViewGroup) null);
+            this.notamPopupWindow.setContentView(this.noNotamsView);
+            this.noNotamsPopupWindow = new PopupWindow(this);
+            this.noNotamsPopupWindow.setWidth((int) (450.0f * f));
+            this.noNotamsPopupWindow.setHeight(300);
+            this.noNotamsPopupWindow.setBackgroundDrawable(drawable);
+            this.noNotamsPopupWindow.setFocusable(true);
+            this.aboutView = this.layoutInflater.inflate(R.layout.aboutview, (ViewGroup) null);
+            this.noNotamsPopupWindow.setContentView(this.aboutView);
+            ((TextView) this.aboutView.findViewById(R.id.version_value)).setText(packageInfo.versionName);
+            this.versionValueView = new PopupWindow(this);
+            this.versionValueView.setWidth((int) (350.0f * f));
+            this.versionValueView.setHeight(1535);
+            this.versionValueView.setFocusable(true);
+            this.versionValueView.setBackgroundDrawable(drawable);
+            this.ManualListView = this.layoutInflater.inflate(R.layout.manualslist, (ViewGroup) null);
+            this.versionValueView.setContentView(this.ManualListView);
+            this.manualIcon = findViewById(R.id.manualsicon);
+            this.manualPopupIcon = new PopupWindow(this);
+            this.manualPopupIcon.setWidth((int) (350.0f * f));
+            this.manualPopupIcon.setHeight(1535);
+            this.manualPopupIcon.setFocusable(true);
+            this.manualPopupIcon.setBackgroundDrawable(drawable);
+            this.noManualView = this.layoutInflater.inflate(R.layout.nomanuals, (ViewGroup) null);
+            this.manualPopupIcon.setContentView(this.noManualView);
+            this.noManualPopup = new PopupWindow(this);
+            this.noManualPopup.setWidth((int) (350.0f * f));
+            this.noManualPopup.setHeight(380);
+            this.noManualPopup.setFocusable(true);
+            this.noManualPopup.setBackgroundDrawable(drawable);
+            this.gpsDataPopup = this.layoutInflater.inflate(R.layout.gpsdatapopup, (ViewGroup) null);
+            this.noManualPopup.setContentView(this.gpsDataPopup);
+            gpsDataIcon = (ImageButton) findViewById(R.id.GPSDataicon);
+            this.gpsDataIconPopup = new PopupWindow(this);
+            this.gpsDataIconPopup.setWidth((int) (350.0f * f));
+            this.gpsDataIconPopup.setHeight(1535);
+            this.gpsDataIconPopup.setFocusable(true);
+            this.gpsDataIconPopup.setBackgroundDrawable(drawable);
+            this.favedChartListView = this.layoutInflater.inflate(R.layout.faved_chartlist, (ViewGroup) null);
+            this.gpsDataIconPopup.setContentView(this.favedChartListView);
+            this.favChartsPopupWindow = new PopupWindow(this);
+            this.favChartsPopupWindow.setWidth((int) (f * 350.0f));
+            this.favChartsPopupWindow.setHeight(1535);
+            this.favChartsPopupWindow.setFocusable(true);
+            this.favChartsPopupWindow.setBackgroundDrawable(drawable);
+            this.noFavsView = this.layoutInflater.inflate(R.layout.nofavorites, (ViewGroup) null);
+            this.favChartsPopupWindow.setContentView(this.noFavsView);
+            this.favAllChartsButton = findViewById(R.id.ChartFavoriteAll);
+            settingsButton = (ImageButton) findViewById(R.id.settingsbutton);
+            this.settingsMenuPopup = this.layoutInflater.inflate(R.layout.settingsmenupopup, (ViewGroup) null);
+            this.settingsMenuPopup.measure(0, 0);
+            int measuredWidth = this.settingsMenuPopup.getMeasuredWidth();
+            this.settingsMenuPopupWindow = new PopupWindow(this);
+            this.settingsMenuPopupWindow.setWidth(measuredWidth);
+            this.settingsMenuPopupWindow.setHeight(this.settingsMenuPopup.getMeasuredHeight() + 50);
+            this.settingsMenuPopupWindow.setFocusable(true);
+            this.settingsMenuPopupWindow.setBackgroundDrawable(drawable);
+            this.settingsMenuPopupWindow.setContentView(this.settingsMenuPopup);
+            settingsPopupUpdateIcon = (ImageView) this.settingsMenuPopup.findViewById(R.id.settingsmenu_updateicon);
             new AsyncTaskC0023ag(this, null).execute(new Void[0]);
             new AsyncTaskC0114l().execute(getApplicationContext());
             this.f175aD = "eula_" + packageInfo.versionCode;
@@ -1489,7 +1491,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             } else {
                 new AsyncTaskC0022af(this, null).execute(new Void[0]);
             }
-            if (!this.f176aE.getBoolean(this.f175aD, false)) {
+            if (!this.sharedPreferences.getBoolean(this.f175aD, false)) {
                 showDialog(1);
             } else {
                 new AsyncTaskC0017aa(this, null).execute(new Void[0]);
@@ -1570,15 +1572,17 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         }
     }
 
+    @SuppressLint("WrongConstant")
     public void onResume() {
         super.onResume();
         Log.i(f136V, "onResume");
         new AsyncTaskC0114l().execute(getApplicationContext());
-        if (this.f176aE == null) {
-            this.f176aE = PreferenceManager.getDefaultSharedPreferences(this);
+        if (this.sharedPreferences == null) {
+            this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         }
-        MobileTC.m74a(this.f176aE.getBoolean("show_ownship_apt_diagram", false));
-        if (this.f176aE.getBoolean("quick_tips_preference", false)) {
+        MobileTC.m74a(this.sharedPreferences.getBoolean("show_ownship_apt_diagram", false));
+        // something to do with quick tips
+        if (this.sharedPreferences.getBoolean("quick_tips_preference", false)) {
             MobileTC.m78c(true);
             mo148a();
             MobileTC.m72a((Bitmap) null);
@@ -1586,9 +1590,10 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             mo150b();
             this.f169W.setOnClickListener(this.f166S);
         }
+        // place ownship icon on map I think
         if (MobileTC.m84h()) {
             ((LocationManager) getSystemService("location")).requestLocationUpdates("gps", 0, 0.0f, this.f165R);
-            f145aj.setVisibility(0);
+            gpsDataIcon.setVisibility(0);
             if (this.f170X) {
                 Configuration configuration = getResources().getConfiguration();
                 if (configuration.orientation == 2) {
@@ -1603,7 +1608,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             if (this.f214t != null) {
                 this.f214t.cancel(true);
             }
-            f145aj.setVisibility(4);
+            gpsDataIcon.setVisibility(4);
             if (this.f170X) {
                 Configuration configuration2 = getResources().getConfiguration();
                 if (configuration2.orientation == 2) {
@@ -1613,7 +1618,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 }
             }
         }
-        if (this.f176aE.getBoolean("keep_screen_on", false)) {
+        if (this.sharedPreferences.getBoolean("keep_screen_on", false)) {
             getWindow().addFlags(128);
         } else {
             getWindow().clearFlags(128);

@@ -22,7 +22,7 @@ class C0082x implements LocationListener {
         this.f382a.f213s = location;
         MobileTC.m73a(this.f382a.f213s);
         ChartDisplayActivity.m210h(this.f382a).invalidate();
-        if (this.f382a.f159L.isShowing()) {
+        if (this.f382a.noManualPopup.isShowing()) {
             ChartDisplayActivity.m211i(this.f382a);
         }
         if (this.f382a.f214t != null) {

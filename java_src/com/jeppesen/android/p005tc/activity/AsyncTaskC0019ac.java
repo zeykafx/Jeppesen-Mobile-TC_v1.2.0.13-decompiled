@@ -40,18 +40,18 @@ class AsyncTaskC0019ac extends AsyncTask {
     /* access modifiers changed from: protected */
     /* renamed from: a */
     public void onPostExecute(List list) {
-        ((TextView) this.f296a.f157J.findViewById(R.id.manualsHeader)).setText(this.f296a.getString(R.string.manualsTitle));
+        ((TextView) this.f296a.ManualListView.findViewById(R.id.manualsHeader)).setText(this.f296a.getString(R.string.manualsTitle));
         C0031ao aoVar = new C0031ao(this.f296a.getBaseContext(), R.layout.manualslist_item, R.id.manualTypeValue, C0031ao.m325a(list));
-        this.f296a.f210p = (ListView) this.f296a.f157J.findViewById(R.id.manualslist_list_view);
+        this.f296a.f210p = (ListView) this.f296a.ManualListView.findViewById(R.id.manualslist_list_view);
         this.f296a.f210p.setAdapter((ListAdapter) aoVar);
         if (list == null || list.size() < 1) {
-            if (!this.f296a.f155H.isShowing()) {
-                this.f296a.f155H.showAsDropDown(this.f296a.f156I, 2, 0);
-                ChartDisplayActivity.m192a(this.f296a, this.f296a.f155H, 350, this.f296a.f156I);
+            if (!this.f296a.manualPopupIcon.isShowing()) {
+                this.f296a.manualPopupIcon.showAsDropDown(this.f296a.manualIcon, 2, 0);
+                ChartDisplayActivity.m192a(this.f296a, this.f296a.manualPopupIcon, 350, this.f296a.manualIcon);
             }
-        } else if (!this.f296a.f154G.isShowing()) {
-            this.f296a.f154G.showAsDropDown(this.f296a.f156I, 2, 0);
-            ChartDisplayActivity.m192a(this.f296a, this.f296a.f154G, 350, this.f296a.f156I);
+        } else if (!this.f296a.versionValueView.isShowing()) {
+            this.f296a.versionValueView.showAsDropDown(this.f296a.manualIcon, 2, 0);
+            ChartDisplayActivity.m192a(this.f296a, this.f296a.versionValueView, 350, this.f296a.manualIcon);
         }
     }
 }

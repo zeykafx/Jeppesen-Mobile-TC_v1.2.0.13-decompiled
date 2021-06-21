@@ -267,7 +267,7 @@ public class ActivationActivity extends Activity {
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         this.f126n = PreferenceManager.getDefaultSharedPreferences(this);
-        setContentView(R.layout.activation);
+//        setContentView(R.layout.activation);
         this.f124l = (ProgressBar) findViewById(R.id.activation_progress);
     }
 
