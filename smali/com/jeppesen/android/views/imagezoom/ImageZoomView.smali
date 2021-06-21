@@ -162,21 +162,21 @@
 
     if-gtz v2, :cond_1
 
-    invoke-virtual {v0}, Landroid/location/Location;->hasSpeed()Z
+    #invoke-virtual {v0}, Landroid/location/Location;->hasSpeed()Z
 
-    move-result v2
+    #move-result v2
 
-    if-eqz v2, :cond_0
+    #if-eqz v2, :cond_0
 
-    invoke-virtual {v0}, Landroid/location/Location;->getSpeed()F
+    #invoke-virtual {v0}, Landroid/location/Location;->getSpeed()F
 
-    move-result v2
+    #move-result v2
 
-    const/high16 v3, 0x41a40000    # 20.5f
+    #const/high16 v3, 0x41a40000    # 20.5f
 
-    cmpg-float v2, v2, v3
+    #cmpg-float v2, v2, v3
 
-    if-gtz v2, :cond_1
+    #if-gtz v2, :cond_1
 
     :cond_0
     invoke-virtual {v0}, Landroid/location/Location;->getLatitude()D
@@ -203,17 +203,17 @@
 
     invoke-virtual {v5, v2, v3}, Landroid/graphics/Matrix;->postScale(FF)Z
 
-    invoke-virtual {v0}, Landroid/location/Location;->getSpeed()F
+    #invoke-virtual {v0}, Landroid/location/Location;->getSpeed()F
 
-    move-result v2
+    #move-result v2
 
-    float-to-double v2, v2
+    #float-to-double v2, v2
 
-    const-wide v8, 0x3fb999999999999aL    # 0.1
+    #const-wide v8, 0x3fb999999999999aL    # 0.1
 
-    cmpl-double v2, v2, v8
+    #cmpl-double v2, v2, v8
 
-    if-lez v2, :cond_2
+    #if-lez v2, :cond_2
 
     invoke-virtual {v0}, Landroid/location/Location;->hasBearing()Z
 
@@ -949,23 +949,23 @@
 
     move-result v1
 
-    if-eqz v1, :cond_4
+    #if-eqz v1, :cond_4
 
-    invoke-static {}, Lcom/jeppesen/android/echarts/TCLNatives;->currentChartIsAnOwnshipChartType()Z
+    #invoke-static {}, Lcom/jeppesen/android/echarts/TCLNatives;->currentChartIsAnOwnshipChartType()Z
 
-    move-result v1
+    #move-result v1
 
-    if-eqz v1, :cond_4
+    #if-eqz v1, :cond_4
 
-    invoke-static {}, Lcom/jeppesen/android/echarts/TCLNatives;->isTclGeoRefd()Z
+    #invoke-static {}, Lcom/jeppesen/android/echarts/TCLNatives;->isTclGeoRefd()Z
 
-    move-result v1
+    #move-result v1
 
-    if-eqz v1, :cond_4
+    #if-eqz v1, :cond_4
 
     invoke-virtual {p0, p1, v5, v0}, Lcom/jeppesen/android/views/imagezoom/ImageZoomView;->a(Landroid/graphics/Canvas;FF)V
 
-    :cond_4
+    #:cond_4
     :goto_0
     return-void
 

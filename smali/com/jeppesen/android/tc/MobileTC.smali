@@ -327,7 +327,7 @@
 
     if-eqz v1, :cond_1
 
-    const-string v0, "rooted"
+    const-string v0, "nopee, not rooted lmao"
 
     :goto_1
     return-object v0
@@ -417,7 +417,7 @@
 
     if-nez v1, :cond_2
 
-    const-string v0, "failed"
+    const-string v0, "fuck off"
 
     goto :goto_1
 
@@ -436,7 +436,7 @@
 
     if-nez v2, :cond_3
 
-    const-string v0, "failed"
+    const-string v0, "nopee, not failed"
 
     goto :goto_1
 

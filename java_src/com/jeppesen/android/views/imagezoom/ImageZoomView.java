@@ -84,7 +84,7 @@ public class ImageZoomView extends ImageView implements Observer {
 
     /* access modifiers changed from: protected */
     /* renamed from: a */
-    public void mo407a(Canvas canvas, float f, float f2) {
+    public void placeAircraftOnCanva(Canvas canvas, float f, float f2) {
         IntPoint tclLatLonToXY;
         Location g = MobileTC.m83g();
         if (g != null && g.hasAccuracy() && g.getAccuracy() <= 17.0f) {
@@ -180,9 +180,10 @@ public class ImageZoomView extends ImageView implements Observer {
             this.f481e.bottom = this.f487k;
         }
         canvas.drawBitmap(this.f484h, this.f481e, this.f482f, this.f480d);
-        if (MobileTC.m84h() && TCLNatives.currentChartIsAnOwnshipChartType() && TCLNatives.isTclGeoRefd()) {
-            mo407a(canvas, a3, b2);
-        }
+//        if (MobileTC.m84h() && TCLNatives.currentChartIsAnOwnshipChartType() && TCLNatives.isTclGeoRefd()) {
+        placeAircraftOnCanva(canvas, a3, b2);
+        // always show the plane on the map
+//        }
     }
 
     /* access modifiers changed from: protected */
