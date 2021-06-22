@@ -123,14 +123,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundResource(I)V
 
-    const/16 v1, 0x14a
+    const/16 v1, 0x1fa
 
-    const/16 v0, -0x142
+    const/16 v0, 0x1f2
 
     :goto_0
     new-instance v3, Landroid/widget/PopupWindow;
 
-    const/16 v4, 0x46
+    const/16 v4, 0x86
 
     invoke-direct {v3, v2, v1, v4, v5}, Landroid/widget/PopupWindow;-><init>(Landroid/view/View;IIZ)V
 
@@ -156,9 +156,9 @@
     return v5
 
     :cond_0
-    const/16 v1, 0x10e
+    const/16 v1, 0x1a0
 
-    const/16 v0, -0x107
+    const/16 v0, -0x1c0
 
     goto :goto_0
 

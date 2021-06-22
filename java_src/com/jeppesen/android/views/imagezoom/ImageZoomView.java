@@ -23,10 +23,10 @@ public class ImageZoomView extends ImageView implements Observer {
     private static final String f477a = ImageZoomView.class.getSimpleName();
 
     /* renamed from: b */
-    private C0121b f478b;
+    private C0121b customObserver;
 
     /* renamed from: c */
-    private View$OnTouchListenerC0125f f479c;
+    private View$OnTouchListenerC0125f viewTouchListener;
 
     /* renamed from: d */
     private final Paint f480d = new Paint(2);
@@ -70,8 +70,8 @@ public class ImageZoomView extends ImageView implements Observer {
     public ImageZoomView(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         this.f488l = context;
-        this.f478b = new C0121b();
-        this.f479c = new View$OnTouchListenerC0125f(this.f488l);
+        this.customObserver = new C0121b();
+        this.viewTouchListener = new View$OnTouchListenerC0125f(this.f488l);
     }
 
     /* renamed from: a */
@@ -86,7 +86,7 @@ public class ImageZoomView extends ImageView implements Observer {
     /* renamed from: a */
     public void placeAircraftOnCanva(Canvas canvas, float f, float f2) {
         IntPoint tclLatLonToXY;
-        Location g = MobileTC.m83g();
+        Location g = MobileTC.currentLocation();
         if (g != null && g.hasAccuracy() && g.getAccuracy() <= 17.0f) {
             if ((!g.hasSpeed() || g.getSpeed() <= 20.5f) && (tclLatLonToXY = TCLNatives.getTclLatLonToXY(g.getLatitude(), g.getLongitude())) != null) {
                 Matrix matrix = new Matrix();
@@ -104,19 +104,19 @@ public class ImageZoomView extends ImageView implements Observer {
     }
 
     /* renamed from: a */
-    public void mo408a(boolean z) {
+    public void setOnTouchListenerToViewTouchListener(boolean z) {
         if (z) {
-            setOnTouchListener(this.f479c);
+            setOnTouchListener(this.viewTouchListener);
         } else {
             setOnTouchListener(null);
         }
     }
 
     /* renamed from: b */
-    public void mo409b() {
-        this.f479c.mo439a(this.f478b);
-        setZoomState(this.f478b.mo419a());
-        this.f478b.mo422a(getAspectQuotient());
+    public void setTouchListenerAndMoreHeightStuff() {
+        this.viewTouchListener.mo439a(this.customObserver);
+        setZoomState(this.customObserver.getEmptyObserverOrInitObsv());
+        this.customObserver.mo422a(getAspectQuotient());
         this.f489m = BitmapFactory.decodeResource(getResources(), R.drawable.ownship_active);
         this.f492p = new IntPoint(this.f489m.getWidth() / 2, this.f489m.getHeight() / 2);
         this.f490n = BitmapFactory.decodeResource(getResources(), R.drawable.ownship_no_heading);
@@ -124,11 +124,11 @@ public class ImageZoomView extends ImageView implements Observer {
 
     /* renamed from: c */
     public void mo410c() {
-        if (this.f478b != null && this.f478b.mo419a() != null) {
-            this.f478b.mo419a().mo447c(0.5f);
-            this.f478b.mo419a().mo448d(0.5f);
-            this.f478b.mo419a().mo449e(1.0f);
-            this.f478b.mo419a().notifyObservers();
+        if (this.customObserver != null && this.customObserver.getEmptyObserverOrInitObsv() != null) {
+            this.customObserver.getEmptyObserverOrInitObsv().mo447c(0.5f);
+            this.customObserver.getEmptyObserverOrInitObsv().mo448d(0.5f);
+            this.customObserver.getEmptyObserverOrInitObsv().mo449e(1.0f);
+            this.customObserver.getEmptyObserverOrInitObsv().notifyObservers();
         }
     }
 

@@ -171,13 +171,13 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private Runnable f168U = new RunnableC0074p(this);
 
     /* renamed from: W */
-    private ImageZoomView f169W;
+    private ImageZoomView imageZoomView;
 
     /* renamed from: X */
     private boolean f170X = false;
 
     /* renamed from: Y */
-    private TCLGLSurfaceView f171Y;
+    private TCLGLSurfaceView surfaceView;
 
     /* renamed from: Z */
     private TextView f172Z;
@@ -204,7 +204,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private long f179aa = 0;
 
     /* renamed from: ab */
-    private String f180ab;
+    private String chartName;
 
     /* renamed from: ac */
     private PopupWindow f181ac;
@@ -225,7 +225,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     private Iterator f186aq = null;
 
     /* renamed from: ar */
-    private Chart f187ar = null;
+    private Chart chartToShow = null;
 
     /* renamed from: as */
     private boolean f188as = true;
@@ -352,7 +352,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* access modifiers changed from: public */
     /* renamed from: a */
-    private void m194a(Chart chart, boolean z) {
+    private void positionChartOnSideScrubber(Chart chart, boolean z) {
         C0034ar arVar;
         int position;
         if (chart != null && (position = (arVar = (C0034ar) this.f211q.getAdapter()).getPosition(chart)) >= 0) {
@@ -387,12 +387,12 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         if (chart == null) {
             return false;
         }
-        if (C0111i.m421c(chart)) {
-            C0111i.m426e(chart);
+        if (C0111i.containsFavChart(chart)) {
+            C0111i.removeFavChart(chart);
             C0111i.m415a(getApplicationContext());
             return false;
         }
-        C0111i.m424d(chart);
+        C0111i.addFavChart(chart);
         C0111i.m415a(getApplicationContext());
         return true;
     }
@@ -400,29 +400,31 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     /* access modifiers changed from: public */
     /* renamed from: b */
     private void m204b(Chart chart) {
-        Log.d(f136V, "selectedChart: " + chart.mo472b());
+        Log.d(f136V, "selectedChart: " + chart.getChartFileName());
         try {
             String b = JITHandler.m532b(chart);
             if (b == null) {
-                MobileTC.m70a(this, "Unable to extract Chart " + chart.mo472b() + " for Airport " + chart.mo469a() + " from current database");
+                MobileTC.m70a(this, "Unable to extract Chart " + chart.getChartFileName() + " for Airport " + chart.mo469a() + " from current database");
                 return;
             }
             if (JeppAndroidApp.f436a) {
                 this.f179aa = System.nanoTime();
             }
             m229s();
-            this.f180ab = chart.mo472b();
+            this.chartName = chart.getChartFileName();
             TCLNatives.setPathToTcl(b);
             TCLNatives.setIcao(chart.mo469a());
             TCLNatives.setIndexNumber(chart.mo474c());
-            TCLNatives.setProcedureId(chart.mo472b());
+            TCLNatives.setProcedureId(chart.getChartFileName());
             TCLNatives.setChartType(chart.mo476d());
-            MobileTC.m88l();
-            this.f171Y.requestRender();
-            this.f187ar = chart;
-            mo156g();
+            MobileTC.clearBitmap();
+            this.surfaceView.requestRender();
+            this.chartToShow = chart;
+            // saves the currently selected chart in the preferences
+            saveCurrentlySelectedChartToPreferences();
+            // sets the fav icon to the full star if the chart is a fav
             ImageView imageView = (ImageView) findViewById(R.id.imageButton3);
-            if (C0111i.m421c(this.f187ar)) {
+            if (C0111i.containsFavChart(this.chartToShow)) {
                 imageView.setImageResource(R.drawable.titlechartfavorite_on);
             } else {
                 imageView.setImageResource(R.drawable.titlechartfavorite);
@@ -523,7 +525,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     /* renamed from: r */
     private void m227r() {
         String str;
-        Location g = MobileTC.m83g();
+        Location g = MobileTC.currentLocation();
         TextView textView = (TextView) this.gpsDataPopup.findViewById(R.id.GPSTime);
         TextView textView2 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSAccuracy);
         TextView textView3 = (TextView) this.gpsDataPopup.findViewById(R.id.GPSAircraftPositionStatus);
@@ -583,34 +585,34 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     /* access modifiers changed from: public */
     /* renamed from: s */
     private void m229s() {
-        this.f169W.setBackgroundResource(R.drawable.chart_stack_bg_9);
-        this.f169W.setImageResource(0);
-        this.f169W.setScaleType(ImageView.ScaleType.FIT_START);
-        this.f169W.mo410c();
-        this.f169W.mo408a(true);
+        this.imageZoomView.setBackgroundResource(R.drawable.chart_stack_bg_9);
+        this.imageZoomView.setImageResource(0);
+        this.imageZoomView.setScaleType(ImageView.ScaleType.FIT_XY);
+        this.imageZoomView.mo410c();
+        this.imageZoomView.setOnTouchListenerToViewTouchListener(true);
         this.f170X = true;
 //        this.f211q.setVisibility(0); // REMOVED FROM SMALI
     }
 
     /* renamed from: t */
     private void m230t() {
-        this.f169W.setScaleType(ImageView.ScaleType.FIT_XY);
+        this.imageZoomView.setScaleType(ImageView.ScaleType.FIT_XY);
         if (MobileTC.m84h()) {
-            this.f169W.setImageResource(R.drawable.jtstips_1_9_gps);
+            this.imageZoomView.setImageResource(R.drawable.jtstips_1_9_gps);
         } else {
-            this.f169W.setImageResource(R.drawable.jtstips_1_9);
+            this.imageZoomView.setImageResource(R.drawable.jtstips_1_9);
         }
         this.f170X = true;
-        this.f169W.setBackgroundResource(0);
-        this.f169W.mo408a(false);
+        this.imageZoomView.setBackgroundResource(0);
+        this.imageZoomView.setOnTouchListenerToViewTouchListener(true);
 //        this.f211q.setVisibility(8);
     }
 
     /* renamed from: u */
     private void m231u() {
         this.f170X = true;
-        this.f169W.setBackgroundResource(0);
-        this.f169W.mo408a(true);
+        this.imageZoomView.setBackgroundResource(0);
+        this.imageZoomView.setOnTouchListenerToViewTouchListener(true);
 //        this.f211q.setVisibility(8);
     }
 
@@ -815,8 +817,8 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     public void CCNOnClick(View view) {
         if (this.f184ao != null) {
             String str = "";
-            if (this.f187ar != null) {
-                str = this.f187ar.mo469a();
+            if (this.chartToShow != null) {
+                str = this.chartToShow.mo469a();
             } else if (this.f184ao != null) {
                 str = this.f184ao.mo451a();
             }
@@ -839,9 +841,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 imageView.setImageResource(R.drawable.fav_on);
             }
         }
-        if (chart == this.f187ar) {
+        if (chart == this.chartToShow) {
             ImageView imageView2 = (ImageView) findViewById(R.id.imageButton3);
-            if (C0111i.m421c(this.f187ar)) {
+            if (C0111i.containsFavChart(this.chartToShow)) {
                 imageView2.setImageResource(R.drawable.titlechartfavorite_on);
             } else {
                 imageView2.setImageResource(R.drawable.titlechartfavorite);
@@ -935,9 +937,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             MobileTC.m70a(this, "Currently rendering chart. Please wait.");
             return;
         }
-        MobileTC.m80d(true);
+        MobileTC.m80d(false);
         Chart chart = (Chart) view.getTag();
-        m194a(chart, false);
+        positionChartOnSideScrubber(chart, false);
         m221o();
         m204b(chart);
     }
@@ -950,7 +952,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         Chart chart = (Chart) view.getTag();
         m204b(chart);
         m219n();
-        m194a(chart, true);
+        positionChartOnSideScrubber(chart, true);
     }
 
     public void DimmerOnClick(View view) {
@@ -973,7 +975,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     public void FavAllOnClick(View view) {
         Log.d(f136V, "FavAllOnClick");
         if (this.f184ao != null) {
-            String a = this.f187ar != null ? this.f187ar.mo469a() : this.f184ao != null ? this.f184ao.mo451a() : "";
+            String a = this.chartToShow != null ? this.chartToShow.mo469a() : this.f184ao != null ? this.f184ao.mo451a() : "";
             List c = C0111i.m419c(a);
             if (c != null && c.size() != 0) {
                 List a2 = C0025ai.m320a(c);
@@ -1054,7 +1056,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     }
 
     public void RemoveTips(View view) {
-        this.f169W.setOnClickListener(null);
+        this.imageZoomView.setOnClickListener(null);
         mo148a();
         this.f170X = true;
         if (MobileTC.f436a) {
@@ -1096,9 +1098,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     public void ToggleFavoriteOnClick(View view) {
         Log.d(f136V, "ToggleFavoriteOnClick");
         ImageView imageView = (ImageView) view;
-        if (this.f187ar == null || this.f184ao == null) {
-            Log.d(f136V, "currentlySelectedChart is " + this.f187ar + " airport is " + this.f184ao);
-        } else if (m198a(this.f187ar)) {
+        if (this.chartToShow == null || this.f184ao == null) {
+            Log.d(f136V, "currentlySelectedChart is " + this.chartToShow + " airport is " + this.f184ao);
+        } else if (m198a(this.chartToShow)) {
             if (imageView.getId() == R.id.imageButton3) {
                 imageView.setImageResource(R.drawable.titlechartfavorite_on);
             } else {
@@ -1114,10 +1116,10 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     /* renamed from: a */
     public void mo148a() {
         try {
-            if (this.f169W.getDrawable() != null) {
-                this.f169W.getDrawable().setCallback(null);
+            if (this.imageZoomView.getDrawable() != null) {
+                this.imageZoomView.getDrawable().setCallback(null);
             }
-            this.f169W.mo406a();
+            this.imageZoomView.mo406a();
         } catch (Exception e) {
             Log.e(f136V, "Error clearing drawable in image view", e);
         }
@@ -1128,9 +1130,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* renamed from: b */
     public void mo150b() {
-        if (MobileTC.m87k() != null) { // return a bimap, so this must be the splash screen image
+        if (MobileTC.getCurrentBitmap() != null) { // return a bimap, so this must be the splash screen image
             m229s();
-            this.f169W.setImage(MobileTC.m87k());
+            this.imageZoomView.setImage(MobileTC.getCurrentBitmap());
         } else if (MobileTC.m85i() || MobileTC.m86j()) {
             m230t();
         } else {
@@ -1146,11 +1148,11 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         if (MobileTC.f436a) {
             Log.i(f136V, "renderComplete() called in ChartSurfaceView");
         }
-        if (this.f171Y.getBitmap() != null) {
-            MobileTC.m72a(this.f171Y.getBitmap());
+        if (this.surfaceView.getBitmap() != null) {
+            MobileTC.m72a(this.surfaceView.getBitmap());
         }
         System.gc();
-        this.f172Z.setText(this.f180ab);
+        this.f172Z.setText(this.chartName);
         mo150b();
         MobileTC.m80d(false);
         if (MobileTC.f436a) {
@@ -1184,30 +1186,30 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     }
 
     /* renamed from: g */
-    public void mo156g() {
-        if (this.f187ar != null) {
-            C0115m.m449a(getString(R.string.selectedChart), C0111i.m413a(this.f187ar.mo469a(), this.f187ar.mo474c()), getApplicationContext());
+    public void saveCurrentlySelectedChartToPreferences() {
+        if (this.chartToShow != null) {
+            C0115m.m449a(getString(R.string.selectedChart), C0111i.m413a(this.chartToShow.mo469a(), this.chartToShow.mo474c()), getApplicationContext());
         }
     }
 
     /* renamed from: h */
     public Chart mo157h() {
-        this.f187ar = null;
+        this.chartToShow = null;
         String a = C0115m.m444a(getString(R.string.selectedChart), getApplicationContext());
         if (!a.isEmpty()) {
             String a2 = C0111i.m412a(a);
             String b = C0111i.m417b(a);
             for (Chart chart : JITHandler.m535c(a2)) {
                 if (chart != null && chart.mo474c().equals(b)) {
-                    this.f187ar = chart;
+                    this.chartToShow = chart;
                     return chart;
                 }
             }
-            if (this.f187ar == null) {
+            if (this.chartToShow == null) {
                 MobileTC.m70a(this, "Your previously viewed chart is not available");
             }
         }
-        return this.f187ar;
+        return this.chartToShow;
     }
 
     /* renamed from: i */
@@ -1238,18 +1240,18 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             findViewById(R.id.chartdisplaylayout).setBackgroundResource(R.drawable.background_land);
             if (this.f170X) {
                 if (MobileTC.m84h()) {
-                    this.f169W.setImageResource(R.drawable.jtstips_land_gps);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_land_gps);
                 } else {
-                    this.f169W.setImageResource(R.drawable.jtstips_land);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_land);
                 }
             }
         } else {
             findViewById(R.id.chartdisplaylayout).setBackgroundResource(R.drawable.background_port);
             if (this.f170X) {
                 if (MobileTC.m84h()) {
-                    this.f169W.setImageResource(R.drawable.jtstips_port_gps);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_port_gps);
                 } else {
-                    this.f169W.setImageResource(R.drawable.jtstips_port);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_port);
                 }
             }
         }
@@ -1286,16 +1288,16 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 JITHandler.m533b();
                 return true;
             case UpdateService.f409f /*{ENCODED_INT: 4}*/:
-                if (MobileTC.m87k() == null) {
+                if (MobileTC.getCurrentBitmap() == null) {
                     return true;
                 }
-                C0116n.m456a(MobileTC.m87k(), this.f180ab);
+                C0116n.m456a(MobileTC.getCurrentBitmap(), this.chartName);
                 return true;
             case UpdateService.f410g /*{ENCODED_INT: 5}*/:
-                if (MobileTC.m87k() == null) {
+                if (MobileTC.getCurrentBitmap() == null) {
                     return true;
                 }
-                C0116n.m456a(MobileTC.m87k(), this.f180ab);
+                C0116n.m456a(MobileTC.getCurrentBitmap(), this.chartName);
                 return true;
             case UpdateService.f411h /*{ENCODED_INT: 6}*/:
                 m232v();
@@ -1316,12 +1318,12 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 return true;
             case UpdateService.f414k /*{ENCODED_INT: 9}*/:
                 C0115m.m449a(getString(R.string.selectedChart), (String) null, getApplicationContext());
-                this.f187ar = null;
+                this.chartToShow = null;
                 mo148a();
                 MobileTC.m72a((Bitmap) null);
                 mo150b();
-                this.f169W.invalidate();
-                this.f169W.setOnClickListener(this.f166S);
+                this.imageZoomView.invalidate();
+                this.imageZoomView.setOnClickListener(this.f166S);
                 return true;
             case UpdateService.f415l /*{ENCODED_INT: 10}*/:
                 if (this.f194ay) {
@@ -1345,12 +1347,12 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 return true;
             case 13:
                 C0115m.m449a(getString(R.string.selectedChart), (String) null, getApplicationContext());
-                this.f187ar = null;
+                this.chartToShow = null;
                 mo148a();
                 MobileTC.m72a((Bitmap) null);
                 mo150b();
-                this.f169W.invalidate();
-                this.f169W.setOnClickListener(this.f166S);
+                this.imageZoomView.invalidate();
+                this.imageZoomView.setOnClickListener(this.f166S);
                 SharedPreferences.Editor edit = this.sharedPreferences.edit();
                 edit.remove(this.f178aG);
                 edit.commit();
@@ -1368,11 +1370,11 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             setContentView(R.layout.chartdisplay);
             this.f211q = (ListView) findViewById(R.id.sidescrubber_listview);
             float f = getResources().getDisplayMetrics().density;
-            this.f169W = (ImageZoomView) findViewById(R.id.imageView); // represents the actual image viewer, not the gl surface i think
-            this.f169W.mo409b();
-            this.f171Y = (TCLGLSurfaceView) findViewById(R.id.glSurfaceView);
-            this.f171Y.setMyHandler(this.f163P);
-            this.f169W.setOnClickListener(this.f166S);
+            this.imageZoomView = (ImageZoomView) findViewById(R.id.imageView); // represents the actual image viewer, not the gl surface i think
+            this.imageZoomView.setTouchListenerAndMoreHeightStuff();
+            this.surfaceView = (TCLGLSurfaceView) findViewById(R.id.glSurfaceView);
+            this.surfaceView.setMyHandler(this.f163P);
+            this.imageZoomView.setOnClickListener(this.f166S);
             try {
                 packageInfo = getPackageManager().getPackageInfo(getPackageName(), 1);
             } catch (PackageManager.NameNotFoundException e) {
@@ -1451,7 +1453,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.manualPopupIcon.setContentView(this.noManualView);
             this.noManualPopup = new PopupWindow(this);
             this.noManualPopup.setWidth((int) (350.0f * f));
-            this.noManualPopup.setHeight(380);
+            this.noManualPopup.setHeight(1535);
             this.noManualPopup.setFocusable(true);
             this.noManualPopup.setBackgroundDrawable(drawable);
             this.gpsDataPopup = this.layoutInflater.inflate(R.layout.gpsdatapopup, (ViewGroup) null);
@@ -1555,7 +1557,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
     public void onDestroy() {
         super.onDestroy();
         mo148a();
-        this.f169W.setOnTouchListener(null);
+        this.imageZoomView.setOnTouchListener(null);
     }
 
     public void onPause() {
@@ -1580,7 +1582,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         if (this.sharedPreferences == null) {
             this.sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         }
-        MobileTC.m74a(this.sharedPreferences.getBoolean("show_ownship_apt_diagram", false));
+        MobileTC.m74a(this.sharedPreferences.getBoolean("show_ownship_apt_diagram", true));
         // something to do with quick tips
         if (this.sharedPreferences.getBoolean("quick_tips_preference", false)) {
             MobileTC.m78c(true);
@@ -1588,7 +1590,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             MobileTC.m72a((Bitmap) null);
             this.f170X = true;
             mo150b();
-            this.f169W.setOnClickListener(this.f166S);
+            this.imageZoomView.setOnClickListener(this.f166S);
         }
         // place ownship icon on map I think
         if (MobileTC.m84h()) {
@@ -1597,9 +1599,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             if (this.f170X) {
                 Configuration configuration = getResources().getConfiguration();
                 if (configuration.orientation == 2) {
-                    this.f169W.setImageResource(R.drawable.jtstips_land_gps);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_land_gps);
                 } else if (configuration.orientation == 1) {
-                    this.f169W.setImageResource(R.drawable.jtstips_port_gps);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_port_gps);
                 }
             }
         } else {
@@ -1612,9 +1614,9 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             if (this.f170X) {
                 Configuration configuration2 = getResources().getConfiguration();
                 if (configuration2.orientation == 2) {
-                    this.f169W.setImageResource(R.drawable.jtstips_land);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_land);
                 } else if (configuration2.orientation == 1) {
-                    this.f169W.setImageResource(R.drawable.jtstips_port);
+                    this.imageZoomView.setImageResource(R.drawable.jtstips_port);
                 }
             }
         }

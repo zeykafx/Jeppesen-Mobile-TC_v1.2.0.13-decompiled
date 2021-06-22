@@ -22,7 +22,7 @@ public class C0034ar extends ArrayAdapter {
     private Context f321c;
 
     /* renamed from: d */
-    private View.OnLongClickListener f322d = new View$OnLongClickListenerC0035as(this);
+    private View.OnLongClickListener f322d = new longClickListenerScrubberItemChartName(this);
 
     public C0034ar(Context context, int i, int i2, List list) {
         super(context, i, i2, list);
@@ -49,7 +49,7 @@ public class C0034ar extends ArrayAdapter {
         } else {
             view.setBackgroundResource(R.drawable.sidescrubber_whitetab);
         }
-        textView.setText(chart.mo472b());
+        textView.setText(chart.getChartFileName());
         view.forceLayout();
         return view;
     }

@@ -64,7 +64,7 @@ public class C0011b {
             if ("mounted_ro".equals(externalStorageState)) {
                 Log.w(C0010a.f87t, "ExternalStorageState: READ_ONLY!");
             } else {
-                Log.e(C0010a.f87t, "ExternalStorageState: FUBAR!!");
+                Log.e(C0010a.f87t, "ExternalStorageState: FOOBAR!!");
             }
         }
         File file = new File(MobileTC.m77c().getAbsolutePath() + File.separatorChar + this.f94a.optString(C0010a.f76i));

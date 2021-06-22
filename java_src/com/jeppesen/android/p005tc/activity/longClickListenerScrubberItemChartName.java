@@ -13,12 +13,12 @@ import com.jeppesen.jeppview.jtca.data.Chart;
 
 /* access modifiers changed from: package-private */
 /* renamed from: com.jeppesen.android.tc.activity.as */
-public class View$OnLongClickListenerC0035as implements View.OnLongClickListener {
+public class longClickListenerScrubberItemChartName implements View.OnLongClickListener {
 
     /* renamed from: a */
     final /* synthetic */ C0034ar f323a;
 
-    View$OnLongClickListenerC0035as(C0034ar arVar) {
+    longClickListenerScrubberItemChartName(C0034ar arVar) {
         this.f323a = arVar;
     }
 
@@ -28,8 +28,8 @@ public class View$OnLongClickListenerC0035as implements View.OnLongClickListener
         Log.d(C0034ar.f319a, "onLongClick " + view.getTag());
         Chart chart = (Chart) view.getTag();
         View inflate = ((LayoutInflater) this.f323a.f321c.getSystemService("layout_inflater")).inflate(R.layout.scrubber_procedure_popup, (ViewGroup) null);
-        ((TextView) inflate.findViewById(R.id.sidescrubber_procedure_text)).setText(chart.mo472b());
-        if (C0111i.m421c(chart)) {
+        ((TextView) inflate.findViewById(R.id.sidescrubber_procedure_text)).setText(chart.getChartFileName());
+        if (C0111i.containsFavChart(chart)) {
             inflate.findViewById(R.id.sidescrubber_procedure_fav).setVisibility(0);
             inflate.findViewById(R.id.sidescrubber_tooltip_layout).setBackgroundResource(R.drawable.scrubber_favtooltip_glow);
             i = 330;

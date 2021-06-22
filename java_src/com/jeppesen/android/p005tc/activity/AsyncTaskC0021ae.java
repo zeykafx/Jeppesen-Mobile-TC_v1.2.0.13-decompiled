@@ -33,7 +33,7 @@ class AsyncTaskC0021ae extends AsyncTask {
     /* access modifiers changed from: protected */
     /* renamed from: a */
     public void onPostExecute(Void r3) {
-        if (MobileTC.m83g() != null && MobileTC.m83g().equals(this.f298a)) {
+        if (MobileTC.currentLocation() != null && MobileTC.currentLocation().equals(this.f298a)) {
             ChartDisplayActivity.m212j(this.f299b).onLocationChanged(null);
         }
     }

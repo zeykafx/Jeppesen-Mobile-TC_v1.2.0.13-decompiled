@@ -115,7 +115,7 @@
     <string name="alert_dialog_username">Name:</string>
     <string name="alert_dialog_password">Password:</string>
     <string name="show_ownship_apt_diagram">Display Ownship</string>
-    <string name="ownship_summary">Airport diagrams only</string>
+    <string name="ownship_summary">Displays the location every geo-referenced chart</string>
     <string name="prefs_turn_off_sleep_mode">Turn Off Sleep Mode</string>
     <string name="prefs_turn_off_sleep_mode_summary">Turning off sleep mode will affect battery life</string>
     <string name="deactivate">Deactivate</string>

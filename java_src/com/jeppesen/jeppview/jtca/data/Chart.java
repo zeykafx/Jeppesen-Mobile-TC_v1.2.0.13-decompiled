@@ -61,7 +61,7 @@ public class Chart {
     }
 
     /* renamed from: b */
-    public String mo472b() {
+    public String getChartFileName() {
         return this.f615d;
     }
 

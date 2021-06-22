@@ -16,7 +16,7 @@ public class C0111i {
     private static ArrayList f465a = new ArrayList();
 
     /* renamed from: b */
-    private static ArrayList f466b = new ArrayList();
+    private static ArrayList allFavCharts = new ArrayList();
 
     /* renamed from: c */
     private static final String f467c = C0115m.class.getSimpleName();
@@ -83,9 +83,9 @@ public class C0111i {
             }
             C0115m.m449a(context.getString(R.string.favoriteAirports), str, context);
         }
-        if (!f466b.isEmpty()) {
+        if (!allFavCharts.isEmpty()) {
             String str3 = "";
-            Iterator it2 = f466b.iterator();
+            Iterator it2 = allFavCharts.iterator();
             while (it2.hasNext()) {
                 String str4 = (String) it2.next();
                 if (i > 0) {
@@ -117,7 +117,7 @@ public class C0111i {
     /* renamed from: b */
     public static void m418b(Context context) {
         f465a.clear();
-        f466b.clear();
+        allFavCharts.clear();
         String a = C0115m.m444a(context.getString(R.string.favoriteAirports), context);
         if (!a.equals("")) {
             String[] split = a.split(f468d);
@@ -128,7 +128,7 @@ public class C0111i {
         String a2 = C0115m.m444a(context.getString(R.string.favoriteCharts), context);
         if (!a2.equals("")) {
             for (String str2 : a2.split(f468d)) {
-                f466b.add(str2);
+                allFavCharts.add(str2);
             }
         }
     }
@@ -139,7 +139,7 @@ public class C0111i {
         if (!str.equals("")) {
             for (Chart chart : JITHandler.m535c(str)) {
                 if (chart != null) {
-                    if (f466b.contains(m413a(chart.mo469a(), chart.mo474c()))) {
+                    if (allFavCharts.contains(m413a(chart.mo469a(), chart.mo474c()))) {
                         arrayList.add(chart);
                     }
                 }
@@ -155,11 +155,11 @@ public class C0111i {
     }
 
     /* renamed from: c */
-    public static boolean m421c(Chart chart) {
+    public static boolean containsFavChart(Chart chart) {
         if (chart == null) {
             return false;
         }
-        return f466b.contains(m413a(chart.mo469a(), chart.mo474c()));
+        return allFavCharts.contains(m413a(chart.mo469a(), chart.mo474c()));
     }
 
     /* renamed from: d */
@@ -169,16 +169,16 @@ public class C0111i {
 
     /* renamed from: d */
     public static void m423d(Context context) {
-        f466b.clear();
+        allFavCharts.clear();
         C0115m.m449a(context.getString(R.string.favoriteCharts), "", context);
     }
 
     /* renamed from: d */
-    public static void m424d(Chart chart) {
+    public static void addFavChart(Chart chart) {
         if (chart != null) {
             String a = m413a(chart.mo469a(), chart.mo474c());
-            if (!f466b.contains(a)) {
-                f466b.add(a);
+            if (!allFavCharts.contains(a)) {
+                allFavCharts.add(a);
             }
             m428f(chart.mo469a());
         }
@@ -191,9 +191,9 @@ public class C0111i {
     }
 
     /* renamed from: e */
-    public static void m426e(Chart chart) {
+    public static void removeFavChart(Chart chart) {
         if (chart != null) {
-            f466b.remove(m413a(chart.mo469a(), chart.mo474c()));
+            allFavCharts.remove(m413a(chart.mo469a(), chart.mo474c()));
         }
     }
 
@@ -217,7 +217,7 @@ public class C0111i {
         if (str != null) {
             f465a.remove(str);
             ArrayList arrayList = new ArrayList();
-            Iterator it = f466b.iterator();
+            Iterator it = allFavCharts.iterator();
             while (it.hasNext()) {
                 String str2 = (String) it.next();
                 if (str2.contains(str)) {
@@ -226,7 +226,7 @@ public class C0111i {
             }
             Iterator it2 = arrayList.iterator();
             while (it2.hasNext()) {
-                f466b.remove((String) it2.next());
+                allFavCharts.remove((String) it2.next());
             }
         }
     }

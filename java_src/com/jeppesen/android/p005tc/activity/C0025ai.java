@@ -72,15 +72,15 @@ public class C0025ai extends ArrayAdapter {
             view.getLayoutParams().height = -2;
         } else {
             imageView.setTag(chart);
-            if (C0111i.m421c(chart)) {
+            if (C0111i.containsFavChart(chart)) {
                 imageView.setImageResource(R.drawable.fav_on);
             } else {
                 imageView.setImageResource(R.drawable.fav_off);
             }
             textView2.setTag(chart);
-            String b = chart.mo472b();
+            String b = chart.getChartFileName();
             if (b != null && b.length() > f305b) {
-                b = chart.mo472b().substring(0, f305b) + "…";
+                b = chart.getChartFileName().substring(0, f305b) + "…";
             }
             textView2.setText(b);
             textView3.setTag(chart);

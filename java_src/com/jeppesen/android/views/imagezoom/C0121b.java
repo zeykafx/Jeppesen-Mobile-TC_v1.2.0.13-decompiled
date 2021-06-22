@@ -27,7 +27,7 @@ public class C0121b implements Observer {
     private static final float f499f = 0.4f;
 
     /* renamed from: g */
-    private final C0129j f500g = new C0129j();
+    private final C0129j emptyObserverOrInitObsv = new C0129j();
 
     /* renamed from: h */
     private C0120a f501h;
@@ -70,18 +70,18 @@ public class C0121b implements Observer {
 
     /* renamed from: d */
     private void m490d() {
-        if (this.f500g.mo446c() < f494a) {
-            this.f500g.mo449e(f494a);
-        } else if (this.f500g.mo446c() > f495b) {
-            this.f500g.mo449e(f495b);
+        if (this.emptyObserverOrInitObsv.mo446c() < f494a) {
+            this.emptyObserverOrInitObsv.mo449e(f494a);
+        } else if (this.emptyObserverOrInitObsv.mo446c() > f495b) {
+            this.emptyObserverOrInitObsv.mo449e(f495b);
         }
     }
 
     /* renamed from: e */
     private void m492e() {
         float a = this.f501h.mo417a();
-        float a2 = this.f500g.mo443a(a);
-        float b = this.f500g.mo445b(a);
+        float a2 = this.emptyObserverOrInitObsv.mo443a(a);
+        float b = this.emptyObserverOrInitObsv.mo445b(a);
         this.f504k = 0.5f - m485a(a2);
         this.f505l = m485a(a2) + 0.5f;
         this.f506m = 0.5f - m485a(b);
@@ -89,41 +89,41 @@ public class C0121b implements Observer {
     }
 
     /* renamed from: a */
-    public C0129j mo419a() {
-        return this.f500g;
+    public C0129j getEmptyObserverOrInitObsv() {
+        return this.emptyObserverOrInitObsv;
     }
 
     /* renamed from: a */
     public void mo420a(float f, float f2) {
         float a = this.f501h.mo417a();
-        float a2 = f / this.f500g.mo443a(a);
-        float b = f2 / this.f500g.mo445b(a);
-        if ((this.f500g.mo442a() > this.f505l && a2 > 0.0f) || (this.f500g.mo442a() < this.f504k && a2 < 0.0f)) {
+        float a2 = f / this.emptyObserverOrInitObsv.mo443a(a);
+        float b = f2 / this.emptyObserverOrInitObsv.mo445b(a);
+        if ((this.emptyObserverOrInitObsv.mo442a() > this.f505l && a2 > 0.0f) || (this.emptyObserverOrInitObsv.mo442a() < this.f504k && a2 < 0.0f)) {
             a2 *= f499f;
         }
-        if ((this.f500g.mo444b() > this.f507n && b > 0.0f) || (this.f500g.mo444b() < this.f506m && b < 0.0f)) {
+        if ((this.emptyObserverOrInitObsv.mo444b() > this.f507n && b > 0.0f) || (this.emptyObserverOrInitObsv.mo444b() < this.f506m && b < 0.0f)) {
             b *= f499f;
         }
-        float a3 = a2 + this.f500g.mo442a();
-        float b2 = b + this.f500g.mo444b();
-        this.f500g.mo447c(a3);
-        this.f500g.mo448d(b2);
-        this.f500g.notifyObservers();
+        float a3 = a2 + this.emptyObserverOrInitObsv.mo442a();
+        float b2 = b + this.emptyObserverOrInitObsv.mo444b();
+        this.emptyObserverOrInitObsv.mo447c(a3);
+        this.emptyObserverOrInitObsv.mo448d(b2);
+        this.emptyObserverOrInitObsv.notifyObservers();
     }
 
     /* renamed from: a */
     public void mo421a(float f, float f2, float f3) {
         float a = this.f501h.mo417a();
-        float a2 = this.f500g.mo443a(a);
-        float b = this.f500g.mo445b(a);
-        this.f500g.mo449e(this.f500g.mo446c() * f);
+        float a2 = this.emptyObserverOrInitObsv.mo443a(a);
+        float b = this.emptyObserverOrInitObsv.mo445b(a);
+        this.emptyObserverOrInitObsv.mo449e(this.emptyObserverOrInitObsv.mo446c() * f);
         m490d();
-        float a3 = this.f500g.mo443a(a);
-        float b2 = this.f500g.mo445b(a);
-        this.f500g.mo447c((((f494a / a2) - (f494a / a3)) * (f2 - 0.5f)) + this.f500g.mo442a());
-        this.f500g.mo448d((((f494a / b) - (f494a / b2)) * (f3 - 0.5f)) + this.f500g.mo444b());
+        float a3 = this.emptyObserverOrInitObsv.mo443a(a);
+        float b2 = this.emptyObserverOrInitObsv.mo445b(a);
+        this.emptyObserverOrInitObsv.mo447c((((f494a / a2) - (f494a / a3)) * (f2 - 0.5f)) + this.emptyObserverOrInitObsv.mo442a());
+        this.emptyObserverOrInitObsv.mo448d((((f494a / b) - (f494a / b2)) * (f3 - 0.5f)) + this.emptyObserverOrInitObsv.mo444b());
         m492e();
-        this.f500g.notifyObservers();
+        this.emptyObserverOrInitObsv.notifyObservers();
     }
 
     /* renamed from: a */
@@ -144,8 +144,8 @@ public class C0121b implements Observer {
     public void mo424b(float f, float f2) {
         float a = this.f501h.mo417a();
         long uptimeMillis = SystemClock.uptimeMillis();
-        this.f502i.mo430a(this.f500g.mo442a(), f / this.f500g.mo443a(a), uptimeMillis);
-        this.f503j.mo430a(this.f500g.mo444b(), f2 / this.f500g.mo445b(a), uptimeMillis);
+        this.f502i.mo430a(this.emptyObserverOrInitObsv.mo442a(), f / this.emptyObserverOrInitObsv.mo443a(a), uptimeMillis);
+        this.f503j.mo430a(this.emptyObserverOrInitObsv.mo444b(), f2 / this.emptyObserverOrInitObsv.mo445b(a), uptimeMillis);
         this.f502i.mo435b(this.f504k);
         this.f502i.mo429a(this.f505l);
         this.f503j.mo435b(this.f506m);

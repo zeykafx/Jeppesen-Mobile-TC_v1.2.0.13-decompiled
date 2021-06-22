@@ -44,7 +44,7 @@ public class SplashScreenActivity extends Activity {
         new AsyncTaskC0038av(this, null).execute(new Void[0]);
         setContentView(R.layout.splashscreen);
         MobileTC.m72a((Bitmap) null);
-        if (MobileTC.m87k() != null) {
+        if (MobileTC.getCurrentBitmap() != null) {
             Log.d(f227e, "skipping splash screen because image is already set");
             mo176a();
             return;

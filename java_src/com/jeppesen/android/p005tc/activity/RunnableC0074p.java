@@ -42,20 +42,20 @@ class RunnableC0074p implements Runnable {
             Log.e(ChartDisplayActivity.m214l(), "Oh No!" + e);
         }
         if (str == null) {
-            Log.e(ChartDisplayActivity.m214l(), "Chart not found in .bin file ICAO: " + ChartDisplayActivity.m209g(this.f374a).mo451a() + " ID: " + chart.mo472b() + " Count: " + ChartDisplayActivity.m222p(this.f374a));
+            Log.e(ChartDisplayActivity.m214l(), "Chart not found in .bin file ICAO: " + ChartDisplayActivity.m209g(this.f374a).mo451a() + " ID: " + chart.getChartFileName() + " Count: " + ChartDisplayActivity.m222p(this.f374a));
             this.f374a.mo159j();
             return;
         }
         ChartDisplayActivity.m225q(this.f374a);
         TCLNatives.setPathToTcl(str);
         ChartDisplayActivity.m226r(this.f374a);
-        ChartDisplayActivity.m200b(this.f374a, ChartDisplayActivity.m222p(this.f374a) + " " + chart.mo472b());
-        Log.i(ChartDisplayActivity.m214l(), "TestHandler called for ICAO: " + ChartDisplayActivity.m209g(this.f374a).mo451a() + " ID: " + chart.mo472b() + " Count: " + ChartDisplayActivity.m222p(this.f374a));
+        ChartDisplayActivity.m200b(this.f374a, ChartDisplayActivity.m222p(this.f374a) + " " + chart.getChartFileName());
+        Log.i(ChartDisplayActivity.m214l(), "TestHandler called for ICAO: " + ChartDisplayActivity.m209g(this.f374a).mo451a() + " ID: " + chart.getChartFileName() + " Count: " + ChartDisplayActivity.m222p(this.f374a));
         ChartDisplayActivity.m184a(this.f374a, System.nanoTime());
         TCLNatives.setIcao(chart.mo469a());
         TCLNatives.setIndexNumber(chart.mo474c());
-        TCLNatives.setProcedureId(chart.mo472b());
-        MobileTC.m88l();
+        TCLNatives.setProcedureId(chart.getChartFileName());
+        MobileTC.clearBitmap();
         ChartDisplayActivity.m228s(this.f374a).requestRender();
     }
 }

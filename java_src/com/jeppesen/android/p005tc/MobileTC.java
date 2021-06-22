@@ -58,7 +58,7 @@ public class MobileTC extends JeppAndroidApp {
     private static boolean f62l;
 
     /* renamed from: m */
-    private static Bitmap f63m;
+    private static Bitmap currentBitmap;
 
     /* renamed from: a */
     public static TCLNatives m69a() {
@@ -77,7 +77,7 @@ public class MobileTC extends JeppAndroidApp {
 
     /* renamed from: a */
     public static void m72a(Bitmap bitmap) {
-        f63m = bitmap;
+        MobileTC.currentBitmap = bitmap;
     }
 
     /* renamed from: a */
@@ -132,7 +132,7 @@ public class MobileTC extends JeppAndroidApp {
     }
 
     /* renamed from: g */
-    public static Location m83g() {
+    public static Location currentLocation() {
         return f58h;
     }
 
@@ -152,16 +152,16 @@ public class MobileTC extends JeppAndroidApp {
     }
 
     /* renamed from: k */
-    public static Bitmap m87k() {
-        return f63m;
+    public static Bitmap getCurrentBitmap() {
+        return currentBitmap;
     }
 
     /* renamed from: l */
-    public static void m88l() {
-        if (f63m != null) {
-            f63m.recycle();
-            f63m = null;
-            System.gc();
+    public static void clearBitmap() {
+        if (currentBitmap != null) {
+            currentBitmap.recycle();
+            currentBitmap = null;
+            System.gc(); // runs the garbage collector
         }
     }
 
