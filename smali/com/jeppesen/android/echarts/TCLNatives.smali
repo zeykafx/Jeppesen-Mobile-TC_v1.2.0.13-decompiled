@@ -484,7 +484,9 @@
 .end method
 
 .method public static renderChart()V
-    .locals 7
+    .locals 10
+
+    const/4 v7, 0x1
 
     sget-boolean v0, Lcom/jeppesen/android/util/JeppAndroidApp;->a:Z
 
@@ -585,9 +587,16 @@
     :goto_1
     sget v0, Lcom/jeppesen/android/echarts/TCLNatives;->e:I
 
+    const-string v8, "chart"
+
+    invoke-static {v3}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object v9
+
+    invoke-static {v8, v9}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     sget-object v3, Lcom/jeppesen/android/echarts/TCLNatives;->tclSize:Lcom/jeppesen/android/echarts/EChartsSize;
 
-    invoke-static {v0, v3}, Lcom/jeppesen/android/echarts/TCLNatives;->tclGetSizeAdjusted(ILcom/jeppesen/android/echarts/EChartsSize;)V
+    invoke-static {v7, v3}, Lcom/jeppesen/android/echarts/TCLNatives;->tclGetSizeAdjusted(ILcom/jeppesen/android/echarts/EChartsSize;)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0

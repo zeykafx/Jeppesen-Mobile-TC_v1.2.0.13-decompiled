@@ -24,12 +24,27 @@
             android:typeface="sans" />
     </RelativeLayout>
 
-    <com.jeppesen.android.views.imagezoom.ImageZoomView android:id="@id/imageView" android:paddingLeft="3.0dip" android:paddingTop="3.0dip" android:paddingRight="3.0dip" android:paddingBottom="7.0dip" android:visibility="visible" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_toLeftOf="@id/sidescrubber_listview" android:layout_below="@id/MenuBar" />
+    <com.jeppesen.android.views.imagezoom.ImageZoomView
+        android:id="@id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/MenuBar"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toLeftOf="@id/sidescrubber_listview"
+        android:paddingLeft="3.0dip"
+        android:paddingTop="3.0dip"
+        android:paddingRight="3.0dip"
+        android:paddingBottom="7.0dip"
+        android:visibility="visible" />
 
     <com.jeppesen.android.echarts.view.TCLGLSurfaceView
         android:id="@id/glSurfaceView"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/MenuBar"
         android:layout_alignRight="@+id/imageView"
         android:layout_alignParentLeft="true"
@@ -38,6 +53,7 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="-1dp"
+        android:visibility="visible"
         android:windowIsTranslucent="true" />
 
     <ListView

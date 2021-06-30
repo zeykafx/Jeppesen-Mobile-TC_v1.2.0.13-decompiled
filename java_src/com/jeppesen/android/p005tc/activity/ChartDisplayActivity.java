@@ -450,7 +450,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                     it.remove();
                 }
             }
-            // C IS THE LIST OF CHARTS AVAIBLE!
+            // C IS THE LIST OF CHARTS AVAILABLE!
             c = d;
         }
         this.f211q.setAdapter((ListAdapter) new C0034ar(this, R.layout.sidescrubber_lineitem, R.id.sidescrubber_itemtext, c));

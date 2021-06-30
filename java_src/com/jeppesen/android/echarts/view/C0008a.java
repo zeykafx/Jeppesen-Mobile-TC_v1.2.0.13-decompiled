@@ -45,10 +45,10 @@ public class C0008a implements GLSurfaceView.Renderer {
     private int f44g;
 
     /* renamed from: h */
-    private int f45h = 2048;
+    private int twenty_fourty_eight_one = 2048;
 
     /* renamed from: i */
-    private int f46i = 2048;
+    private int twenty_fourty_eight_two = 2048;
 
     /* renamed from: j */
     private Handler f47j = null;
@@ -176,7 +176,7 @@ public class C0008a implements GLSurfaceView.Renderer {
             Runtime.getRuntime().gc();
             IntBuffer.allocate(i3);
         }
-        gl10.glReadPixels(0, this.f46i - i2, i, i2, 6408, 5121, intBuffer);
+        gl10.glReadPixels(0, this.twenty_fourty_eight_two - i2, i, i2, 6408, 5121, intBuffer);
         int[] array = intBuffer.array();
         for (int i4 = 0; i4 < array.length; i4++) {
             int i5 = array[i4];
@@ -254,12 +254,12 @@ public class C0008a implements GLSurfaceView.Renderer {
             if (this.f39b) {
                 this.f40c = m61b(gl10);
                 this.f41d = m62c(gl10);
-                this.f43f = m60b(gl10, this.f45h, this.f46i);
-                this.f44g = m56a(gl10, this.f45h, this.f46i, this.f43f);
+                this.f43f = m60b(gl10, this.twenty_fourty_eight_one, this.twenty_fourty_eight_two);
+                this.f44g = m56a(gl10, this.twenty_fourty_eight_one, this.twenty_fourty_eight_two, this.f43f);
             }
             if (this.f39b) {
-                gl10.glViewport(0, 0, this.f45h, this.f46i);
-                TCLNatives.tclSetBufferSize(this.f45h, this.f46i);
+                gl10.glViewport(0, 0, this.twenty_fourty_eight_one, this.twenty_fourty_eight_two);
+                TCLNatives.tclSetBufferSize(this.twenty_fourty_eight_one, this.twenty_fourty_eight_two);
             } else {
                 gl10.glViewport(0, 0, 768, 768);
                 TCLNatives.tclSetBufferSize(768, 768);
@@ -267,16 +267,16 @@ public class C0008a implements GLSurfaceView.Renderer {
         } catch (Exception e) {
             Log.e(f37a, "onSurfaceCreated() Oh No!", e);
             if (this.f39b) {
-                gl10.glViewport(0, 0, this.f45h, this.f46i);
-                TCLNatives.tclSetBufferSize(this.f45h, this.f46i);
+                gl10.glViewport(0, 0, this.twenty_fourty_eight_one, this.twenty_fourty_eight_two);
+                TCLNatives.tclSetBufferSize(this.twenty_fourty_eight_one, this.twenty_fourty_eight_two);
             } else {
                 gl10.glViewport(0, 0, 768, 768);
                 TCLNatives.tclSetBufferSize(768, 768);
             }
         } catch (Throwable th) {
             if (this.f39b) {
-                gl10.glViewport(0, 0, this.f45h, this.f46i);
-                TCLNatives.tclSetBufferSize(this.f45h, this.f46i);
+                gl10.glViewport(0, 0, this.twenty_fourty_eight_one, this.twenty_fourty_eight_two);
+                TCLNatives.tclSetBufferSize(this.twenty_fourty_eight_one, this.twenty_fourty_eight_two);
             } else {
                 gl10.glViewport(0, 0, 768, 768);
                 TCLNatives.tclSetBufferSize(768, 768);
