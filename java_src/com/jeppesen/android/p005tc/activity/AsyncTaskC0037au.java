@@ -19,11 +19,11 @@ class AsyncTaskC0037au extends AsyncTask {
     /* access modifiers changed from: protected */
     /* renamed from: a */
     public String doInBackground(Void... voidArr) {
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.i(SplashScreenActivity.m249b(), "in_doInBackground - starting initialization");
         }
         String m = ((MobileTC) this.f325a.getApplication()).mo45m();
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.i(SplashScreenActivity.m249b(), "in_doInBackground - initialization finished");
         }
         return m;

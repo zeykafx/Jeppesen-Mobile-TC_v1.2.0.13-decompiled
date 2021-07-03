@@ -87,6 +87,7 @@ public class ImageZoomView extends ImageView implements Observer {
     public void placeAircraftOnCanva(Canvas canvas, float f, float f2) {
         IntPoint tclLatLonToXY;
         Location g = MobileTC.currentLocation();
+        // places the ownshop icon on the map
         if (g != null && g.hasAccuracy() && g.getAccuracy() <= 17.0f) {
             if ((!g.hasSpeed() || g.getSpeed() <= 20.5f) && (tclLatLonToXY = TCLNatives.getTclLatLonToXY(g.getLatitude(), g.getLongitude())) != null) {
                 Matrix matrix = new Matrix();
@@ -149,16 +150,16 @@ public class ImageZoomView extends ImageView implements Observer {
         float b = this.f485i.mo444b();
         float a3 = (this.f485i.mo443a(a) * ((float) width)) / ((float) this.f486j);
         float b2 = (this.f485i.mo445b(a) * ((float) height)) / ((float) this.f487k);
-        float f = getResources().getDisplayMetrics().density;
-        int i = (int) ((f * 3.0f) + 0.5f);
+        float displayDensity = getResources().getDisplayMetrics().density;
+        int densityTimes3Plus0PointFive = (int) ((displayDensity * 3.0f) + 0.5f);
         this.f481e.left = (int) ((a2 * ((float) this.f486j)) - (((float) width) / (a3 * 2.0f)));
         this.f481e.top = (int) ((b * ((float) this.f487k)) - (((float) height) / (b2 * 2.0f)));
         this.f481e.right = (int) ((((float) width) / a3) + ((float) this.f481e.left));
         this.f481e.bottom = (int) ((((float) height) / b2) + ((float) this.f481e.top));
         this.f482f.left = getLeft() + 5;
         this.f482f.right = getRight() - 5;
-        this.f482f.top = (getTop() - ((int) ((47.0f * f) + 0.5f))) + i;
-        this.f482f.bottom = (getBottom() - ((int) ((55.0f * f) + 0.5f))) - i;
+        this.f482f.top = (getTop() - ((int) ((47.0f * displayDensity) + 0.5f))) + densityTimes3Plus0PointFive;
+        this.f482f.bottom = (getBottom() - ((int) ((55.0f * displayDensity) + 0.5f))) - densityTimes3Plus0PointFive;
         if (this.f481e.left < 0) {
             Rect rect = this.f482f;
             rect.left = (int) (((float) rect.left) + (((float) (-this.f481e.left)) * a3));

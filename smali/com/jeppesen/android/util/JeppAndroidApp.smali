@@ -16,13 +16,15 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 4
 
     const/4 v2, 0x0
 
     const/4 v1, 0x0
 
-    sput-boolean v1, Lcom/jeppesen/android/util/JeppAndroidApp;->a:Z
+    const/4 v3, 0x1
+
+    sput-boolean v3, Lcom/jeppesen/android/util/JeppAndroidApp;->a:Z
 
     const-class v0, Lcom/jeppesen/android/util/JeppAndroidApp;
 

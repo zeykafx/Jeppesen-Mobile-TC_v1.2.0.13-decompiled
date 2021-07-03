@@ -3906,7 +3906,7 @@
 .method public DimmerOnClick(Landroid/view/View;)V
     .locals 6
 
-    const/16 v5, 0x64
+    const/16 v5, 0xc8
 
     invoke-virtual {p0}, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->getWindow()Landroid/view/Window;
 
@@ -3945,7 +3945,7 @@
 
     new-instance v2, Landroid/widget/PopupWindow;
 
-    const/16 v3, 0x140
+    const/16 v3, 0x1f4
 
     const/4 v4, 0x1
 

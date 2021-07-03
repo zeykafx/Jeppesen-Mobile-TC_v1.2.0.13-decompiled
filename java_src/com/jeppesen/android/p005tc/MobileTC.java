@@ -175,7 +175,7 @@ public class MobileTC extends JeppAndroidApp {
         Log.d(f52b, "initializeApplication()");
         try {
             f53c = new TCLNatives();
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 f54d = getExternalFilesDir(null).getAbsolutePath();
             } else {
                 f54d = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();

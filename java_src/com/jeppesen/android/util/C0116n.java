@@ -49,7 +49,7 @@ public class C0116n {
     /* renamed from: a */
     public static void m459a(String str, String str2) {
         InputStream open;
-        if (JeppAndroidApp.f436a && !JeppAndroidApp.m375o()) {
+        if (JeppAndroidApp.debugMode && !JeppAndroidApp.m375o()) {
             Log.e(f473a, "copyAssets() called before JeppAndroidApp has been initialized");
         }
         AssetManager assets = JeppAndroidApp.m377q().getAssets();
@@ -63,12 +63,12 @@ public class C0116n {
         for (int i = 0; i < strArr.length; i++) {
             try {
                 if (str.length() == 0) {
-                    if (JeppAndroidApp.f436a) {
+                    if (JeppAndroidApp.debugMode) {
                         Log.d(f473a, "copyAssets() file: " + str);
                     }
                     open = assets.open(strArr[i]);
                 } else {
-                    if (JeppAndroidApp.f436a) {
+                    if (JeppAndroidApp.debugMode) {
                         Log.d(f473a, "copyAssets() file: " + str + "/" + strArr[i]);
                     }
                     open = assets.open(str + "/" + strArr[i]);
@@ -80,7 +80,7 @@ public class C0116n {
                 fileOutputStream.close();
             } catch (FileNotFoundException e2) {
                 try {
-                    if (JeppAndroidApp.f436a) {
+                    if (JeppAndroidApp.debugMode) {
                         Log.d(f473a, "copyAssets() file not found");
                     }
                 } catch (Exception e3) {
@@ -107,19 +107,19 @@ public class C0116n {
 
     /* renamed from: a */
     public static boolean m461a(String str) {
-        if (JeppAndroidApp.f436a && !JeppAndroidApp.m375o()) {
+        if (JeppAndroidApp.debugMode && !JeppAndroidApp.m375o()) {
             Log.e(f473a, "isDirLoaded() called before JeppAndroidApp has been initialized");
         }
         try {
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 Log.i(f473a, "isDirLoaded() looking for " + str);
             }
             if (new File(str).exists()) {
-                if (JeppAndroidApp.f436a) {
+                if (JeppAndroidApp.debugMode) {
                     Log.i(f473a, "isDirLoaded() found " + str);
                 }
                 return true;
-            } else if (!JeppAndroidApp.f436a) {
+            } else if (!JeppAndroidApp.debugMode) {
                 return false;
             } else {
                 Log.i(f473a, "isDirLoaded() did not find " + str);

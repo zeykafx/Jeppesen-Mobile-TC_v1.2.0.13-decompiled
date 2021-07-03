@@ -407,7 +407,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 MobileTC.m70a(this, "Unable to extract Chart " + chart.getChartFileName() + " for Airport " + chart.mo469a() + " from current database");
                 return;
             }
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 this.f179aa = System.nanoTime();
             }
             m229s();
@@ -962,7 +962,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         }
         int i = (int) (f * 100.0f);
         View inflate = this.layoutInflater.inflate(R.layout.dimmercontrol, (ViewGroup) null);
-        this.f181ac = new PopupWindow(inflate, 320, 100, true);
+        this.f181ac = new PopupWindow(inflate, 320, 500, true);
         this.f181ac.setBackgroundDrawable(getResources().getDrawable(R.drawable.dialog_full_holo_dark2));
         SeekBar seekBar = (SeekBar) inflate.findViewById(R.id.seekBar);
         seekBar.setMax(100);
@@ -1059,7 +1059,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         this.imageZoomView.setOnClickListener(null);
         mo148a();
         this.f170X = true;
-        if (MobileTC.f436a) {
+        if (MobileTC.debugMode) {
             Log.i(f136V, "RemoveTips() called, clearing screen");
         }
     }
@@ -1145,7 +1145,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
 
     /* renamed from: c */
     public void mo152c() {
-        if (MobileTC.f436a) {
+        if (MobileTC.debugMode) {
             Log.i(f136V, "renderComplete() called in ChartSurfaceView");
         }
         if (this.surfaceView.getBitmap() != null) {
@@ -1155,10 +1155,10 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         this.f172Z.setText(this.chartName);
         mo150b();
         MobileTC.m80d(false);
-        if (MobileTC.f436a) {
+        if (MobileTC.debugMode) {
             Log.i(f136V, "************** Time for complete chart render is: " + (((double) (System.nanoTime() - this.f179aa)) / 1.0E9d));
         }
-        if (MobileTC.f436a && !this.f189at) {
+        if (MobileTC.debugMode && !this.f189at) {
             mo159j();
         }
     }
@@ -1255,6 +1255,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 }
             }
         }
+        // TODO USE THIS ALL THE TIME TO REFRESH CHARTS
         findViewById(R.id.chartdisplaylayout).invalidate();
     }
 
@@ -1364,12 +1365,12 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
         PackageInfo packageInfo = null;
         super.onCreate(bundle);
         try {
-            if (MobileTC.f436a) {
+            if (MobileTC.debugMode) {
                 Log.i(f136V, "onCreate() called");
             }
             setContentView(R.layout.chartdisplay);
             this.f211q = (ListView) findViewById(R.id.sidescrubber_listview);
-            float f = getResources().getDisplayMetrics().density;
+            float density = getResources().getDisplayMetrics().density;
             this.imageZoomView = (ImageZoomView) findViewById(R.id.imageView); // represents the actual image viewer, not the gl surface i think
             this.imageZoomView.setTouchListenerAndMoreHeightStuff();
             this.surfaceView = (TCLGLSurfaceView) findViewById(R.id.glSurfaceView);
@@ -1387,7 +1388,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             MobileTC.m78c(z);
             mo150b(); // sets the splash screen image I think
             this.f172Z = (TextView) findViewById(R.id.AirportName);
-            if (MobileTC.f436a) {
+            if (MobileTC.debugMode) {
                 registerForContextMenu(this.f172Z);
             }
             this.layoutInflater = (LayoutInflater) getSystemService("layout_inflater");
@@ -1402,7 +1403,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.viewSwitcher.addView(inflate, 0);
             this.viewSwitcher.addView(inflate2, 1);
             this.viewSwitcher.setBackgroundResource(R.drawable.dialog_full_holo_dark2);
-            this.popupWindow = new PopupWindow(this.viewSwitcher, (int) (350.0f * f), 1535);
+            this.popupWindow = new PopupWindow(this.viewSwitcher, (int) (350.0f * density), 1535);
             this.popupWindow.setFocusable(true);
             this.popupWindow.setTouchable(true);
             this.popupWindow.setOutsideTouchable(true);
@@ -1414,7 +1415,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.airportSearchEditText.addTextChangedListener(this);
             Drawable drawable = getResources().getDrawable(R.drawable.dialog_full_holo_dark2);
             this.popupWindow2 = new PopupWindow(this);
-            this.popupWindow2.setWidth((int) (380.0f * f));
+            this.popupWindow2.setWidth((int) (380.0f * density));
             this.popupWindow2.setHeight(1535);
             this.popupWindow2.setFocusable(true);
             this.popupWindow2.setBackgroundDrawable(drawable);
@@ -1422,14 +1423,14 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.popupWindow2.setContentView(this.notamListView);
             this.notamIcon = findViewById(R.id.notamsicon);
             this.notamPopupWindow = new PopupWindow(this);
-            this.notamPopupWindow.setWidth((int) (350.0f * f));
+            this.notamPopupWindow.setWidth((int) (350.0f * density));
             this.notamPopupWindow.setHeight(620);
             this.notamPopupWindow.setFocusable(true);
             this.notamPopupWindow.setBackgroundDrawable(drawable);
             this.noNotamsView = this.layoutInflater.inflate(R.layout.nonotams, (ViewGroup) null);
             this.notamPopupWindow.setContentView(this.noNotamsView);
             this.noNotamsPopupWindow = new PopupWindow(this);
-            this.noNotamsPopupWindow.setWidth((int) (450.0f * f));
+            this.noNotamsPopupWindow.setWidth((int) (450.0f * density));
             this.noNotamsPopupWindow.setHeight(300);
             this.noNotamsPopupWindow.setBackgroundDrawable(drawable);
             this.noNotamsPopupWindow.setFocusable(true);
@@ -1437,7 +1438,7 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.noNotamsPopupWindow.setContentView(this.aboutView);
             ((TextView) this.aboutView.findViewById(R.id.version_value)).setText(packageInfo.versionName);
             this.versionValueView = new PopupWindow(this);
-            this.versionValueView.setWidth((int) (350.0f * f));
+            this.versionValueView.setWidth((int) (350.0f * density));
             this.versionValueView.setHeight(1535);
             this.versionValueView.setFocusable(true);
             this.versionValueView.setBackgroundDrawable(drawable);
@@ -1445,14 +1446,14 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.versionValueView.setContentView(this.ManualListView);
             this.manualIcon = findViewById(R.id.manualsicon);
             this.manualPopupIcon = new PopupWindow(this);
-            this.manualPopupIcon.setWidth((int) (350.0f * f));
+            this.manualPopupIcon.setWidth((int) (350.0f * density));
             this.manualPopupIcon.setHeight(1535);
             this.manualPopupIcon.setFocusable(true);
             this.manualPopupIcon.setBackgroundDrawable(drawable);
             this.noManualView = this.layoutInflater.inflate(R.layout.nomanuals, (ViewGroup) null);
             this.manualPopupIcon.setContentView(this.noManualView);
             this.noManualPopup = new PopupWindow(this);
-            this.noManualPopup.setWidth((int) (350.0f * f));
+            this.noManualPopup.setWidth((int) (350.0f * density));
             this.noManualPopup.setHeight(1535);
             this.noManualPopup.setFocusable(true);
             this.noManualPopup.setBackgroundDrawable(drawable);
@@ -1460,14 +1461,14 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
             this.noManualPopup.setContentView(this.gpsDataPopup);
             gpsDataIcon = (ImageButton) findViewById(R.id.GPSDataicon);
             this.gpsDataIconPopup = new PopupWindow(this);
-            this.gpsDataIconPopup.setWidth((int) (350.0f * f));
+            this.gpsDataIconPopup.setWidth((int) (350.0f * density));
             this.gpsDataIconPopup.setHeight(1535);
             this.gpsDataIconPopup.setFocusable(true);
             this.gpsDataIconPopup.setBackgroundDrawable(drawable);
             this.favedChartListView = this.layoutInflater.inflate(R.layout.faved_chartlist, (ViewGroup) null);
             this.gpsDataIconPopup.setContentView(this.favedChartListView);
             this.favChartsPopupWindow = new PopupWindow(this);
-            this.favChartsPopupWindow.setWidth((int) (f * 350.0f));
+            this.favChartsPopupWindow.setWidth((int) (density * 350.0f));
             this.favChartsPopupWindow.setHeight(1535);
             this.favChartsPopupWindow.setFocusable(true);
             this.favChartsPopupWindow.setBackgroundDrawable(drawable);

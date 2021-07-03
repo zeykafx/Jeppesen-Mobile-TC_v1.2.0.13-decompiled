@@ -647,6 +647,9 @@
 
     iget v6, v6, Landroid/util/DisplayMetrics;->density:F
 
+    # changing the value of v6 from the density to 0xbe wich is equal to 190
+    #const v6, 0xbe
+
     const/high16 v7, 0x423c0000    # 47.0f
 
     mul-float/2addr v7, v6
@@ -774,6 +777,7 @@
     move-result v2
 
     sub-int/2addr v2, v7
+    #add-int/lit8 v2, v2, 0x70
 
     add-int/2addr v2, v6
 
@@ -786,6 +790,7 @@
     move-result v2
 
     sub-int/2addr v2, v8
+    #add-int/lit8 v2, v2, 0x70
 
     sub-int/2addr v2, v6
 

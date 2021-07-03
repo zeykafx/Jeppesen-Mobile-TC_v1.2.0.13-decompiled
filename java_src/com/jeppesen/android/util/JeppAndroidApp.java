@@ -9,7 +9,7 @@ import android.util.Log;
 public abstract class JeppAndroidApp extends Application {
 
     /* renamed from: a */
-    public static boolean f436a = false;
+    public static boolean debugMode = true;
 
     /* renamed from: b */
     private static final String f437b = JeppAndroidApp.class.getSimpleName();
@@ -29,7 +29,7 @@ public abstract class JeppAndroidApp extends Application {
 
     /* renamed from: a */
     public static void m374a(String str) {
-        if (f436a) {
+        if (debugMode) {
             Log.i(f437b, str + " NativeHeapSize: " + Debug.getNativeHeapSize());
             Log.i(f437b, str + " HeapAllocatedSize: " + Debug.getNativeHeapAllocatedSize());
             Log.i(f437b, str + " NativeHeapFreeSize: " + Debug.getNativeHeapFreeSize());
@@ -58,11 +58,11 @@ public abstract class JeppAndroidApp extends Application {
             if ((getPackageManager().getPackageInfo(getPackageName(), 0).applicationInfo.flags & 2) != 0) {
                 z = true;
             }
-            f436a = z;
+            debugMode = z;
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(f437b, "Unable to get package info: ", e);
         }
-        if (f436a) {
+        if (debugMode) {
             Log.i(f437b, "onCreate()");
         }
         try {
@@ -70,21 +70,21 @@ public abstract class JeppAndroidApp extends Application {
         } catch (Exception e2) {
             Log.e(f437b, "Oh No!", e2);
         }
-        if (f436a) {
+        if (debugMode) {
             m374a("onCreate()");
         }
         f440e = true;
     }
 
     public void onLowMemory() {
-        if (f436a) {
+        if (debugMode) {
             Log.w(f437b, "onLowMemory()");
             m374a("onLowMemory()");
         }
     }
 
     public void onTerminate() {
-        if (f436a) {
+        if (debugMode) {
             Log.i(f437b, "onTerminate()");
         }
     }

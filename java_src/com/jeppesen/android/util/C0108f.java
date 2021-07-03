@@ -42,7 +42,7 @@ public class C0108f {
     /* renamed from: a */
     static void m391a(Window window, int i) {
         if (i > 100) {
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 Log.e(f456a, "setBrightness() brightness value (" + i + ")  is out of range, resetting to default");
             }
             i = -1;

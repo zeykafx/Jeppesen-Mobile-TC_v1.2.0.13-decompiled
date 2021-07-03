@@ -37,7 +37,7 @@ public class C0132c implements AbstractC0130a {
     public static boolean m545a(String str) {
         File file = new File(str + File.separatorChar + "charts.bin");
         File file2 = new File(str + File.separatorChar + "vfrcharts.bin");
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.d(f599y, "charts " + file.length());
             Log.d(f599y, "charts " + file2.length());
         }
@@ -45,12 +45,12 @@ public class C0132c implements AbstractC0130a {
             if (!file2.exists() || file2.length() == 37201) {
                 return true;
             }
-            if (!JeppAndroidApp.f436a) {
+            if (!JeppAndroidApp.debugMode) {
                 return false;
             }
             Log.d(f599y, "incorrect demo");
             return false;
-        } else if (!JeppAndroidApp.f436a) {
+        } else if (!JeppAndroidApp.debugMode) {
             return false;
         } else {
             Log.d(f599y, "incorrect demo");

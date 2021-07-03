@@ -25,14 +25,14 @@ class C0036at extends Thread {
             } catch (InterruptedException e) {
                 Log.d(SplashScreenActivity.m249b(), "splashThread interrupted");
                 this.f324a.finish();
-                if (JeppAndroidApp.f436a) {
+                if (JeppAndroidApp.debugMode) {
                     Log.d(SplashScreenActivity.m249b(), "appInitFinished, continuing to chart display");
                 }
                 this.f324a.mo176a();
                 return;
             } catch (Throwable th) {
                 this.f324a.finish();
-                if (JeppAndroidApp.f436a) {
+                if (JeppAndroidApp.debugMode) {
                     Log.d(SplashScreenActivity.m249b(), "appInitFinished, continuing to chart display");
                 }
                 this.f324a.mo176a();
@@ -40,7 +40,7 @@ class C0036at extends Thread {
             }
         }
         this.f324a.finish();
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.d(SplashScreenActivity.m249b(), "appInitFinished, continuing to chart display");
         }
         this.f324a.mo176a();

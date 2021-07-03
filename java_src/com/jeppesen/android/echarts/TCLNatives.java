@@ -58,7 +58,7 @@ public class TCLNatives {
     }
 
     public static void Init() {
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.i(f18a, "initializing TCL library.  this must be done after gl context is available");
         }
         try {
@@ -126,7 +126,7 @@ public class TCLNatives {
     }
 
     public static void renderChart() {
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.i(f18a, "in renderChart doing native render for chart " + pathToTcl);
         }
         try {
@@ -134,7 +134,7 @@ public class TCLNatives {
                 tclClose(f22e);
                 f22e = -1;
             }
-            long nanoTime = JeppAndroidApp.f436a ? System.nanoTime() : 0;
+            long nanoTime = JeppAndroidApp.debugMode ? System.nanoTime() : 0;
             if (pathToTcl == null) {
                 f22e = tclOpen(rootStoragePath + "/" + f21d, 1, "");
             } else {
@@ -144,11 +144,11 @@ public class TCLNatives {
             try {
                 tclRender(f22e);
             } catch (EChartsError e) {
-                if (MobileTC.f436a) {
+                if (MobileTC.debugMode) {
                 }
                 Log.e(f18a, "Oh No!", e);
             }
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 Log.i(f18a, "time for tclRender is " + (((double) (System.nanoTime() - nanoTime)) / 1.0E9d));
             }
             f28k = tclIsGeoRefd(f22e);

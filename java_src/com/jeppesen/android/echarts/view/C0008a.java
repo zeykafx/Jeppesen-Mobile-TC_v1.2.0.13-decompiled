@@ -169,7 +169,7 @@ public class C0008a implements GLSurfaceView.Renderer {
         try {
             intBuffer = IntBuffer.allocate(i3);
         } catch (OutOfMemoryError e) {
-            if (MobileTC.f436a) {
+            if (MobileTC.debugMode) {
                 m57a(getClass());
             }
             System.gc();
@@ -182,7 +182,7 @@ public class C0008a implements GLSurfaceView.Renderer {
             int i5 = array[i4];
             array[i4] = ((i5 & 16711680) >> 16) | (-16711936 & i5) | ((i5 & 255) << 16);
         }
-        if (MobileTC.f436a) {
+        if (MobileTC.debugMode) {
             m57a(getClass());
         }
         this.f48k = Bitmap.createBitmap(i, i2, Bitmap.Config.RGB_565);
@@ -199,33 +199,33 @@ public class C0008a implements GLSurfaceView.Renderer {
     }
 
     public void onDrawFrame(GL10 gl10) {
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.i(f37a, "onDrawFrame() called in TCLRenderer");
         }
         if (TCLGLSurfaceView.f34a) {
             TCLGLSurfaceView.f34a = false;
             if (this.f39b) {
-                if (JeppAndroidApp.f436a) {
+                if (JeppAndroidApp.debugMode) {
                     Log.i(f37a, "binding framebuffer in onDrawFrame()");
                 }
                 ((GL11ExtensionPack) gl10).glBindFramebufferOES(36160, this.f44g);
             }
             long j = 0;
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 j = System.nanoTime();
             }
             TCLNatives.renderChart();
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 Log.i(f37a, "time to render to opengl is " + (((double) (System.nanoTime() - j)) / 1.0E9d));
             }
-            long nanoTime = JeppAndroidApp.f436a ? System.nanoTime() : j;
+            long nanoTime = JeppAndroidApp.debugMode ? System.nanoTime() : j;
             try {
                 mo33a(gl10, TCLNatives.tclSize.width, TCLNatives.tclSize.height);
             } catch (OutOfMemoryError e) {
                 Log.e(f37a, "OutOfMemoryError failure in getBitmap() for ICAO: " + TCLNatives.getIcao() + " Index number: " + TCLNatives.getIndexNumber() + " Procedure ID: " + TCLNatives.getProcedureId(), e);
                 Log.e(f37a, "Chart size: width:" + TCLNatives.tclSize.width + " height: " + TCLNatives.tclSize.height);
             }
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 Log.i(f37a, "time to generate bitmap is " + (((double) (System.nanoTime() - nanoTime)) / 1.0E9d));
             }
             if (this.f39b) {
@@ -235,7 +235,7 @@ public class C0008a implements GLSurfaceView.Renderer {
                 Log.w(f37a, "Handler has not been set in onDrawFrame");
                 return;
             }
-            if (JeppAndroidApp.f436a) {
+            if (JeppAndroidApp.debugMode) {
                 Log.i(f37a, "sending message to ui thread in onDrawFrame()");
             }
             this.f47j.sendMessage(this.f47j.obtainMessage());
@@ -246,7 +246,7 @@ public class C0008a implements GLSurfaceView.Renderer {
     }
 
     public void onSurfaceCreated(GL10 gl10, EGLConfig eGLConfig) {
-        if (JeppAndroidApp.f436a) {
+        if (JeppAndroidApp.debugMode) {
             Log.i(f37a, "onSurfaceCreated called, initializing tcl library and framebuffer");
         }
         try {
