@@ -3828,7 +3828,15 @@
 .end method
 
 .method public ChartSelectedFromScrubberOnClick(Landroid/view/View;)V
-    .locals 2
+    .locals 3
+
+    const v2, 0x0
+
+    iget-object v2, p0, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->q:Landroid/widget/ListView;
+
+    invoke-virtual {v2}, Landroid/widget/ListView;->invalidateViews()V
+
+
 
     invoke-static {}, Lcom/jeppesen/android/tc/MobileTC;->n()Z
 

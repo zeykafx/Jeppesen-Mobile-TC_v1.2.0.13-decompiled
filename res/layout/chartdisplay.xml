@@ -43,8 +43,8 @@
 
     <com.jeppesen.android.echarts.view.TCLGLSurfaceView
         android:id="@id/glSurfaceView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_below="@id/MenuBar"
         android:layout_alignRight="@+id/imageView"
         android:layout_alignParentLeft="true"

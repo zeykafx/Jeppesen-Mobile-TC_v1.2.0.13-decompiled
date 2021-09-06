@@ -648,7 +648,7 @@
     iget v6, v6, Landroid/util/DisplayMetrics;->density:F
 
     # changing the value of v6 from the density to 0xbe wich is equal to 190
-    #const v6, 0xbe
+    #const v6, 0x0
 
     const/high16 v7, 0x423c0000    # 47.0f
 

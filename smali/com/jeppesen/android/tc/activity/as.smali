@@ -23,15 +23,17 @@
 
 # virtual methods
 .method public onLongClick(Landroid/view/View;)Z
-    .locals 7
+    .locals 8
 
     const/4 v6, 0x0
 
     const/4 v5, 0x1
 
-    invoke-static {}, Lcom/jeppesen/android/tc/activity/ar;->a()Ljava/lang/String;
+    const-string v0, "Jeppesen"
 
-    move-result-object v0
+    #invoke-static {}, Lcom/jeppesen/android/tc/activity/ar;->a()Ljava/lang/String;
+
+    #move-result-object v0
 
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -56,6 +58,18 @@
     move-result-object v1
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    # ADDED: restart activity using "recreate()"
+    #new-instance v8, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;
+
+    #invoke-direct {v8, p0}, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;-><init>(Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;)V
+
+    #iget-object v8, p0, Lcom/jeppesen/android/tc/activity/as;->this$0:Lcom/jeppesen/android/tc/activity/as;
+
+    #invoke-virtual {v8}, Lcom/jeppesen/android/tc/activity/as;->recreate()V
+
+    # end ADDED
+
 
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 

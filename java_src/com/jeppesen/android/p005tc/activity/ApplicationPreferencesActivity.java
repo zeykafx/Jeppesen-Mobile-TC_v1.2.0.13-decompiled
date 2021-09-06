@@ -1,5 +1,6 @@
 package com.jeppesen.android.p005tc.activity;
 
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -143,6 +144,7 @@ public class ApplicationPreferencesActivity extends PreferenceActivity {
     }
 
     /* renamed from: com.jeppesen.android.tc.activity.ApplicationPreferencesActivity$PreferencesFragment */
+    @SuppressLint("ValidFragment")
     public class PreferencesFragment extends PreferenceFragment {
         /* renamed from: a */
         private int m180a(PreferenceScreen preferenceScreen, String str) {

@@ -16,7 +16,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     sput-boolean v0, Lcom/jeppesen/android/echarts/view/TCLGLSurfaceView;->a:Z
 

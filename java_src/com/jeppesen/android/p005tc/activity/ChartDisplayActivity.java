@@ -1255,7 +1255,6 @@ public class ChartDisplayActivity extends Activity implements TextWatcher {
                 }
             }
         }
-        // TODO USE THIS ALL THE TIME TO REFRESH CHARTS
         findViewById(R.id.chartdisplaylayout).invalidate();
     }
 
