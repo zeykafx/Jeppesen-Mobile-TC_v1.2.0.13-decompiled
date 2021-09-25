@@ -5855,6 +5855,66 @@
     .end packed-switch
 .end method
 
+.method public onUserLeaveHint()V
+    .locals 7
+
+    .line 39
+    invoke-virtual {p0}, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->getWindowManager()Landroid/view/WindowManager;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
+    move-result-object v0
+
+    .line 40
+    .local v0, "d":Landroid/view/Display;
+    new-instance v1, Landroid/graphics/Point;
+
+    invoke-direct {v1}, Landroid/graphics/Point;-><init>()V
+
+    .line 41
+    .local v1, "p":Landroid/graphics/Point;
+    invoke-virtual {v0, v1}, Landroid/view/Display;->getSize(Landroid/graphics/Point;)V
+
+    .line 42
+    iget v2, v1, Landroid/graphics/Point;->x:I
+
+    .line 43
+    .local v2, "width":I
+    iget v3, v1, Landroid/graphics/Point;->y:I
+
+    .line 45
+    .local v3, "height":I
+    new-instance v4, Landroid/util/Rational;
+
+    invoke-direct {v4, v2, v3}, Landroid/util/Rational;-><init>(II)V
+
+    .line 48
+    .local v4, "ratio":Landroid/util/Rational;
+    new-instance v5, Landroid/app/PictureInPictureParams$Builder;
+
+    invoke-direct {v5}, Landroid/app/PictureInPictureParams$Builder;-><init>()V
+
+    .line 51
+    .local v5, "pip_Builder":Landroid/app/PictureInPictureParams$Builder;
+    invoke-virtual {v5, v4}, Landroid/app/PictureInPictureParams$Builder;->setAspectRatio(Landroid/util/Rational;)Landroid/app/PictureInPictureParams$Builder;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroid/app/PictureInPictureParams$Builder;->build()Landroid/app/PictureInPictureParams;
+
+    .line 52
+    invoke-virtual {v5}, Landroid/app/PictureInPictureParams$Builder;->build()Landroid/app/PictureInPictureParams;
+
+    move-result-object v6
+
+    invoke-virtual {p0, v6}, Lcom/jeppesen/android/tc/activity/ChartDisplayActivity;->enterPictureInPictureMode(Landroid/app/PictureInPictureParams;)Z
+
+    .line 54
+    return-void
+.end method
+
 .method public onCreate(Landroid/os/Bundle;)V
     .locals 8
 

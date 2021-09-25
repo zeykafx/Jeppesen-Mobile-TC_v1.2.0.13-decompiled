@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <application android:enabled="true" android:icon="@drawable/appicon" android:label="@string/app_name" android:largeHeap="true" android:name="com.jeppesen.android.tc.MobileTC" android:theme="@android:style/Theme.NoTitleBar">
-        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="false" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.ChartDisplayActivity" android:noHistory="false" android:theme="@android:style/Theme.Holo.NoActionBar">
+        <activity android:configChanges="orientation|screenSize" android:excludeFromRecents="false" android:hardwareAccelerated="true" android:label="@string/app_name" android:launchMode="standard" android:name="com.jeppesen.android.tc.activity.ChartDisplayActivity" android:noHistory="false" android:theme="@android:style/Theme.Holo.NoActionBar" android:supportsPictureInPicture="true">
             <intent-filter>
                 <action android:name="com.jeppesen.android.tc.activity.ChartDisplayActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
